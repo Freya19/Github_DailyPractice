@@ -1,4 +1,4 @@
-package site.pyyf.practice;
+package freya19.practice.Java_Base;
 
 public class testPersonRight {
     public static void main(String[] arg){

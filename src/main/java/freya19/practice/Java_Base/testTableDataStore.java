@@ -1,4 +1,4 @@
-package freya19.practice.JavaCode;
+package freya19.practice.Java_Base;
 
 import java.util.*;
 

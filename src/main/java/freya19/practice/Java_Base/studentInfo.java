@@ -1,4 +1,4 @@
-package site.pyyf.practice;
+package freya19.practice.Java_Base;
 
 import java.util.HashMap;
 import java.util.Map;
