@@ -20,11 +20,11 @@ import java.util.List;
  */
 
 class SolutionL24 {
-    private void swapTwoNodeAfterThisNode(ListNode node){
+    public void swapTwoNodeAfterThisNode(ListNode node){
         ListNode tmp = node.next;
         node.next = tmp.next;
         tmp.next = tmp.next.next;
-        node.next = tmp;
+        node.next.next = tmp;
     }
     public ListNode swapPairs(ListNode head) {
         ListNode dummpyNode = new ListNode(0);
@@ -45,10 +45,11 @@ public class everyTwoNodeSwapL2 {
         ListNode listNode3 = new ListNode(3);
         ListNode listNode4 = new ListNode(4);
         listNode1.next = listNode2;
+        listNode2.next = null;
         listNode2.next = listNode3;
         listNode3.next = listNode4;
         listNode4.next = null;
-        ListNode result = new SolutionL24().swapPairs(listNode1);
+        ListNode listNode = new SolutionL24().swapPairs(listNode1);
         System.out.println();
     }
 
