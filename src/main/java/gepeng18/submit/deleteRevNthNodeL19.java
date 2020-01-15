@@ -14,8 +14,8 @@ package gepeng18.submit;
  * 给定的 n 保证是有效的。
  */
 class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
     ListNode(int x) {
         val = x;

@@ -31,7 +31,6 @@ public class PalindromeNumberL9 {
     public static void main(String[] args) {
         System.out.println(new Solutionl9().isPalindrome(0));
     }
-
 }
 
 class Solutionl9 {
