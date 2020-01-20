@@ -1,3 +1,9 @@
+/*
+get到了：StringBuilder的妙处（可以append啊~）
+get到了，这种关于字符串数组比较巧妙的判断操作（遍历 由内而外 ）
+ */
+
+
 package freya19.practice.Daily_Practices;
 
 public class maxCommonPrefixSolutionL11 {
@@ -22,14 +28,14 @@ public class maxCommonPrefixSolutionL11 {
         commonPrefix.append(strs[0].charAt(0)); //首字母相同
         //下面开始判断后面的。
         //思路是先找字母，再判断字符串；
-        for (int j = 1; j < minlength; j++) {
-            char c = strs[0].charAt(j);
-            for (int i = 1; i < strs.length; i++) {
-                if (c != strs[i].charAt(j)) return commonPrefix.toString();
+        for (int j = 1; j < minlength; j++) {   //char
+            char c = strs[0].charAt(j);   // 字符串数组第一个元素的第J个字符
+            for (int i = 1; i < strs.length; i++) {  //遍历字符串数组的每个元素
+                if (c != strs[i].charAt(j)) return commonPrefix.toString(); //如果不等于，直接返回上面得到的那个（首字母复合时的前缀）
             }
-            commonPrefix.append(c);
+            commonPrefix.append(c);//找到就append到里面
         }
-        return commonPrefix.toString();
+        return commonPrefix.toString();//然后返回找到的公共前缀
     }
 }
 
