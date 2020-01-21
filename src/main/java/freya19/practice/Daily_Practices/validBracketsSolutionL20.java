@@ -50,3 +50,15 @@ class tesL20 {
 
     }
 }
+
+/*
+发现stack有empty()和isEmpty()两种方法，百度得到源码不同。
+首先，empty()
+public boolean empty() {
+        return size() == 0;
+    }
+
+其次，isEmpty()
+public synchronized boolean isEmpty() {
+       return elementCount == 0;
+ */
