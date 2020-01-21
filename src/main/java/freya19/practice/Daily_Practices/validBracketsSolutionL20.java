@@ -34,7 +34,7 @@ public class validBracketsSolutionL20 {
                 if(cur=='{'&&s.charAt(i)!='}') return false;
             }
         }
-        if(sk.isEmpty()) return true;
+        if(sk.empty()) return true;
         return false;
     }
 }
