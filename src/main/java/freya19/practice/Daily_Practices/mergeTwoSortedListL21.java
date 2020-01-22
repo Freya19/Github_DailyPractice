@@ -58,15 +58,32 @@ public class mergeTwoSortedListL21 {
         ListNode dummyHead = new ListNode(0);
         ListNode curr = dummyHead;
         while(l1!=null&&l2!=null){
-            boolean flag = (l1.val<l2.val);
-            curr.next = flag?l1:l2;
-            curr = curr.next;
-            l1 = flag?l1.next:l1; //如果l1<l2，返回l1指向l1的下一个节点，反之就还是l1；然后走下面一行代码
-            l2 = flag?l2:l2.next;
+            //视频的方法
+//            boolean flag = (l1.val<l2.val);
+//            curr.next = flag?l1:l2;
+//            curr = curr.next;
+//            l1 = flag?l1.next:l1; //如果l1<l2，返回l1指向l1的下一个节点，反之就还是l1；然后走下面一行代码
+//            l2 = flag?l2:l2.next;
 
+            //我的基本方法
+            if(l1.val < l2.val){
+                curr.next = l1;
+                curr = curr.next;
+                l1 = l1.next;
+            }else{
+                curr.next=l2;
+                curr = curr.next;
+                l2=l2.next;
+            }
         }
-        curr.next=(l1==null)?l2:l1; //这里想判断的是，如果一个链表指向了最后的null，curr.next就要指向另一个链表的节点
+//        视频的方法
+//        curr.next=(l1==null)?l2:l1; //这里想判断的是，如果一个链表指向了最后的null，curr.next就要指向另一个链表的节点
 
+        //我的方法
+        if(l1==null) curr.next=l2;
+        if(l2==null) curr.next=l1;
+
+        //最后返回第一个节点
         return dummyHead.next;
     }
 }
