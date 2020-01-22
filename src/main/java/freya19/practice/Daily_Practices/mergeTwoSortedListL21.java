@@ -13,6 +13,29 @@ import org.w3c.dom.ls.LSOutput;
 import java.util.ArrayList;
 import java.util.List;
 
+//定义一个单向链表
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) { val = x; }
+
+
+    // 根据n个元素的数组arr创建一个链表
+    // 使用arr为参数，创建另外一个ListNode的构造函数
+    public ListNode (int[] arr){
+
+        if(arr == null || arr.length == 0)
+            throw new IllegalArgumentException("arr can not be empty");
+
+        this.val = arr[0];
+        ListNode curNode = this;
+        for(int i = 1 ; i < arr.length ; i ++){
+            curNode.next = new ListNode(arr[i]); //将arr数组里面的元素逐一添加到链表的节点中
+            curNode = curNode.next;
+        }
+    }
+}
+
 
 public class mergeTwoSortedListL21 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
