@@ -13,12 +13,11 @@ import org.w3c.dom.ls.LSOutput;
 import java.util.ArrayList;
 import java.util.List;
 
-//定义一个单向链表
+// 链表类，并定义一个由数组得到链表的方法
 class ListNode {
     int val;
     ListNode next;
     ListNode(int x) { val = x; }
-
 
     // 根据n个元素的数组arr创建一个链表
     // 使用arr为参数，创建另外一个ListNode的构造函数
@@ -34,9 +33,24 @@ class ListNode {
             curNode = curNode.next;
         }
     }
+
+    // 显示得到的链表的信息
+    @Override
+    public String toString(){
+
+        StringBuilder s = new StringBuilder("");
+        ListNode curNode = this;
+        while(curNode != null){
+            s.append(Integer.toString(curNode.val));
+            s.append(" -> ");
+            curNode = curNode.next;
+        }
+        s.append("NULL");
+        return s.toString();
+    }
 }
 
-
+// 合并两个有序链表的方法类
 public class mergeTwoSortedListL21 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if(l1==null) return l2;
@@ -58,9 +72,16 @@ public class mergeTwoSortedListL21 {
 
 class testL21{
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5};
-        ListNode head = new ListNode(nums);
-        System.out.println(head);
+        //创建测试链表并打印输出
+        int[] nums1 = {1,2,6,8};
+        int[] nums2 = {2,4,5};
+        ListNode head1 = new ListNode(nums1);
+        ListNode head2 = new ListNode(nums2);
+        System.out.println(head1);
+        System.out.println(head2);
+
+
+
     }
 
 }
