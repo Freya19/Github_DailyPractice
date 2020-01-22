@@ -58,13 +58,15 @@ public class mergeTwoSortedListL21 {
         ListNode dummyHead = new ListNode(0);
         ListNode curr = dummyHead;
         while(l1!=null&&l2!=null){
-            boolean flag = l1.val<l2.val;
+            boolean flag = (l1.val<l2.val);
             curr.next = flag?l1:l2;
             curr = curr.next;
-            l1=flag?l1.next:l2;
-            l2=flag?l1:l2.next;
+            l1 = flag?l1.next:l1; //如果l1<l2，返回l1指向l1的下一个节点，反之就还是l1；然后走下面一行代码
+            l2 = flag?l2:l2.next;
+
         }
-        curr.next=(l1==null)?l1:l2;
+        curr.next=(l1==null)?l2:l1; //这里想判断的是，如果一个链表指向了最后的null，curr.next就要指向另一个链表的节点
+
         return dummyHead.next;
     }
 }
@@ -77,10 +79,14 @@ class testL21{
         int[] nums2 = {2,4,5};
         ListNode head1 = new ListNode(nums1);
         ListNode head2 = new ListNode(nums2);
-        System.out.println(head1);
-        System.out.println(head2);
+        //利用写好的显示方法，显示创建的两个测试链表的信息
+        System.out.println(head1.toString());
+        System.out.println(head2.toString());
 
-
+        //合并两个测试链表
+        mergeTwoSortedListL21 m = new mergeTwoSortedListL21();
+        ListNode m2 = m.mergeTwoLists(head1,head2);
+        System.out.println(m2.toString());
 
     }
 
