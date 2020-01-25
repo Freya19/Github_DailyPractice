@@ -38,6 +38,10 @@ public class removeDuplicatesL26 {
         }
         System.out.println();
 
+        //不重复的元素 —— 其实最后显示的数组可以是这样的，因为重复的被移除了
+        for(int j=0;j<l;j++){
+            System.out.print(arrs[j]);
+        }
 
     }
 }
