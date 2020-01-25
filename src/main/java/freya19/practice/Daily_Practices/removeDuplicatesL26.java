@@ -22,8 +22,22 @@ public class removeDuplicatesL26 {
 
     public static void main(String[] args) {
         int arrs[]={1,1,2,2,3};
+        //原数组
+        for(int i:arrs){
+            System.out.print(i);
+        }
+        System.out.println();
+        //移除重复元素，返回移除后不重复元素数组的长度
         removeDuplicatesL26 rd = new removeDuplicatesL26();
-        System.out.println( rd.removeDuplicates(arrs));
+        int l=rd.removeDuplicates(arrs);
+        System.out.println(l);
+
+        //新数组的排列
+        for(int j:arrs){
+            System.out.print(j);
+        }
+        System.out.println();
+
 
     }
 }
