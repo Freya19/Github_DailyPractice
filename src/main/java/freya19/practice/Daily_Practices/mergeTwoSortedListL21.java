@@ -13,7 +13,7 @@ import org.w3c.dom.ls.LSOutput;
 import java.util.ArrayList;
 import java.util.List;
 
-// 链表类，并定义一个由数组得到链表的方法
+// 链表，并定义一个由数组得到链表的方法
 class ListNode {
     int val;
     ListNode next;
