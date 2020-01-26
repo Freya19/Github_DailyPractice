@@ -11,6 +11,8 @@ package freya19.practice.Daily_Practices;
 
 public class removeDuplicatesL26 {
     public int removeDuplicates(int[] nums){
+        if(nums==null||nums.length==0) return 0; //数组为空或长度为0的情况
+
         int slow = 1;
         for(int fast = 1;fast<nums.length;fast++){
             if(nums[fast-1]!=nums[fast]) {
@@ -21,7 +23,9 @@ public class removeDuplicatesL26 {
     }
 
     public static void main(String[] args) {
-        int arrs[]={1,1,2,2,3};
+        int arrs[]={1,1,2,2,2,3};
+//        int arrs[]={};
+//        int arrs[]=null;//这样会报错：Exception in thread "main" java.lang.NullPointerException
         //原数组
         for(int i:arrs){
             System.out.print(i);
