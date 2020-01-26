@@ -22,5 +22,22 @@
 package freya19.practice.Daily_Practices;
 
 public class removeElementL27 {
+    public int removeElement(int[] nums, int val){
+        if(nums == null) return 0;
+        int slow =  0;
+        for (int fast = 0;fast<nums.length;fast++){
+            if(nums[fast]!= val){
+                nums[slow++] = nums[fast];
+            }
+        }
+        return slow;
+    }
 
+    public static void main(String[] args) {
+        int arr[]={2,3,3,2};
+        int val = 3;
+        removeElementL27 re = new removeElementL27();
+        int i = re.removeElement(arr,val);
+        System.out.println(i);
+    }
 }
