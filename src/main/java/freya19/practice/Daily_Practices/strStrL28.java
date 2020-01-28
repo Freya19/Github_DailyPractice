@@ -57,9 +57,21 @@ public class strStrL28 {
         String s3= "aaaaa";
         String s4 = "bba";
 
+        String s5= "aaaa";
+        String s6 = "";
+
+        String s7= "";
+        String s8 = "";
+
+        String s9= "aaa";
+        String s10 = "aaabbb";
+
         strStrL28 ss = new strStrL28();
+
         System.out.println(ss.strStr(s1,s2));
         System.out.println(ss.strStr(s3,s4));
-
+        System.out.println(ss.strStr(s5,s6));
+        System.out.println(ss.strStr(s7,s8));  //输出仍然是 -1 ，这里是自动把haystack为空也处理了吗？？？
+        System.out.println(ss.strStr(s9,s10)); // 输出是0 。。。 ？？
     }
 }
