@@ -45,14 +45,21 @@ public class strStrL28 {
                 }else{
                     i++;
                 }
-        }return q.element();
+        }
+        if(q.size()==0) return -1; //队列里没有任何数据，就表示没有这样的子串，就是没有找到了
+        return q.element();
     }
 
     public static void main(String[] args) {
         String s1 = "hello";
         String s2 = "ll";
 
+        String s3= "aaaaa";
+        String s4 = "bba";
+
         strStrL28 ss = new strStrL28();
         System.out.println(ss.strStr(s1,s2));
+        System.out.println(ss.strStr(s3,s4));
+
     }
 }
