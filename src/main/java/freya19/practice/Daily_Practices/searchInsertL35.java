@@ -25,18 +25,21 @@ package freya19.practice.Daily_Practices;
 public class searchInsertL35 {
     public int searchInsert(int[] nums, int target){
         if(nums==null) return -1;
-        for(int i=0;i<nums.length;i++){
+        int i =0;
+        while(i<nums.length){
             if(nums[i]!=target) {
                 if(target<nums[0]) return 0;
-                if(target>nums[nums.length-1]) return (nums.length-1);
-                if(nums[i]<target && nums[i+1]>target) return i;
-            }else if(nums[i]==target) return i;
+                if(target>nums[nums.length-1]) return (nums.length);
+                if(nums[i]<target && nums[i+1]>target) return i+1;
+                i++;
+            }
         }
+        return i;
     }
 
     public static void main(String[] args) {
         int[] arr = {1,3,5,6};
-        int target = 7;
+        int target = 3;
 
         searchInsertL35 si = new searchInsertL35();
         System.out.println(si.searchInsert(arr,target));
