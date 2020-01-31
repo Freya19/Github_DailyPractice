@@ -51,9 +51,9 @@ public class RlockAndNonReentrantLock{
 
     public static void main(String[] args) throws InterruptedException {
         RlockAndNonReentrantLock rlock = new RlockAndNonReentrantLock();
-        rlock.test();
+//        rlock.test();
         rlock.a(); //第一次调用时，locked=false，此时while循环不走，线程未阻塞；但locked=true；
-        rlock.doSth();//调用这个方法，
+//        rlock.doSth();//调用这个方法，内部调用lock.islock时就会阻塞
     }
 
 }
