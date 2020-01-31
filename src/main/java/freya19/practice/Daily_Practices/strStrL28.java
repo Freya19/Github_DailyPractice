@@ -22,7 +22,7 @@ import java.util.Queue;
 
 public class strStrL28 {
     public int strStr(String haystack, String needle){
-//        if(haystack==null || haystack.length()<needle.length()) return -2; // 这里有个疑问，就是 haystack如果地空的话会咋样
+//        if(haystack==null || haystack.length()<needle.length()) return -1; // 这里有个疑问，就是 haystack如果空的话会咋样
         if(needle==null) return 0;
 
         Queue<Integer> q = new LinkedList<Integer>();

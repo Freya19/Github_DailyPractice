@@ -32,9 +32,9 @@ public class searchInsertL35 {
                 if(target>nums[nums.length-1]) return (nums.length);
                 if(nums[i]<target && nums[i+1]>target) return i+1;
                 i++;
-            }
+            }return i;
         }
-        return i;
+        return -1;
     }
 
     public static void main(String[] args) {
