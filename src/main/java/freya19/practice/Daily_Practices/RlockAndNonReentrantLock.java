@@ -48,7 +48,6 @@ public class RlockAndNonReentrantLock{
         }
     }
 
-
     public static void main(String[] args) throws InterruptedException {
         RlockAndNonReentrantLock rlock = new RlockAndNonReentrantLock();
         rlock.test();
