@@ -14,19 +14,41 @@ package freya19.practice.Daily_Practices;
 public class lengthOfLastWordL58 {
     public int lengthOfLastWord(String s){
         int len = 0;
-        String[] arr = s.split("\\s+"); // \转义字符 \s+ 表示匹配所有的空字符
-        for(int i=0;i<arr.length;i++){
-            System.out.println(arr[i]);
-            String lastWord = arr[arr.length-1];
-            len = lastWord.length();
+        if(s!=null && s.length()!=0) {
+            String[] arr = s.split("\\s+"); // \转义字符 \s+ 表示匹配所有的空字符
+            if(arr.length!=0) {
+                String lastWord = arr[arr.length - 1];
+                len = lastWord.length();
+                return len;
+            }
         }
-        return len;
+        return 0;
     }
+    /*
+    int len = 0;
+        String[] arr = s.split("\\s+"); // \转义字符 \s+ 表示匹配所有的空字符
+        String lastWord = arr[arr.length-1];
+        len = lastWord.length();
+        return len;
+
+    提交上面的内容给LeetCode会出错：
+    执行出错信息： Line 5: java.lang.ArrayIndexOutOfBoundsException: -1
+    最后执行的输入： " "
+     */
+
 
     public static void main(String[] args) {
         String str = "Hello World Fighting WuHan";
+        String str1 = " ";
+        String str2 = "";
+
+        System.out.println(str1.isEmpty()); // false
+        System.out.println(str2.isEmpty()); // true
+        System.out.println(str1.length());  // 1  所以不能用非空和长度不等于0来判断
+        System.out.println(str2.length());  // 0 所以不能用非空和长度不等于0来判断
+
         lengthOfLastWordL58 lolw = new lengthOfLastWordL58();
-        int l = lolw.lengthOfLastWord(str);
+        int l = lolw.lengthOfLastWord(str1);
         System.out.println(l);
 
     }
