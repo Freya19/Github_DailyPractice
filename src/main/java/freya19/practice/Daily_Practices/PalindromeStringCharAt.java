@@ -1,5 +1,5 @@
 package freya19.practice.Daily_Practices;
-
+//判断是否是回文数字
 public class PalindromeStringCharAt {
     public static void main(String[] args) {
         int a = 12321;

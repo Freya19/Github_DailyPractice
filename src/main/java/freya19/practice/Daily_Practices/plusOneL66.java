@@ -1,5 +1,6 @@
 package freya19.practice.Daily_Practices;
 
+import javax.sound.midi.Soundbank;
 import java.lang.annotation.Retention;
 import java.util.ArrayList;
 
@@ -20,6 +21,20 @@ import java.util.ArrayList;
  */
 public class plusOneL66 {
     public int[] plusOne(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (digits[i] != 9) {
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
+        }
+
+        //跳出for循环，说明数字全部是9
+        int[] temp = new int[digits.length + 1];
+        temp[0] = 1;
+        return temp;
+    }
+   /* public int[] plusOne(int[] digits) {
         if(digits!=null&&digits.length!=0){
             int len = digits.length;
             digits[len-1]+=1;
@@ -40,37 +55,23 @@ public class plusOneL66 {
         //为空的情况下，返回空
         int[] n =new int[0];
         return n;
-    }
-
-    public void printArr(int[] nums){
-                for(int i:nums){
-            System.out.print(i);
-        }
-        System.out.println();
-    }
+    }   */
 
     public static void main(String[] args) {
         int[] a1 = {1,2,3};
         int[] a2 = {0};
         int[] a3 = {};
         int[] a4 = {1,2,3,9};
-        int[] a5 = {9,9}; //输出要是[1,0,0]  为啥呢？？？？？
+        int[] a5 = {9,9}; //输出要是[1,0,0]  为啥呢？？？？？ 因为99+1 = 100.。。。
 
 //        System.out.println(a3==null); //false  ——> 数组为空是这样定义的：int[] a = null;是创建了数组的引用，但在堆中并没有数组中的元素
 //        System.out.println(a3.length==0);//true
 
         plusOneL66 po = new plusOneL66();
-
-        int[] p = po.plusOne(a1);
-        po.printArr(p);
-
-        p=po.plusOne(a2);
-        po.printArr(p);
-
-        p=po.plusOne(a3);
-        po.printArr(p);
-
-        p=po.plusOne(a4);
-        po.printArr(p);
+        po.plusOne(a1);
+//        po.plusOne(a2);
+//        po.plusOne(a3);
+//        po.plusOne(a4);
+//        po.plusOne(a5);
     }
 }
