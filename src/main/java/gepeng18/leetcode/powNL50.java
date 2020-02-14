@@ -1,8 +1,4 @@
-package gepeng18.submit;
-
-import com.sun.media.sound.SoftTuning;
-
-import java.math.BigDecimal;
+package gepeng18.leetcode;
 
 /**
  * 实现 pow(x, n) ，即计算 x 的 n 次幂函数。

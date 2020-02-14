@@ -1,4 +1,4 @@
-package gepeng18.submit;
+package gepeng18.leetcode;
 
 public class listUtils {
     public static ListNode createList(int [] array){

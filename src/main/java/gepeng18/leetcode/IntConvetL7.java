@@ -1,6 +1,4 @@
-package gepeng18.submit;
-
-import com.sun.media.sound.SoftTuning;
+package gepeng18.leetcode;
 
 public class IntConvetL7 {
     public static void main(String[] args) {

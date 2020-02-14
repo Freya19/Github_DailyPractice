@@ -1,6 +1,4 @@
-package gepeng18.submit;
-
-import java.util.List;
+package gepeng18.leetcode;
 
 /**
  * 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。

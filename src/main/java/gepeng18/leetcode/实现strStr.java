@@ -1,4 +1,4 @@
-package gepeng18.submit;
+package gepeng18.leetcode;
 
 /**
  * 实现 strStr() 函数。
