@@ -4,7 +4,7 @@ import java.io.*;
 
 public class mdCutImages {
     public static void main(String[] args) throws Exception {
-        String filePath = "F:\\Projects\\Java\\Github_DailyPractice\\src\\main\\java\\gepeng18\\utils\\1.md";
+        String filePath = "F:\\Projects\\Java\\Github_DailyPractice\\src\\main\\java\\gepeng18\\utils\\servlet.md";
         final String imgOriPath = getImgOriPath("FHY-GP");
         String fileName = filePath.split("\\\\")[filePath.split("\\\\").length - 1];
         String fileNameWithoutSuffix = fileName.split("\\.")[0];
