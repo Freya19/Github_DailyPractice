@@ -12,8 +12,6 @@ public class 替换空格P51 {
         if(str.toString().equals(""))
             return "";
 
-
-
         int start = 0;
         int blankNUm = 0;
         while(start<str.length()){
@@ -29,7 +27,6 @@ public class 替换空格P51 {
         result.append(str);
         for(int i=0;i<p2-p1;i++)
             result.append('1');
-
 
         while(p1>=0){
             if(result.charAt(p1)==' '){
