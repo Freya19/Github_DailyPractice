@@ -53,5 +53,5 @@ class SolutionL23 {
         return dummyNode.next;
     }
 }
-public class 合并K个排序链表L23 {
+class 合并K个排序链表L23 {
 }

@@ -47,7 +47,7 @@ class SolutionL50 {
 
     }
 }
-public class powNL50 {
+class powNL50 {
     public static void main(String[] args) {
         double v = new SolutionL50().myPow(2.00000, -2);
         System.out.println(String.format("%.5f",v));

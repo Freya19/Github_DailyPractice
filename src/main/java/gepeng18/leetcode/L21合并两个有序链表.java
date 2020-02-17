@@ -14,7 +14,7 @@ package gepeng18.leetcode;
  */
 
 
-public class 合并两个有序链表L21 {
+public class L21合并两个有序链表 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummyNode = new ListNode(0);
         ListNode current = dummyNode;
@@ -39,7 +39,7 @@ public class 合并两个有序链表L21 {
     public static void main(String[] args) {
         ListNode list1 = listUtils.createList(new int[]{1, 2, 4});
         ListNode list2 = listUtils.createList(new int[]{1, 3, 4});
-        ListNode mergedList = new 合并两个有序链表L21().mergeTwoLists(list1, list2);
+        ListNode mergedList = new L21合并两个有序链表().mergeTwoLists(list1, list2);
         listUtils.printList(mergedList);
 
     }

@@ -11,7 +11,7 @@ package gepeng18.leetcode;
 输出: 2
 
  */
-public class 搜索插入位置L35 {
+public class L35搜索插入位置 {
     public static int searchInsert(int[] nums, int target) {
         int index = 0;
         while (index < nums.length && nums[index] < target)

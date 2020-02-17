@@ -31,7 +31,7 @@ package gepeng18.leetcode;
  */
 
 
-public class 移除元素L27 {
+public class L27移除元素 {
     public static void swap(int[] nums, int left, int right) {
         int temp = nums[left];
         nums[left] = nums[right];

@@ -56,7 +56,7 @@ class SolutionL14 {
     }
 
 }
-public class maxCommonQianzhuiL14 {
+class maxCommonQianzhuiL14 {
     public static void main(String[] args) {
         String[] strs = {"123","123","1234"};
         String resutl = new SolutionL14().longestCommonPrefix(strs);

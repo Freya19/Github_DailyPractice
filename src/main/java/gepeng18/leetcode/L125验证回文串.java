@@ -1,8 +1,5 @@
 package gepeng18.leetcode;
 
-import javax.xml.stream.events.Characters;
-import java.util.Collection;
-
 /**
  * 给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
  * <p>
@@ -18,9 +15,9 @@ import java.util.Collection;
  * 输入: "race a car"
  * 输出: false
  */
-public class 验证回文串L125 {
+public class L125验证回文串 {
     public static void main(String[] args) {
-        final boolean palindrome = new 验证回文串L125().isPalindrome("A man, a plan, a canal: Panama");
+        final boolean palindrome = new L125验证回文串().isPalindrome("A man, a plan, a canal: Panama");
         System.out.println(palindrome);
     }
 

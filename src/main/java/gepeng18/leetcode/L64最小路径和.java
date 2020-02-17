@@ -1,6 +1,6 @@
 package gepeng18.leetcode;
 
-public class 最小路径和L64 {
+public class L64最小路径和 {
 
     int [][] min;
 

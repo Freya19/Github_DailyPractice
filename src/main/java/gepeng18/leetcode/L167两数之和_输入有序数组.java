@@ -4,7 +4,7 @@ import sun.security.util.Length;
 
 import java.util.Arrays;
 
-public class 两数之和_输入有序数组L167 {
+public class L167两数之和_输入有序数组 {
 
     public static void main(String[] args) {
         final int i = Arrays.binarySearch(new int[]{2, 7, 11,15}, 1, 4, 7);

@@ -6,7 +6,7 @@ package gepeng18.leetcode;
  输入: [1,8,6,2,5,4,8,3,7]
  输出: 49
  */
-public class maxWaterContainerL11 {
+class maxWaterContainerL11 {
     public static void main(String[] args) {
         int []height = {0};
         int result = new SolutionL11().maxArea(height);

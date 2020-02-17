@@ -36,7 +36,7 @@ class SolutionL24 {
         return dummpyNode.next;
     }
 }
-public class everyTwoNodeSwapL2 {
+class everyTwoNodeSwapL2 {
     public static void main(String[] args) {
         ListNode listNode1 = new ListNode(1);
         ListNode listNode2 = new ListNode(2);

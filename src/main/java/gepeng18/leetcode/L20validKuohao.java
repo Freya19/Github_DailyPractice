@@ -66,7 +66,7 @@ class SolutionL20 {
     }
 
 }
-public class validKuohaoL20 {
+class validKuohaoL20 {
     public static void main(String[] args) {
         String string = "([{}])]";
         boolean valid = new SolutionL20().isValid(string);

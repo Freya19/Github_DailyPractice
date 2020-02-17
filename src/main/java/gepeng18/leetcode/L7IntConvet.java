@@ -1,6 +1,6 @@
 package gepeng18.leetcode;
 
-public class IntConvetL7 {
+class IntConvetL7 {
     public static void main(String[] args) {
         int sum = 1000;
         int reverse = SolutionL7.reverse(sum);
