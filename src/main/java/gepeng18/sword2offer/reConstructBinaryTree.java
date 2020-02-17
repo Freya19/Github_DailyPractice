@@ -1,7 +1,5 @@
 package gepeng18.sword2offer;
 
-
-
 class TreeNode {
     int val;
     TreeNode left;

@@ -1,5 +1,7 @@
 package freya19.practice.SwordToOffer;
-
+/*
+用两个栈来实现一个队列，完成队列的Push和Pop操作。 队列中的元素为int类型。
+ */
 import java.util.Stack;
 
 public class P68TwoStack2Queue {
@@ -27,10 +29,18 @@ public class P68TwoStack2Queue {
 
     public static void main(String[] args) {
 //        int i = 2;
-        P68TwoStack2Queue queue = new P68TwoStack2Queue();
-        queue.push(1);
-        queue.push(2);
-        queue.push(3);
-        System.out.println(queue.pop());
+//        P68TwoStack2Queue queue = new P68TwoStack2Queue();
+//        queue.push(1);
+//        queue.push(2);
+//        queue.push(3);
+//        System.out.println(queue.pop());
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        int c = stack.pop();
+        System.out.println(c);
+        System.out.println( stack.pop());
     }
 }
