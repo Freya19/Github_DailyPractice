@@ -4,6 +4,11 @@ import javafx.util.Pair;
 
 import java.util.*;
 
+
+class s{
+
+}
+
 public class L347前K个高频元素 {
 
     public List<Integer> topKFrequent(int[] nums, int k) {
@@ -36,7 +41,6 @@ public class L347前K个高频元素 {
     }
 
     public static void main(String[] args) {
-
         final List<Integer> integers = new L347前K个高频元素().topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2);
         integers.forEach(System.out::println);
     }
