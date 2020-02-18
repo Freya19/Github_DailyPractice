@@ -26,7 +26,6 @@ class Command{
     }
 }
 
-
 public class preorderTraversalL144 {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
@@ -60,4 +59,7 @@ public class preorderTraversalL144 {
         }
         return res;
     }
+
 }
+
+
