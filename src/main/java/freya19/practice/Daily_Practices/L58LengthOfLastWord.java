@@ -11,7 +11,7 @@ package freya19.practice.Daily_Practices;
 输出: 5
 
  */
-public class lengthOfLastWordL58 {
+public class L58LengthOfLastWord {
     public int lengthOfLastWord(String s){
         int len = 0;
         if(s!=null && s.length()!=0) {
@@ -47,7 +47,7 @@ public class lengthOfLastWordL58 {
         System.out.println(str1.length());  // 1  所以不能用非空和长度不等于0来判断
         System.out.println(str2.length());  // 0 所以不能用非空和长度不等于0来判断
 
-        lengthOfLastWordL58 lolw = new lengthOfLastWordL58();
+        L58LengthOfLastWord lolw = new L58LengthOfLastWord();
         int l = lolw.lengthOfLastWord(str1);
         System.out.println(l);
 

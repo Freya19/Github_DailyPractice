@@ -20,7 +20,7 @@ package freya19.practice.Daily_Practices;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class strStrL28 {
+public class L28strStr {
     public int strStr(String haystack, String needle){
 //        if(haystack==null || haystack.length()<needle.length()) return -1; // 这里有个疑问，就是 haystack如果空的话会咋样
         if(needle==null) return 0;
@@ -66,7 +66,7 @@ public class strStrL28 {
         String s9= "aaa";
         String s10 = "aaabbb";
 
-        strStrL28 ss = new strStrL28();
+        L28strStr ss = new L28strStr();
 
         System.out.println(ss.strStr(s1,s2));
         System.out.println(ss.strStr(s3,s4));

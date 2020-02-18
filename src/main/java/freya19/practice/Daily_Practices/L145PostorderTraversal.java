@@ -21,7 +21,7 @@ class Command{
     }
 }
  */
-public class postorderTraversalL145 {
+public class L145PostorderTraversal {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if(root == null)

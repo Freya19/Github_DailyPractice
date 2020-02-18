@@ -22,7 +22,7 @@
  */
 package freya19.practice.Daily_Practices;
 
-public class searchInsertL35 {
+public class L35SearchInsert {
     public int searchInsert(int[] nums, int target){
         if(nums==null) return -1;
         int i =0;
@@ -41,7 +41,7 @@ public class searchInsertL35 {
         int[] arr = {1,3,5,6};
         int target = 3;
 
-        searchInsertL35 si = new searchInsertL35();
+        L35SearchInsert si = new L35SearchInsert();
         System.out.println(si.searchInsert(arr,target));
     }
 }

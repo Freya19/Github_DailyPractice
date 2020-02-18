@@ -22,7 +22,7 @@ class Command{
 }
  */
 
-public class inorderTraversalL94 {
+public class L94InorderTraversal {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if(root == null)

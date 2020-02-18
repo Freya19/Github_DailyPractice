@@ -1,6 +1,6 @@
 package freya19.practice.Daily_Practices;
 
-public class Roman2Int_L13 {
+public class L13Roman2Int_ {
     public int roman2Int(String roms){
         if(roms==null||roms.length()==0) return 0;
 
@@ -27,7 +27,7 @@ public class Roman2Int_L13 {
     public static void main(String[] args) {
         String r = "CMXLIX";
 
-        Roman2Int_L13 rom = new Roman2Int_L13();
+        L13Roman2Int_ rom = new L13Roman2Int_();
         System.out.println(rom.roman2Int(r));
 
     }
