@@ -30,5 +30,6 @@ public class studentInfo {
 
         System.out.println(mp.get(1).name);
         System.out.println(mp.get(2).name);
+
     }
 }
