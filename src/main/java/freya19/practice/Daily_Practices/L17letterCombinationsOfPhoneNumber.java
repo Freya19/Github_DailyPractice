@@ -26,13 +26,14 @@ public class L17letterCombinationsOfPhoneNumber {
             "tuv",  //8
             "wxyz"  //9
     };
-    private List<String> res;
+    private List<String> res; // 下面两个函数操作的是同一个res
 
     public List<String> letterCombinations(String digits) {
         res = new ArrayList<>();
         if(digits.equals("")) return res;
 
-        findCombination(digits, 0, "");
+        findCombination(digits, 0, ""); // 递归调用的这个函数 本身没有返回值（void）
+        // 但是其中对res进行了操作
 
         return res;
     }

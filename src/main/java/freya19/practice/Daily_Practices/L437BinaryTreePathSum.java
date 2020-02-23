@@ -38,6 +38,7 @@ public class L437BinaryTreePathSum {
         // 路径中不包含root，所以从其子节点开始递归
         res += pathSum(root.right, sum);
         res += pathSum(root.left, sum);
+
         return res;
     }
 

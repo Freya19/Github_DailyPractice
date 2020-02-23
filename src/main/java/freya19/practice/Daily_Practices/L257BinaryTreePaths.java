@@ -29,8 +29,8 @@ public class L257BinaryTreePaths {
 
         // 叶子节点
         if(root.left==null&&root.right==null) {
-            res.add(Integer.toString(root.val));  // Integer.toString(root.val) 将整型转成字符型
-            return res;
+                res.add(Integer.toString(root.val));  // Integer.toString(root.val) 将整型转成字符型
+                return res;
         }
 
         // 非叶子节点
