@@ -15,8 +15,6 @@ package freya19.practice.Daily_Practices;
 ]
  */
 
-import com.sun.corba.se.spi.servicecontext.UEInfoServiceContext;
-import sun.applet.Main;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -45,7 +43,8 @@ public class L46permute {
     public void generatePermutation(int[] nums, int index, LinkedList<Integer> temp){
         // 递归终止条件
         if(nums.length==index){
-            res.add(temp);
+            res.add((LinkedList<Integer>)temp.clone());
+//            res.add((LinkedList<Integer>)temp.clone());  // 如果这里不这样clone并转型的话，输出就全部都是空
             return;
         }
 

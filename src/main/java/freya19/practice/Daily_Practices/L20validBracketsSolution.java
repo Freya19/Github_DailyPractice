@@ -19,7 +19,7 @@ package freya19.practice.Daily_Practices;
 
 import java.util.Stack;
 
-public class validBracketsSolutionL20 {
+public class L20validBracketsSolution {
     public boolean isValid(String s) {
         Stack<Character> sk = new Stack();
         for(int i=0;i<s.length();i++){
@@ -43,7 +43,7 @@ class tesL20 {
     public static void main(String[] args) {
     String s1 = "([{})]";
     String s2 = "([{}])";
-    validBracketsSolutionL20 vb = new validBracketsSolutionL20();
+    L20validBracketsSolution vb = new L20validBracketsSolution();
 
     System.out.println(vb.isValid(s1));
     System.out.println( vb.isValid(s2));
