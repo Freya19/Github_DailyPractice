@@ -43,8 +43,8 @@ public class L46permute {
     public void generatePermutation(int[] nums, int index, LinkedList<Integer> temp){
         // 递归终止条件
         if(nums.length==index){
-            res.add((LinkedList<Integer>)temp.clone());
-//            res.add((LinkedList<Integer>)temp.clone());  // 如果这里不这样clone并转型的话，输出就全部都是空
+            res.add((LinkedList<Integer>)temp.clone());  //浅拷贝
+//            res.add(temp);  // 如果这里不这样clone并转型的话，输出就全部都是空
             return;
         }
 
