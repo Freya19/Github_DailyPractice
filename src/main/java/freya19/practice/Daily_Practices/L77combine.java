@@ -44,6 +44,13 @@ public class L77combine {
         }
 
         // 否则就继续从start往后组合
+
+        /*
+        // 优化
+        // 还有k - c.size()个空位, 所以, [i...n] 中至少要有 k - c.size() 个元素
+        // i最多为 n - (k - c.size()) + 1
+        for(int i = start ; i <= n - (k - c.size()) + 1 ; i ++){
+        */
         for (int i = start; i <= n; i++) {
             temp.addLast(i);
             // i位置的数加入了组合结果中，i后面的数字仍要进行一次判断，看看是否也要加入,此时start+1
