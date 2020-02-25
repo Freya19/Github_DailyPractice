@@ -51,7 +51,7 @@ class Solution {
 class ZFormConvertL6 {
     public static void main(String[] args) {
         String data = "LEETCODEISHIRING";
-        String result = Solution.convert(data, 3);
+        String result = Permutations.convert(data, 3);
         System.out.println(result);
     }
 }
