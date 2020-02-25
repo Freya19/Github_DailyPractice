@@ -24,42 +24,43 @@ public class L77combine {
 
     public List<List<Integer>> combine(int n, int k) {
 
-        res = new ArrayList<>();
-        if (n <= 0 || k <= 0 || k > n) return res;
+        res = new ArrayList<List<Integer>>();
+        if(n <= 0 || k <= 0 || k > n)
+            return res;
 
-        LinkedList<Integer> temp = new LinkedList<>();
-        generateCombination(n,k,1,temp);   //因为C(n,k)，是从1到n之间的数进行组合
+        LinkedList<Integer> c = new LinkedList<Integer>();
+        generateCombinations(n, k, 1, c);
 
         return res;
-
-
     }
 
-    // 1...n  之间，从start个数开始找到k个数的组合，temp中存的是前start个组合
-    private void generateCombination(int n, int k, int start, LinkedList<Integer> temp) {
-        // 递归终止
-        if (temp.size() == k) {
-            res.add((List<Integer>) temp.clone());
+    // 求解C(n,k), 当前已经找到的组合存储在c中, 需要从start开始搜索新的元素
+    private void generateCombinations(int n, int k, int start, LinkedList<Integer> c){
+
+        if(c.size() == k){
+            res.add((List<Integer>)c.clone());
             return;
         }
 
-        // 否则就继续从start往后组合
-
-        /*
-        // 优化
-        // 还有k - c.size()个空位, 所以, [i...n] 中至少要有 k - c.size() 个元素
-        // i最多为 n - (k - c.size()) + 1
-        for(int i = start ; i <= n - (k - c.size()) + 1 ; i ++){
-        */
-        for (int i = start; i <= n; i++) {
-            temp.addLast(i);
-            // i位置的数加入了组合结果中，i后面的数字仍要进行一次判断，看看是否也要加入,此时start+1
-            generateCombination(n,k,i+1,temp);
-            //走到下面这一步，表示当前这个i=start已经组合完了，要继续i=start+1位置的数字往后组合了
-            //所以就要从temp中把存入的i移除
-            temp.removeLast();
+        for(int i = start ; i <= n ; i ++){
+            c.addLast(i);
+            generateCombinations(n, k, i + 1, c);
+            c.removeLast();
         }
 
         return;
+    }
+
+    private static void printList(List<Integer> list){
+        for(Integer e: list)
+            System.out.print(e + " ");
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+        List<List<Integer>> res = (new L77combine()).combine(4, 2);
+        for(List<Integer> list: res)
+            printList(list);
     }
 }

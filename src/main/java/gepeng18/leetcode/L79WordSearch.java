@@ -62,7 +62,7 @@ public class L79WordSearch {
                 int newx = startx + d[i][0];
                 int newy = starty + d[i][1];
                 if(inArea(newx, newy) && !visited[newx][newy] &&
-                        searchWord(board, word, index + 1, newx, newy))
+                                searchWord(board, word, index + 1, newx, newy))
                     return true;
             }
             visited[startx][starty] = false;
