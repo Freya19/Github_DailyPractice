@@ -50,7 +50,6 @@ public class L51N皇后 {
                 row.removeLast();
             }
 
-        return;
     }
 
     private List<String> generateBoard(int n, LinkedList<Integer> row){
@@ -66,6 +65,10 @@ public class L51N皇后 {
         }
         return board;
     }
+
+
+
+
 
     private static void printBoard(List<String> board){
         for(String s: board)

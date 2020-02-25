@@ -5,10 +5,6 @@ import javafx.util.Pair;
 import java.util.*;
 
 
-class s{
-
-}
-
 public class L347前K个高频元素 {
 
     public List<Integer> topKFrequent(int[] nums, int k) {
