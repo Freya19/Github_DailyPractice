@@ -4,7 +4,7 @@ import java.io.*;
 
 public class mdCutImages {
     public static void main(String[] args) throws Exception {
-        String filePath = "F:\\OneDrive\\笔记\\JAVA\\jdbc.md";
+        String filePath = "F:\\OneDrive\\笔记\\问题汇总\\github访问过慢.md";
         final String imgOriPath = getImgOriPath("FHY-GP");
         String fileName = filePath.split("\\\\")[filePath.split("\\\\").length - 1];
         String fileNameWithoutSuffix = fileName.split("\\.")[0];
