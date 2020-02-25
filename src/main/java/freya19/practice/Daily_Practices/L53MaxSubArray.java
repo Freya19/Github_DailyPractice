@@ -1,7 +1,5 @@
 package freya19.practice.Daily_Practices;
 
-import java.lang.annotation.Retention;
-
 /*
 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 
@@ -13,7 +11,7 @@ import java.lang.annotation.Retention;
 进阶:
 如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。
  */
-public class maxSubArrayL53 {
+public class L53MaxSubArray {
     public int maxSubArray(int[] nums){
         int maxCurr = nums[0];
         int maxSum = nums[0];
@@ -37,7 +35,7 @@ public class maxSubArrayL53 {
         int[] arr1 = {-1,2,3,-1};
         int[] arr2 = {-1,-2,3,-1};
 
-        maxSubArrayL53 msa = new maxSubArrayL53();
+        L53MaxSubArray msa = new L53MaxSubArray();
         System.out.println(msa.maxSubArray(arr1));
         System.out.println(msa.maxSubArray(arr2));
 

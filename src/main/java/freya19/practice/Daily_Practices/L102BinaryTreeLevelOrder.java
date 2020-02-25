@@ -23,13 +23,13 @@ import java.util.List;
   [15,7]
 ]
  */
-public class binaryTreeLevelOrderL102 {
+public class L102BinaryTreeLevelOrder {
     public List<List<Integer>> levelOrder(TreeNode root) {
         //最终返回的结果集
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         if(root==null) return res; //传入的二叉树是个空的树，就返回啥也没有的结果集
 
-        //如果非空，则利用队列来遍历每一层的数据，存放到队列中国
+        //如果非空，则利用队列来遍历每一层的数据，存放到队列中
         LinkedList<Pair<TreeNode,Integer>> queue = new LinkedList<>();
         // 将root的信息存入.ListNode表示节点，Integer表示是当前节点的层级
         queue.addLast(new Pair<TreeNode,Integer>(root,0));  //addLast;

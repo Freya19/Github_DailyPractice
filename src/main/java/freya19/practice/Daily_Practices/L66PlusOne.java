@@ -1,9 +1,5 @@
 package freya19.practice.Daily_Practices;
 
-import javax.sound.midi.Soundbank;
-import java.lang.annotation.Retention;
-import java.util.ArrayList;
-
 /*
 给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
@@ -19,7 +15,7 @@ import java.util.ArrayList;
 输出: [4,3,2,2]
 解释: 输入数组表示数字 4321。
  */
-public class plusOneL66 {
+public class L66PlusOne {
     public int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
             if (digits[i] != 9) {
@@ -67,7 +63,7 @@ public class plusOneL66 {
 //        System.out.println(a3==null); //false  ——> 数组为空是这样定义的：int[] a = null;是创建了数组的引用，但在堆中并没有数组中的元素
 //        System.out.println(a3.length==0);//true
 
-        plusOneL66 po = new plusOneL66();
+        L66PlusOne po = new L66PlusOne();
         po.plusOne(a1);
 //        po.plusOne(a2);
 //        po.plusOne(a3);

@@ -9,7 +9,7 @@
 
 package freya19.practice.Daily_Practices;
 
-public class removeDuplicatesL26 {
+public class L26RemoveDuplicates {
     public int removeDuplicates(int[] nums){
         if(nums==null||nums.length==0) return 0; //数组为空或长度为0的情况
 
@@ -32,7 +32,7 @@ public class removeDuplicatesL26 {
         }
         System.out.println();
         //移除重复元素，返回移除后不重复元素数组的长度
-        removeDuplicatesL26 rd = new removeDuplicatesL26();
+        L26RemoveDuplicates rd = new L26RemoveDuplicates();
         int l=rd.removeDuplicates(arrs);
         System.out.println(l);
 

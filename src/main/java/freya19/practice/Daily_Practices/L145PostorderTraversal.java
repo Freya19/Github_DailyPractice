@@ -21,9 +21,8 @@ class Command{
     }
 }
  */
-
-public class inorderTraversalL94 {
-    public List<Integer> inorderTraversal(TreeNode root) {
+public class L145PostorderTraversal {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if(root == null)
             return res;
@@ -43,12 +42,12 @@ public class inorderTraversalL94 {
             }else{
                 assert cmd.s.equals("go"); //字符串表示指令是不严谨的，可以用枚举或者boolean
 
-                // 中序遍历  left -> root ->right，所以推入栈就反过来
+                // 后序遍历  left -> right -> root，所以推入栈就反过来
+                stack.push(new Command("print",cmd.node));
+
                 if(cmd.node.right!=null){ //有右子树，往下执行，所以往栈中推入go指令
                     stack.push(new Command("go",cmd.node.right));
                 }
-
-                stack.push(new Command("print",cmd.node));
 
                 if(cmd.node.left!=null) { //有左子树，往下执行，所以往栈中推入go指令
                     stack.push(new Command("go", cmd.node.left));

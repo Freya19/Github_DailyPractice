@@ -8,11 +8,6 @@
 
 package freya19.practice.Daily_Practices;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.util.ArrayList;
-import java.util.List;
-
 // 链表，并定义一个由数组得到链表的方法
 class ListNode {
     int val;
@@ -51,7 +46,7 @@ class ListNode {
 }
 
 // 合并两个有序链表的方法类
-public class mergeTwoSortedListL21 {
+public class L21MergeTwoSortedList {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if(l1==null) return l2;
         if(l2==null) return l1;
@@ -101,7 +96,7 @@ class testL21{
         System.out.println(head2.toString());
 
         //合并两个测试链表
-        mergeTwoSortedListL21 m = new mergeTwoSortedListL21();
+        L21MergeTwoSortedList m = new L21MergeTwoSortedList();
         ListNode m2 = m.mergeTwoLists(head1,head2);
         System.out.println(m2.toString());
 

@@ -21,7 +21,7 @@
  */
 package freya19.practice.Daily_Practices;
 
-public class countAndSayL38 {
+public class L38CountAndSay {
     public String countAndSay(int n) {
         if (n <= 0) return " ";
         String str = "1"; //第一个字符串
@@ -53,7 +53,7 @@ public class countAndSayL38 {
    1个1、 两个1   1个2 1个1     1个1 1个2 两个1     外观描述
 */
     public static void main(String[] args) {
-        countAndSayL38 cas = new countAndSayL38();
+        L38CountAndSay cas = new L38CountAndSay();
         System.out.println(cas.countAndSay(5));
     }
 

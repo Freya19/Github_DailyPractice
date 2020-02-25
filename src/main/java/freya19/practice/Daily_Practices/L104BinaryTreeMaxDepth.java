@@ -13,7 +13,7 @@ package freya19.practice.Daily_Practices;
    15   7
 返回它的最大深度 3 。
  */
-public class binaryTreeMaxDepthL104 {
+public class L104BinaryTreeMaxDepth {
     public int maxDepth(TreeNode root) {
         //递归终止条件
         if(root==null) return 0; //这棵树高度为0

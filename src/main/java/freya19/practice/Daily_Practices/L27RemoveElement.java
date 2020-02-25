@@ -21,9 +21,7 @@
 
 package freya19.practice.Daily_Practices;
 
-import com.sun.xml.internal.ws.addressing.WsaActionUtil;
-
-public class removeElementL27 {
+public class L27RemoveElement {
     public int removeElement(int[] nums, int val){
         if(nums == null) return 0;
         int slow =  0;
@@ -46,7 +44,7 @@ public class removeElementL27 {
         }
         System.out.println();
 
-        removeElementL27 re = new removeElementL27();
+        L27RemoveElement re = new L27RemoveElement();
         int len = re.removeElement(arr,val);
         System.out.println("移除后的数长度："+ len);
 
