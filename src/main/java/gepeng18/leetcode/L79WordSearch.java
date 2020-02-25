@@ -17,58 +17,78 @@ board =
 给定 word = "ABCB", 返回 false.
  */
 public class L79WordSearch {
-    // 上下左右移动的偏移量
-    private int[][] dest = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
-    // 行 和 列
-    private int m, n;
-    // 标志位数组
-    private boolean[][] used;
 
-    // 元素是否越界
-    private boolean inArea(int x, int y) {
-        return (x >= 0 && x < m && y >= 0 && y < n);
-    }
+    private int d[][] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
+    private int m, n;
+    private boolean[][] visited;
 
     public boolean exist(char[][] board, String word) {
-        if (board == null && word == null)
+
+        if(board == null || word == null)
             throw new IllegalArgumentException("board or word can not be null!");
 
-        m = board.length;  // 行
-        if (m == 0)
+        m = board.length;
+        if(m == 0)
             throw new IllegalArgumentException("board can not be empty.");
-        n = board[0].length; // 列
-        if (n == 0)
+        n = board[0].length;
+        if(n == 0)
             throw new IllegalArgumentException("board can not be empty.");
 
-        used = new boolean[m][n];
-
-        for (int i = 0; i < m; i++)
-            for (int j = 0; j < n; j++)
-                if (wordSearch(board, word, 0, i, j))
+        visited = new boolean[m][n];
+        for(int i = 0 ; i < m ; i ++)
+            for(int j = 0 ; j < n ; j ++)
+                if(searchWord(board, word, 0, i, j))
                     return true;
 
         return false;
     }
 
-    // board是待搜索的二维数组；word是待查找的字符串，index是当前要查找的字母位置；
-    // startx和starty是word[index]在board中所处位置的某一个元素的坐标
-    private boolean wordSearch(char[][] board, String word, int index, int startx, int starty) {
-        if (index == word.length()) {
-            return board[startx][starty] == word.charAt(index);
-        }
+    private boolean inArea( int x , int y ){
+        return x >= 0 && x < m && y >= 0 && y < n;
+    }
 
-        if (board[startx][starty] == word.charAt(index)) {
-            used[startx][starty] = true;// 占用当前元素
-            for (int i = 0; i < 4; i++) {
-                int newx = startx + dest[i][0];
-                int newy = starty + dest[i][1];
-                if (inArea(newx, newy) && !used[newx][newy]) {
-                    if (wordSearch(board, word, index + 1, newx, newy))
-                        return true;
-                }
+    // 从board[startx][starty]开始, 寻找word[index...word.size())
+    private boolean searchWord(char[][] board, String word, int index,
+                               int startx, int starty){
+
+        //assert(inArea(startx,starty));
+        if(index == word.length() - 1)
+            return board[startx][starty] == word.charAt(index);
+
+        if(board[startx][starty] == word.charAt(index)){
+            visited[startx][starty] = true;
+            // 从startx, starty出发,向四个方向寻
+            for(int i = 0 ; i < 4 ; i ++){
+                int newx = startx + d[i][0];
+                int newy = starty + d[i][1];
+                if(inArea(newx, newy) && !visited[newx][newy] &&
+                        searchWord(board, word, index + 1, newx, newy))
+                    return true;
             }
-            used[startx][starty] = false; // 解除占用，也就是当前这个元素的前后左右都么有找到
+            visited[startx][starty] = false;
         }
         return false;
+    }
+
+    public static void main(String args[]){
+
+        char[][] b1 = { {'A','B','C','E'},
+                {'S','F','C','S'},
+                {'A','D','E','E'}};
+
+        String words[] = {"ABCCED", "SEE", "ABCB" };
+        for(int i = 0 ; i < words.length ; i ++)
+            if((new L79WordSearch()).exist(b1, words[i]))
+                System.out.println("found " + words[i]);
+            else
+                System.out.println("can not found " + words[i]);
+
+        // ---
+
+        char[][] b2 = {{'A'}};
+        if((new L79WordSearch()).exist(b2,"AB"))
+            System.out.println("found AB");
+        else
+            System.out.println("can not found AB");
     }
 }
