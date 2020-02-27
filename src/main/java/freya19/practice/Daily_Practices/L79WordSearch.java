@@ -55,7 +55,7 @@ public class L79WordSearch {
     // board是待搜索的二维数组；word是待查找的字符串，index是当前要查找的字母位置；
     // startx和starty是word[index]在board中所处位置的某一个元素的坐标
     private boolean wordSearch(char[][] board, String word, int index, int startx, int starty) {
-        if (index == word.length()) {
+        if (index == word.length()-1) {
             return board[startx][starty] == word.charAt(index);
         }
 
