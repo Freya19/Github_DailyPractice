@@ -1,5 +1,7 @@
 package gepeng18.test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
@@ -34,6 +36,13 @@ public class h2o {
         // releaseOxygen.run() outputs "H". Do not change or remove this line.
         releaseOxygen.run();
         o.release();
+    }
+
+    public static void main(String[] args) {
+        String s = "a";
+        System.out.println((s+"b").hashCode()==s.hashCode());
+
+        Boolean bb = Boolean.FALSE;
     }
 
 }
