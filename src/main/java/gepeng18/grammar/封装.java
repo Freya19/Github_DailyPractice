@@ -10,6 +10,7 @@ public class 封装{
         final B b = new B();
         final C c = new C();
         CloseUtils.close(new IClose[]{a,b,c});
+
     }
 }
 
