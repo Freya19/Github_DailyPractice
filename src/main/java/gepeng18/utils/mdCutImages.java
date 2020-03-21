@@ -4,7 +4,7 @@ import java.io.*;
 
 public class mdCutImages {
     public static void main(String[] args) throws Exception {
-        String filePath = "G:\\OneDrive\\笔记\\JAVA\\JVM--垃圾回收.md";
+        String filePath = "G:\\OneDrive\\笔记\\JAVA\\Java300集基础复习.md";
         final String imgOriPath = getImgOriPath("Freya");
         String fileName = filePath.split("\\\\")[filePath.split("\\\\").length - 1];
         String fileNameWithoutSuffix = fileName.split("\\.")[0];
