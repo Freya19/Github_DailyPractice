@@ -56,6 +56,7 @@ public class L445两数顺序存相加返回顺序 {
         }
 
         //将res中元素返回到链表中
+        //注意这里虚拟头节点不能移动
         ListNode pre = new ListNode(0);//虚拟头节点
         ListNode current = pre;
         while (!res.isEmpty()) {
@@ -77,6 +78,7 @@ public class L445两数顺序存相加返回顺序 {
            current=current.next;
        }
 
+       //注意这里虚拟头节点不能移动
         ListNode pre2 = new ListNode(0);//虚拟头节点
         ListNode current2 = pre2;
         for(int arr:arr2){

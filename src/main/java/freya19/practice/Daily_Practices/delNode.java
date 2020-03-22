@@ -3,7 +3,7 @@ package freya19.practice.Daily_Practices;
 
 public class delNode {
     // 节点类
-    static class ListNode{
+    private static class ListNode{
         public int val;
         public ListNode next = null;
         public ListNode(int x){
@@ -49,7 +49,6 @@ public class delNode {
             sb.append("NULL");//在链表的末尾加上 NULL
             return sb.toString();
         }
-
     }
 
     private void delOneNode(ListNode node) {
