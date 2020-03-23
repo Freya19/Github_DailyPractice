@@ -21,7 +21,7 @@ class Command{
     }
 }
  */
-public class L145PostorderTraversal {
+public class L145二叉树后序遍历 {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if(root == null)

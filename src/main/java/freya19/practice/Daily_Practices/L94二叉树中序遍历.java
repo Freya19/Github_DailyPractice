@@ -22,7 +22,7 @@ class Command{
 }
  */
 
-public class L94InorderTraversal {
+public class L94二叉树中序遍历 {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if(root == null)
