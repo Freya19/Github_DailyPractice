@@ -1,7 +1,7 @@
 package freya19.practice.Daily_Practices;
 // 有问题的
 
-public class delNode {
+public class aboutNode {
     // 节点类
     private static class ListNode{
         public int val;
@@ -65,7 +65,7 @@ public class delNode {
         System.out.println(head);
 
         ListNode node = head.findNode(2);
-        (new delNode()).delOneNode(node);
+        (new aboutNode()).delOneNode(node);
         System.out.println(head);
     }
 
