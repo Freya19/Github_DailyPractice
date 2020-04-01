@@ -2,7 +2,7 @@ package freya19.practice.排序;
 
 /**
  * 可以想象成打牌的时候 把牌从小到大排列
- * 对于近乎有序的数据（比如一套系统的日志），插入排序甚至比nlogn的排序算法更快
+ * 对于近乎有序的数据（比如一套系统的日志），插入排序甚至比 nlogn 的排序算法更快
  */
 
 public class insertionSort插入排序 {
