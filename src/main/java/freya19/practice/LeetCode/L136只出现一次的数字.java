@@ -4,7 +4,8 @@ package freya19.practice.LeetCode;
 其余每个元素均出现两次。找出那个只出现了一次的元素。
 
 说明：
-你的算法应该具有线性时间复杂度O(n)。 你可以不使用额外空间来实现吗？
+你的算法应该具有线性时间复杂度O(n)。
+你可以不使用额外空间来实现吗？
 
 示例 1:
 输入: [2,2,1]     输出: 1
@@ -13,24 +14,20 @@ package freya19.practice.LeetCode;
 输入: [4,1,2,1,2]     输出: 4
  */
 
-import sun.applet.Main;
-
 import java.util.*;
 
 public class L136只出现一次的数字 {
     public int singleNumber(int[] nums) {
-        if(nums==null||nums.length==0)
-            return -1;
 
         Map<Integer,Integer> resMap = new HashMap<>(); // 存放数字出现次数及对应的数字
         int len = nums.length;
 
         for(int i=0;i<len;i++){
             int key = nums[i];  //元素
-            int value = resMap.get(key);  //次数
             if(!resMap.containsKey(key)){
                 resMap.put(key,1);
             }else {
+                int value = resMap.get(key);  //次数
                 resMap.put(key,value+1);
             }
         }
