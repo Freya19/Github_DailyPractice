@@ -21,37 +21,31 @@ package freya19.practice.LeetCode;
  */
 
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class L3无重复字符的最长子串 {
+public class L3双指针之最长子串 {
     public int lengthOfLongestSubstring(String s) {
-        int resLen = 0;
-        if (s.equals("")) return 0;
-        if (s.equals(" ")) return 1;
 
-        int i = 0, j = 0, len = s.length();
-        List<Character> list = new ArrayList<>();
-        while (i < len) {
-
-            char c = s.charAt(i);
-            if (!list.contains(c)) {
-                list.add(c);
-                i++;
-            } else {
-                resLen = Math.max(resLen, list.size());
-                j = s.lastIndexOf("c", i - 1) + 1; //最近的一个重复字符索引的后一位，给j
-
-                list.clear();
-                for (int k = j; k <= i; k++) {
-                    list.add(s.charAt(k));
-                }
-                i++;
+        int start = 0, end = 0, res = 0; //res记录的是子串的长度
+        //key为end此时对于的字符，value为end+1（就是下一个索引位置，这个位置是不重复的字符）
+        Map<Character, Integer> map = new HashMap<>();
+        int len =s.length();
+        while (end<len){
+            char c = s.charAt(end);
+            if(!map.containsKey(c)){
+                map.put(c,end+1);
+                res = Math.max(res,end-start+1);
+                end++;
+            }else {
+                start=Math.max(start,map.get(c)); //此时start指向不重复字符 因为map必然会存了重复的字符，所以需要get最新的这个字符
+//                start=map.get(c); //此时start指向之前重复字符的下一个字符    abba就会错误
+                map.put(c,end+1);
+                res = Math.max(res,end-start+1);
+                end++;
             }
         }
-
-        resLen = Math.max(resLen,list.size());
-        return resLen;
+        return res;
     }
 
     public static void main(String[] args) {
@@ -61,7 +55,7 @@ public class L3无重复字符的最长子串 {
         String s4 = "dvdf";
         String s5 = "pwwkew";
 
-        L3无重复字符的最长子串 l3 = new L3无重复字符的最长子串();
+        L3双指针之最长子串 l3 = new L3双指针之最长子串();
         System.out.println(l3.lengthOfLongestSubstring(s1));
         System.out.println(l3.lengthOfLongestSubstring(s2));
         System.out.println(l3.lengthOfLongestSubstring(s3));

@@ -13,7 +13,7 @@ import java.util.List;
 说明:
 尽管上面的答案是按字典序排列的，但是你可以任意选择答案输出的顺序。
  */
-public class L17letterCombinationsOfPhoneNumber {
+public class L17PhoneNumber {
     private String[] letterMap = {
             " ",    //0
             "",     //1
@@ -56,7 +56,7 @@ public class L17letterCombinationsOfPhoneNumber {
         String ls = letterMap[n - '0'];                                                         //       / | \  / | \   / | \
         for (int i = 0; i < ls.length(); i++) {                                                 //      d  e  f d e  f  d e  f
             // 假设是第一个字母 a，那么此时就要找数字字符串的下一位（index+1）数字(假设是3），
-            // 找它对应的字母串（递归）   “def"，此时这里的s已经是 ''+a 了
+            // 找它对应的字母串（递归）   “def"，此时这里的s已经是 '+'a 了
             findCombination(digits, index + 1, s + ls.charAt(i));
         }
     }
