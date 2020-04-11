@@ -2,9 +2,7 @@ package gepeng18.leetcode;
 
 import gepeng18.test.iterator;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 public class L146LRU缓存机制 {
     private int cap;
@@ -34,5 +32,30 @@ public class L146LRU缓存机制 {
             iterator.remove();
         }
         map.put(key, value);
+    }
+
+    public static void main(String[] args) {
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(3, "3");
+        map.put(2, "2");
+        map.put(1, "5");
+        map.put(10, "5");
+        map.put(898, "5");
+        map.put(11111, "5");
+        map.put(353463446, "5");
+        map.put(8, "5");
+        map.put(15, "5");
+        map.put(4, "5");
+        map.put(6, "5");
+        map.put(7, "5");
+        map.put(9, "5");
+        for (int i = 0; i < 100; i++) {
+
+            for (Integer integer : map.keySet()) {
+                System.out.println(integer);
+            }
+            System.out.println("*******************************************");
+        }
+
     }
 }
