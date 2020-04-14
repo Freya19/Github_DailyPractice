@@ -3,6 +3,7 @@ package freya19.practice.LeetCode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 /*
 给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
@@ -52,5 +53,6 @@ public class L78子集 {
             System.out.println(l);
         }
     }
+
 
 }
