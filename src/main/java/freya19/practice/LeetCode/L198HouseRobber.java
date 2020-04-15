@@ -22,21 +22,45 @@ package freya19.practice.LeetCode;
 
 import java.util.Arrays;
 
+
 public class L198HouseRobber {
-    public int rob(int[] nums){
+    /**
+     * 考虑偷[x...n-1]范围内的房子
+     */
+    public int rob1(int[] nums) {
         int n = nums.length;
-        if(n==0) return 0;
+        if (n == 0) return 0;
 
         int[] memo = new int[n];
-        Arrays.fill(memo,-1);
+        Arrays.fill(memo, -1);
 
         // 这里是倒过来思考的，从最后一个房子开始偷
-        memo[n-1]=nums[n-1]; // n-1 是最后一间房子
+        memo[n - 1] = nums[n - 1]; // n-1 是最后一间房子
 
         // memo[i]就是打劫nums[i...n-1]个房子中的部分房子所能得到的最大金钱
-        for(int i = n-2;i>=0;i--)
-            for(int j=i;j<n;j++)
-                memo[i]=Math.max(memo[i],nums[j]+(j+2<n?memo[j+2]:0));
+        for (int i = n - 2; i >= 0; i--)   // 0 ≤ i ≤ n-2
+            for (int j = i; j < n; j++)    // n-2 ≤ j < n         所以 合在一起就是 [0...n-1]范围内的房子
+                memo[i] = Math.max(memo[i], nums[j] + (j + 2 < n ? memo[j + 2] : 0));
         return memo[0];
+    }
+
+    /**
+     * 考虑偷[0...x]范围内的房子
+     *
+     * @param nums
+     * @return
+     */
+    public int rob(int[] nums) {
+        int n = nums.length;
+        if (n == 0) return 0;
+
+        int[] memo = new int[n];
+        Arrays.fill(memo, -1);
+
+        memo[0] = nums[0];
+        for (int i = 1; i < n; i++)
+            for (int j = i; j >= 0; j--)
+                memo[i] = Math.max(memo[i], nums[j] + (j - 2 >= 0 ? memo[j - 2] : 0));
+        return memo[n-1];
     }
 }
