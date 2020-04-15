@@ -13,14 +13,7 @@ package gepeng18.leetcode;
  * <p>
  * 给定的 n 保证是有效的。
  */
-class ListNode {
-    public int val;
-    public ListNode next;
 
-    ListNode(int x) {
-        val = x;
-    }
-}
 
 class SolutionL19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {

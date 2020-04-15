@@ -2,6 +2,28 @@ package gepeng18.专题.回溯;
 
 import java.util.*;
 
+/**
+ * 给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
+ *
+ * candidates 中的每个数字在每个组合中只能使用一次。
+ *
+ * 说明：
+ *
+ *     所有数字（包括目标数）都是正整数。
+ *     解集不能包含重复的组合。
+ *
+ * 示例 1:
+ *
+ * 输入: candidates = [10,1,2,7,6,1,5], target = 8,
+ * 所求解集为:
+ * [
+ *   [1, 7],
+ *   [1, 2, 5],
+ *   [2, 6],
+ *   [1, 1, 6]
+ * ]
+ *
+ */
 public class L40组合总数II {
     private List<List<Integer>> res = new ArrayList<>();  //定义全局变量保存最终结果
 
@@ -11,10 +33,13 @@ public class L40组合总数II {
             int tmpCount = count+candidates[i];
             List<Integer> tmpState = new ArrayList(state);
             tmpState.add(candidates[i]);
+            System.out.println("考虑"+tmpState);
+            System.out.println("tmpCount = "+tmpCount);
             if(tmpCount<target){
                 back(candidates,target,tmpState,i+1,tmpCount);
             }else{
                 if(tmpCount==target && !set.contains(tmpState) ){
+                    System.out.println(tmpState+"是结果");
                     set.add(tmpState);
                     res.add(tmpState);
                 }
@@ -27,5 +52,9 @@ public class L40组合总数II {
         Arrays.sort(candidates);
         back(candidates,target,state,0,0);
         return res;
+    }
+
+    public static void main(String[] args) {
+        new L40组合总数II().combinationSum2(new int[]{1,1,2,5,6,7,10},8);
     }
 }

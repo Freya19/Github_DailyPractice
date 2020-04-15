@@ -1,5 +1,7 @@
 package gepeng18.leetcode;
 
+import gepeng18.utils.ListUtils;
+
 /**
  * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
  *
@@ -37,10 +39,10 @@ public class L21合并两个有序链表 {
     }
 
     public static void main(String[] args) {
-        ListNode list1 = listUtils.createList(new int[]{1, 2, 4});
-        ListNode list2 = listUtils.createList(new int[]{1, 3, 4});
+        ListNode list1 = ListUtils.createListHead(new int[]{1, 2, 4});
+        ListNode list2 = ListUtils.createListHead(new int[]{1, 3, 4});
         ListNode mergedList = new L21合并两个有序链表().mergeTwoLists(list1, list2);
-        listUtils.printList(mergedList);
+        ListUtils.printList(mergedList);
 
     }
 }
