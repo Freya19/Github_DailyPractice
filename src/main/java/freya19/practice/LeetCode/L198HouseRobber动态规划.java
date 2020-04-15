@@ -23,7 +23,7 @@ package freya19.practice.LeetCode;
 import java.util.Arrays;
 
 
-public class L198HouseRobber {
+public class L198HouseRobber动态规划 {
     /**
      * 考虑偷[x...n-1]范围内的房子
      */

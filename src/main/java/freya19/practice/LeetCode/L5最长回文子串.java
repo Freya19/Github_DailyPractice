@@ -1,6 +1,7 @@
 package freya19.practice.LeetCode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -14,6 +15,8 @@ import java.util.List;
 输入: "cbbd"      输出: "bb"
  */
 public class L5最长回文子串 {
+    private String[] memo;
+
     // 是否为回文的判断函数
     private boolean isPalindrome(String str) {
         for (int i = 0; i < str.length() / 2; i++) {
@@ -24,25 +27,32 @@ public class L5最长回文子串 {
         return true;
     }
 
+    //考虑[0...s.length)长度的字符串所能得到的最长回文子串
     public String longestPalindrome(String s) {
-        int len =s.length();
-        if(len==0)
-            return "";
-//        if(len==1)
-//            return s;
+        memo = new String[s.length()];
+        Arrays.fill(memo, "-1");
 
-        String[] memo = new String[len];
-        memo[0]=s.substring(0,1);  //substring是前闭后开的
-        //对我而言还有一个难点是，怎么从这个字符串中找回文子串
-        //状态定义：考虑[0...x]范围里的字符串
-        for(int i=1;i<len;i++){
-            for(int j=i+1;j<=len;j++){
-               if(isPalindrome(s.substring(i,j))) {
-                   memo[i]=s.substring(i,j).length()>memo[i-1].length()?s.substring(i,j):memo[i-1];
-               }
-            }
+        return findLongestPalindrome(s, 0);
+    }
+
+    //考虑[index...s.length)长度的字符串所能得到的最长回文子串
+    private String findLongestPalindrome(String s, int index) {
+        if (index >= s.length())
+            return "";
+
+        if (memo[index].equals("-1"))
+            return memo[index];
+
+        String res = "0";
+        for (int i = index; i < s.length(); i++) {
+            //判断是不是回文
+            String tmp = findLongestPalindrome(s, i + 1);
+            if (isPalindrome(tmp))
+                //判断下一个回文子串和当前回文子串哪个长
+                res = res.length() > findLongestPalindrome(s, i + 1).length() ? res : findLongestPalindrome(s, i + 1);
         }
-        return memo[len-1];
+        memo[index] = res;
+        return res;
     }
 
     public static void main(String[] args) {

@@ -17,7 +17,7 @@ package freya19.practice.LeetCode;
 解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36。
 说明: 你可以假设 n 不小于 2 且不大于 58。
  */
-public class L343IntegerBreak {
+public class L343IntegerBreak动态规划 {
     private int max3(int a, int b, int c){
         return Math.max(a, Math.max(b, c));
     }
@@ -39,7 +39,7 @@ public class L343IntegerBreak {
     }
 
     public static void main(String[] args) {
-        L343IntegerBreak ib = new L343IntegerBreak();
+        L343IntegerBreak动态规划 ib = new L343IntegerBreak动态规划();
         System.out.println(ib.integerBreak(3));
     }
 }

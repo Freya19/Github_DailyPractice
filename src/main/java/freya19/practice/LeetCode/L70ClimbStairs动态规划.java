@@ -20,7 +20,7 @@ package freya19.practice.LeetCode;
 2.  1 阶 + 2 阶
 3.  2 阶 + 1 阶
  */
-public class L70ClimbStairs {
+public class L70ClimbStairs动态规划 {
     public int climbStairs(int n) {
 
         int[] memo = new int[n+1];
@@ -36,7 +36,7 @@ public class L70ClimbStairs {
 
     public static void main(String[] args) {
         int n=1;  // 注意：题目中要求给定 n 是一个正整数。
-        L70ClimbStairs cs = new L70ClimbStairs();
+        L70ClimbStairs动态规划 cs = new L70ClimbStairs动态规划();
         System.out.println(cs.climbStairs(n));
     }
 }
