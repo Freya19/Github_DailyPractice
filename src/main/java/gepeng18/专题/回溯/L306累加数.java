@@ -31,6 +31,7 @@ public class L306累加数 {
             Integer tmpNum = null;
             try {
                 tmpNum = Integer.valueOf(num.substring(q, i + 1));
+                System.out.println(tmpNum);
 
             }catch (NumberFormatException e){
                 return;

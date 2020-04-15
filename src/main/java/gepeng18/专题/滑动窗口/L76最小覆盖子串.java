@@ -31,7 +31,6 @@ public class L76最小覆盖子串 {
                 l++;
             }
 
-
             if(count==t.length()&&(r-l+1)<minLength){
                 minLength = r-l+1;
                 startIndex = l;

@@ -17,8 +17,8 @@ public class L3无重复字符的最长子串 {
         while( l < s.length() ){
 
             if(r+1<s.length()&&freq[s.charAt(r+1)] == 0 ){
-                freq[s.charAt(r+1)] ++;
-                r = r+1;
+                r++;
+                freq[s.charAt(r)] ++;
             }
             else{
                 freq[s.charAt(l)] --;
