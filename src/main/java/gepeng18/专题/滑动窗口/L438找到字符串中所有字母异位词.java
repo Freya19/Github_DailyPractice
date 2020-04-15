@@ -56,8 +56,6 @@ public class L438找到字符串中所有字母异位词 {
             if (r - l + 1 == p.length() && same(freqS, freqP)) {
                 res.add(l);
             }
-
-
         }
 
         return res;
