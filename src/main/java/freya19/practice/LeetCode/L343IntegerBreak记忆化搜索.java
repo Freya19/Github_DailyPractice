@@ -43,6 +43,7 @@ public class L343IntegerBreak记忆化搜索 {
         for (int i = 1; i < n ; i++) {
             res = max3(res, i * (n - i), i * breakInteger(n - i));
         }
+
         memo[n] = res;
         return res;
 
