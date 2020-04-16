@@ -24,10 +24,9 @@ public class L5最长回文子串_中心扩展 {
         return resSbud.toString();
     }
 
-
-    private void expandAroundCenter(String s, int low) {
-        int l = low;
-        int r = low;
+    private void expandAroundCenter(String s, int current) {
+        int l = current;
+        int r = current;
         while (l-1 >= 0 && r+1 < s.length() && s.charAt(l-1) == s.charAt(r+1)) {
             l--;
             r++;
