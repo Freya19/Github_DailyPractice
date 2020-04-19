@@ -1,4 +1,4 @@
-package freya19.practice.LeetCode;
+package freya19.practice.滑动窗口;
 /*
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 
@@ -24,7 +24,7 @@ package freya19.practice.LeetCode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class L3双指针之最长子串 {
+public class L3最长子串 {
     public int lengthOfLongestSubstring(String s) {
 
         int start = 0, end = 0, res = 0; //res记录的是子串的长度
@@ -55,7 +55,7 @@ public class L3双指针之最长子串 {
         String s4 = "dvdf";
         String s5 = "pwwkew";
 
-        L3双指针之最长子串 l3 = new L3双指针之最长子串();
+        L3最长子串 l3 = new L3最长子串();
         System.out.println(l3.lengthOfLongestSubstring(s1));
         System.out.println(l3.lengthOfLongestSubstring(s2));
         System.out.println(l3.lengthOfLongestSubstring(s3));

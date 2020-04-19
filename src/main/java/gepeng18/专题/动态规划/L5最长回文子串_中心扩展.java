@@ -10,7 +10,7 @@ public class L5最长回文子串_中心扩展 {
         StringBuilder newSbud = new StringBuilder();
 
         for(int i=0;i<s.length();i++)
-            newSbud.append("#").append(s.charAt(i));
+            newSbud.append("#").append(s.charAt(i));  //如 babad  ==> #b#a#b#a#d#
         String newS = newSbud.append("#").toString();
 
         for(int i=0;i<newS.length();i++) {

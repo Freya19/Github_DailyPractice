@@ -15,49 +15,48 @@ import java.util.List;
 输入: "cbbd"      输出: "bb"
  */
 public class L5最长回文子串 {
-    private String[] memo;
+    private String res = "";
 
-    // 是否为回文的判断函数
-    private boolean isPalindrome(String str) {
-        for (int i = 0; i < str.length() / 2; i++) {
-            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    //考虑[0...s.length)长度的字符串所能得到的最长回文子串
     public String longestPalindrome(String s) {
-        memo = new String[s.length()];
-        Arrays.fill(memo, "-1");
+        //先将传入的s处理好，再调用中心扩展法找
+        if (s.length() == 0)
+            return s;
 
-        return findLongestPalindrome(s, 0);
+        //加#
+        StringBuilder newStr = new StringBuilder();
+        for (int i = 0; i < s.length(); i++)
+            newStr.append("#").append(s.charAt(i));
+        String newS = newStr.append("#").toString();
+
+        //调用中心扩展函数找回文串
+        for (int i = 0; i < newS.length(); i++) {
+            centerExpand(newS, i);
+        }
+
+        //找到后去#
+        StringBuilder resStr = new StringBuilder();
+        for (int i = 0; i < res.length(); i++) {
+            if (res.charAt(i) != '#')
+                resStr.append(res.charAt(i));
+        }
+        return resStr.toString();
     }
 
-    //考虑[index...s.length)长度的字符串所能得到的最长回文子串
-    private String findLongestPalindrome(String s, int index) {
-        if (index >= s.length())
-            return "";
+    //中心扩展法
+    private String centerExpand(String str, int cur) {
+        int l = cur;
+        int r = cur;
 
-        if (memo[index].equals("-1"))
-            return memo[index];
-
-        String res = "0";
-        for (int i = index; i < s.length(); i++) {
-            //判断是不是回文
-            String tmp = findLongestPalindrome(s, i + 1);
-            if (isPalindrome(tmp))
-                //判断下一个回文子串和当前回文子串哪个长
-                res = res.length() > findLongestPalindrome(s, i + 1).length() ? res : findLongestPalindrome(s, i + 1);
+        while (l - 1 >= 0 && r + 1 < str.length() && str.charAt(l - 1) == str.charAt(r + 1)) {
+            l--;
+            r++;
+            res = res.length() > str.substring(l, r + 1).length() ? res : str.substring(l, r + 1);
         }
-        memo[index] = res;
         return res;
     }
 
     public static void main(String[] args) {
 //        String s = "babad";
-//        System.out.println(s.substring(0, 1));
         String s = "bb";
         L5最长回文子串 l5 = new L5最长回文子串();
         String s1 = l5.longestPalindrome(s);

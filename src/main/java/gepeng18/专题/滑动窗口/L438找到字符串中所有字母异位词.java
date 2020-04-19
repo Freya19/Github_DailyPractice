@@ -44,11 +44,10 @@ public class L438找到字符串中所有字母异位词 {
         int l = 0, r = -1;
         while (l < s.length()) {
 
-            if(r+1<s.length()&&r - l + 1 < p.length()){
+            if (r + 1 < s.length() && r - l + 1 < p.length()) {
                 r++;
                 freqS[s.charAt(r) - 'a']++;
-            }
-            else {
+            } else {
                 freqS[s.charAt(l) - 'a']--;
                 l++;
             }
