@@ -1,8 +1,4 @@
-package freya19.practice.LeetCode;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package freya19.practice.动态规划;
 
 /*
 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
@@ -14,7 +10,7 @@ import java.util.List;
 示例 2：
 输入: "cbbd"      输出: "bb"
  */
-public class L5最长回文子串 {
+public class L5最长回文子串中心扩展法 {
     private String res = "";
 
     public String longestPalindrome(String s) {
@@ -58,7 +54,7 @@ public class L5最长回文子串 {
     public static void main(String[] args) {
 //        String s = "babad";
         String s = "bb";
-        L5最长回文子串 l5 = new L5最长回文子串();
+        L5最长回文子串中心扩展法 l5 = new L5最长回文子串中心扩展法();
         String s1 = l5.longestPalindrome(s);
         System.out.println(s1);
     }
