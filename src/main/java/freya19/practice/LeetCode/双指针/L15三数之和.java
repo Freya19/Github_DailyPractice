@@ -1,4 +1,4 @@
-package freya19.practice.LeetCode;
+package freya19.practice.LeetCode.双指针;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,17 +19,21 @@ import java.util.List;
  */
 public class L15三数之和 {
     public List<List<Integer>> threeSum(int[] nums) {
+
         int len = nums.length;
         List<List<Integer>> res = new ArrayList<>();
+
         if (nums == null || len < 3) return res;
         Arrays.sort(nums);
+
         for (int i = 0; i < len; i++) {
             if (nums[i] > 0) break;
-            if (i>0&&nums[i] == nums[i - 1]) continue;
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
 //            if (nums[i] == nums[i + 1]) continue;//错误
 
             int l = i + 1;
             int r = len - 1;
+
             while (l < r) {
                 int sum = nums[i] + nums[l] + nums[r];
                 if (sum == 0) {

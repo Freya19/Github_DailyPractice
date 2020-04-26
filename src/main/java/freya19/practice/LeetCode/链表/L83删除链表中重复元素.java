@@ -1,4 +1,4 @@
-package freya19.practice.LeetCode;
+package freya19.practice.LeetCode.链表;
 /*
 给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。
 
@@ -8,6 +8,8 @@ package freya19.practice.LeetCode;
 示例 2:
 输入: 1->1->2->3->3。输出: 1->2->3
  */
+
+import freya19.practice.LeetCode.ListNode;
 
 public class L83删除链表中重复元素 {
     public ListNode deleteDuplicates(ListNode head) {

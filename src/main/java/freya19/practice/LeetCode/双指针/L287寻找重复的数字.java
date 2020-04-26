@@ -13,8 +13,6 @@ package freya19.practice.LeetCode.双指针;
     数组中只有一个重复的数字，但它可能不止重复出现一次。
  */
 
-import java.util.Arrays;
-
 public class L287寻找重复的数字 {
     //一种炫酷的二分法，“抽屉”原理
     public int findDuplicate(int[] nums) {
