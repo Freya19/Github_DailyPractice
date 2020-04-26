@@ -1,6 +1,6 @@
 package gepeng18.leetcode;
 
-import gepeng18.utils.ListUtils;
+import gepeng18.专题.链表.ListUtils;
 
 /**
  * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。

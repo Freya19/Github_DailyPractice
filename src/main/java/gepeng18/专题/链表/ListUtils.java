@@ -1,4 +1,4 @@
-package gepeng18.utils;
+package gepeng18.专题.链表;
 
 
 import gepeng18.leetcode.ListNode;
