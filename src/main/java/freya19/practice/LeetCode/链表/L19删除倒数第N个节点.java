@@ -1,4 +1,7 @@
-package freya19.practice.LeetCode;
+package freya19.practice.LeetCode.链表;
+
+
+import freya19.practice.LeetCode.ListNode;
 
 /*
 给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。

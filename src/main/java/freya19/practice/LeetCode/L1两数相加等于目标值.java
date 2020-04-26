@@ -11,7 +11,7 @@ package freya19.practice.LeetCode;
 所以返回 [0, 1]
  */
 
-public class L1两数相加 {
+public class L1两数相加等于目标值 {
     public int[] twoSum(int[] nums, int target) {
         int len = nums.length;
         int[] res = new int[2];
@@ -30,7 +30,7 @@ public class L1两数相加 {
     public static void main(String[] args) {
         int[] nums = {2,7,11,15};
         int target =9;
-        L1两数相加 temp = new L1两数相加();
+        L1两数相加等于目标值 temp = new L1两数相加等于目标值();
         int[] res = temp.twoSum(nums,target);
 
     }

@@ -1,4 +1,5 @@
-package freya19.practice.LeetCode;
+package freya19.practice.LeetCode.链表;
+import freya19.practice.LeetCode.ListNode;
 
 import java.util.Stack;
 

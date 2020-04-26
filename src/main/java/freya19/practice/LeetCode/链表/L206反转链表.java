@@ -1,11 +1,12 @@
-package freya19.practice.LeetCode;
-/*
+package freya19.practice.LeetCode.链表;/*
 反转一个单链表。
 
 示例:
 输入: 1->2->3->4->5->NULL
 输出: 5->4->3->2->1->NULL
  */
+
+import freya19.practice.LeetCode.ListNode;
 
 public class L206反转链表 {
     public ListNode reverseList(ListNode head) {

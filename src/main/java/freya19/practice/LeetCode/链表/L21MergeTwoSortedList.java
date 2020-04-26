@@ -6,44 +6,10 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-package freya19.practice.LeetCode;
+package freya19.practice.LeetCode.链表;
 
-// 链表，并定义一个由数组得到链表的方法
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) { val = x; }
 
-    // 根据n个元素的数组arr创建一个链表
-    // 使用arr为参数，创建另外一个ListNode的构造函数
-    public ListNode (int[] arr){
-
-        if(arr == null || arr.length == 0)
-            throw new IllegalArgumentException("arr can not be empty");
-
-        this.val = arr[0];
-        ListNode curNode = this;
-        for(int i = 1 ; i < arr.length ; i ++){
-            curNode.next = new ListNode(arr[i]); //将arr数组里面的元素逐一添加到链表的节点中
-            curNode = curNode.next;
-        }
-    }
-
-    // 显示得到的链表的信息
-    @Override
-    public String toString(){
-
-        StringBuilder s = new StringBuilder("");
-        ListNode curNode = this;
-        while(curNode != null){
-            s.append(Integer.toString(curNode.val));
-            s.append(" -> ");
-            curNode = curNode.next;
-        }
-        s.append("NULL");
-        return s.toString();
-    }
-}
+import freya19.practice.LeetCode.ListNode;
 
 // 合并两个有序链表的方法类
 public class L21MergeTwoSortedList {
