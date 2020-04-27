@@ -2,10 +2,11 @@ package freya19.practice.LeetCode;
 
 public class ListNode {
     public int val;
-    public ListNode next = null;
+    public ListNode next;
 
     public ListNode(int x) {
         val = x;
+        next = null;
     }
 
     // 根据传入的数组来创建一个链表，创建另一个LisNode的构造函数
