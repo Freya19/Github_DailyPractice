@@ -1,5 +1,7 @@
 package freya19.practice.LeetCode;
 
+import lombok.val;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +31,6 @@ public class L22括号生成 {
     public List<String> generateParenthesis(int n) {
         back(n, "", 0, 0);
         return res;
-
-
     }
 
     /**
@@ -50,11 +50,13 @@ public class L22括号生成 {
 
         back(n, state + "(", lc + 1, rc);
         back(n, state + ")", lc, rc + 1);
-
     }
 
     public static void main(String[] args) {
-        System.out.println("123");
+        val list = new L22括号生成().generateParenthesis(3);
+        for(String l:list){
+            System.out.println(l);
+        }
     }
 
 }
