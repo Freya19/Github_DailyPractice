@@ -6,7 +6,7 @@ get到了，这种关于字符串数组比较巧妙的判断操作（遍历 由�
 
 package freya19.practice.LeetCode;
 
-public class L11MaxCommonPrefixSolution {
+public class L14MaxCommonPrefixSolution {
     public String maxCommonPrefix(String [] strs) {
         if (strs.length == 0) return " ";
 
@@ -42,7 +42,7 @@ public class L11MaxCommonPrefixSolution {
 class maxCommonPrefixL11{
     public static void main(String[] args) {
         String[] strs ={"flower","flow","flowyy"};
-        L11MaxCommonPrefixSolution mcp = new L11MaxCommonPrefixSolution();
+        L14MaxCommonPrefixSolution mcp = new L14MaxCommonPrefixSolution();
 
         System.out.println(mcp.maxCommonPrefix(strs));
     }
