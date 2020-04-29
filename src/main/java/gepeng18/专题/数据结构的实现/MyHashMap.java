@@ -9,13 +9,11 @@ package gepeng18.专题.数据结构的实现;
  */
 public class MyHashMap<K, V> {
 
-    public class Node<K, V> {
-
+    class Node<K, V> {
         int hash;
         K key;
         V value;
         Node next;
-
     }
 
     /**
@@ -39,15 +37,15 @@ public class MyHashMap<K, V> {
         V value = null;
 
         if (table[hash] != null) {
-            Node temp = table[hash];
+            Node current = table[hash];
 
-            while (temp != null) {
+            while (current != null) {
                 //如果相等，则说明找到了键值对，返回相应的value
-                if (temp.key.equals(key)) {
-                    value = (V) temp.value;
+                if (current.key.equals(key)) {
+                    value = (V) current.value;
                     break;
                 } else {
-                    temp = temp.next;
+                    current = current.next;
                 }
             }
 
@@ -68,44 +66,41 @@ public class MyHashMap<K, V> {
         newNode.value = value;
         newNode.next = null;
 
-        Node temp = table[newNode.hash];
+        Node current = table[newNode.hash];
 
-        //正在遍历的最后一个元素
-        Node iterLast = null;
+        // 最后一个节点
+        Node lastNode = null;
         boolean keyRepeat = false;
-        if (temp == null) {
+        if (current == null) {
             //此处数组元素为空，则直接将新节点放进去
             table[newNode.hash] = newNode;
             size++;
         } else {
             //此处数组元素不为空。则遍历对应链表。。
-            while (temp != null) {
+            while (current != null) {
 
                 //判断key如果重复，则覆盖
-                if (temp.key.equals(key)) {
+                if (current.key.equals(key)) {
                     keyRepeat = true;
                     //只是覆盖value即可。其他的值(hash,key,next)保持不变。
-                    temp.value = value;
+                    current.value = value;
 
                     break;
 
                 } else {
                     //key不重复，则遍历下一个。
-                    iterLast = temp;
-                    temp = temp.next;
+                    lastNode = current;
+                    current = current.next;
 
                 }
             }
 
             //没有发生key重复的情况，则添加到链表最后。
             if (!keyRepeat) {
-                iterLast.next = newNode;
+                lastNode.next = newNode;
                 size++;
             }
-
         }
-
-
     }
 
 
@@ -141,8 +136,7 @@ public class MyHashMap<K, V> {
 
 
     public static int myHash(int v, int length) {
-//		System.out.println("hash in myHash:"+(v&(length-1)));		//直接位运算，效率高
-//		System.out.println("hash in myHash:"+(v%(length-1)));		//取模运算，效率低
+        //直接位运算，效率高
         return v & (length - 1);
     }
 
