@@ -3,6 +3,7 @@ package gepeng18.专题.栈.单调栈;
 import java.util.Stack;
 
 /**
+ * 可以先看一下：https://blog.csdn.net/Zolewit/article/details/88863970
  * 找左边最近的比他小的  右边最近的比他小的
  */
 public class L84柱状图中最大的矩形 {
