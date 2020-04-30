@@ -1,5 +1,8 @@
 package gepeng18.专题.数据结构的实现;
 import java.lang.*;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+
 
 // 在堆的有关操作中，需要比较堆中元素的大小，所以Item需要extends Comparable
 public class MaxHeap<Item extends Comparable> {
@@ -107,5 +110,6 @@ public class MaxHeap<Item extends Comparable> {
         for (int i = 1; i < N; i++){
             assert arr[i - 1] >= arr[i];
         }
+
     }
 }

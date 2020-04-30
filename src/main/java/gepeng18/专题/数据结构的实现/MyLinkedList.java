@@ -10,7 +10,7 @@ package gepeng18.专题.数据结构的实现;
 
 public class MyLinkedList<E> {
 
-    public class Node {
+    class Node {
         Node previous;        //上一个节点
         Node next;                //下一个节点
         Object element;        //元素数据

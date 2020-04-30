@@ -1,9 +1,15 @@
 package gepeng18.test;
 
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class testDataType {
-    public Boolean aBoolean = new Boolean(false);
+    static class Person{
+        int age;
+    }
 
     public static void main(String[] args) {
-        System.out.println(new testDataType().aBoolean);
+        final int age = new Person().age;
+
     }
 }
