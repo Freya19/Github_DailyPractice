@@ -29,19 +29,23 @@ public class MergeSort归并排序 {
         //首先要定义一个临时数组tempArr，并将arr[l...r]中的数据复制到其中
         int[] tempArr = new int[r - l + 1];
         for (int i = l; i <= r; i++) {
-            tempArr[i - l] = arr[i];   //注意这里索引比较多，不要搞混。比如arr[i]不是arr[l]
+            //注意这里索引比较多，不要搞混。比如arr[i]不是arr[l]
+            tempArr[i - l] = arr[i];
         }
 
         // 比较大小，将小的元素归并
         int i = l, j = mid + 1;
         for (int k = l; k <= r; k++) {
-            if (i > mid) { // 前半部分越界
+            if (i > mid) {
+                // 前半部分越界
                 arr[k] = tempArr[j - l];
                 j++;
-            } else if (j > r) { //后半部分越界
+            } else if (j > r) {
+                //后半部分越界
                 arr[k] = tempArr[i - l];
                 i++;
-            } else if (tempArr[i - l] < tempArr[j - l]) { // 不越界了。值小的先归并
+            } else if (tempArr[i - l] < tempArr[j - l]) {
+                // 不越界了。值小的先归并
                 arr[k] = tempArr[i - l];
                 i++;
             } else {
