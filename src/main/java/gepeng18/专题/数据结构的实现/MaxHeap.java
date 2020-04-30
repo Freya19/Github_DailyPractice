@@ -76,8 +76,8 @@ public class MaxHeap<Item extends Comparable> {
             int j = 2 * k;
             if (j + 1 <= count && data[j + 1].compareTo(data[j]) > 0)
                 j++;
-            // data[j] 是 data[2*k]和data[2*k+1]中的最大值
 
+            // data[j] 是 data[2*k]和data[2*k+1]中的最大值
             if (data[k].compareTo(data[j]) >= 0) break;
             swap(k, j);
             k = j;
@@ -86,7 +86,6 @@ public class MaxHeap<Item extends Comparable> {
 
     // 测试 MaxHeap
     public static void main(String[] args) {
-
         MaxHeap<Integer> maxHeap = new MaxHeap<Integer>(100);
         // 堆中元素个数
         int N = 100;
@@ -105,7 +104,8 @@ public class MaxHeap<Item extends Comparable> {
         System.out.println();
 
         // 确保arr数组是从大到小排列的
-        for (int i = 1; i < N; i++)
+        for (int i = 1; i < N; i++){
             assert arr[i - 1] >= arr[i];
+        }
     }
 }
