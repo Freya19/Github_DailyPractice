@@ -16,13 +16,15 @@ import java.util.List;
 public class changeFileNameUtils {
 
     public void changeFileName(String srcFolderPath) {
-        File folder = new File(srcFolderPath); //通过路径得到的文件
-//        String folderName = folder.getName(); //其实是文件夹的名称（如juc）
-//        System.out.println(folderName);// juc
+        //通过路径得到的文件
+        File folder = new File(srcFolderPath);
+        // String folderName = folder.getName(); //其实是文件夹的名称（如juc）
+        // System.out.println(folderName);// juc
 
         for (File f : folder.listFiles()) {
             String name = null;
-            if (f.isDirectory()) {  // 如果是文件的话，就不运行下面的
+            // 如果是文件的话，就不运行下面的
+            if (f.isDirectory()) {
                 for (File fs : f.listFiles()) {
 
                     if (StringUtils.substringAfterLast(fs.getName(), ".").equals("info")) {
