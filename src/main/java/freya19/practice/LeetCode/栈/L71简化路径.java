@@ -50,9 +50,11 @@ public class L71简化路径 {
 
         //如果栈非空，则用StringBuilder来存储栈中的值（快些），最后返回
         StringBuilder res = new StringBuilder();
-        while (!stack.isEmpty()) {
-            res.append(stack.pop());
+        //用for和stack.get()是为了避免pop时路径出栈反过来了
+        for (int i = 0; i < stack.size(); i++) {
+            res.append("/" + stack.get(i));
         }
+
 
         return res.toString();
     }
