@@ -15,10 +15,13 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 
-package freya19.practice.LeetCode;
+package freya19.practice.LeetCode.栈;
 
 import java.util.Stack;
 
+/**
+ * @author Freya
+ */
 public class L20validBracketsSolution {
     public boolean isValid(String s) {
         Stack<Character> sk = new Stack();
@@ -39,7 +42,7 @@ public class L20validBracketsSolution {
     }
 }
 
-class tesL20 {
+class testL20 {
     public static void main(String[] args) {
     String s1 = "([{})]";
     String s2 = "([{}])";

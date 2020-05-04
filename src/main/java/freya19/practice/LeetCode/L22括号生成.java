@@ -43,6 +43,7 @@ public class L22括号生成 {
         if (lc < rc || lc > n || rc > n) {
             return;
         }
+
         if (lc == rc && lc == n) {
             res.add(state);
             return;
@@ -60,3 +61,8 @@ public class L22括号生成 {
     }
 
 }
+
+/*
+最多能添加 n 个左括号，在递归调用的时候，在能传递到最底层的共用字符串中先添加 "(" ，然后 left-1，递归调用就可以。
+当左括号个数大于右括号的个数时添加右括号。
+ */

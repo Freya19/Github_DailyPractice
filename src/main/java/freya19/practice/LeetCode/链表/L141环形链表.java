@@ -18,13 +18,16 @@ public class L141环形链表 {
         }
 
         HashMap<ListNode, Integer> map = new HashMap<>();
-        while (p.next != null) {  //遇到环就死循环了。。。。，所以通过下面的key（出现两次）就return true来跳出循环
+        //遇到环就死循环了。。。。，所以通过下面的key（出现两次）就return true来跳出循环
+        while (p.next != null) {
             ListNode key = p;
             Integer value = map.get(key);
-            if (value == null) {  // p这个节点还没有出现过，就放进去，次数记为1
+            // p这个节点还没有出现过，就放进去，次数记为1
+            if (value == null) {
                 map.put(key, 1);
                 p = p.next;
-            } else if (value == 1) { // p这个节点出现过一次，替换次数为2
+            }// p这个节点出现过一次，替换次数为2
+            else if (value == 1) {
                 map.put(key, value + 1);
                 p = p.next;
             }else  //p这个节点出现了两次，就表示找到了环，直接return true
