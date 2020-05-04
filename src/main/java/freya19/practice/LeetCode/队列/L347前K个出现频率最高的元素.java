@@ -19,7 +19,7 @@ import java.util.*;
 
 public class L347前K个出现频率最高的元素 {
     public int[] topKFrequent(int[] nums, int k) {
-        //nums中元素存放到map中，key为元素，value为元素出现二店次数
+        //nums中元素存放到map中，key为元素，value为元素出现次数
         HashMap<Integer, Integer> counts = new HashMap<>();
         for (Integer num : nums) {
             counts.put(num, counts.getOrDefault(num, 0) + 1);
@@ -52,6 +52,8 @@ public class L347前K个出现频率最高的元素 {
         while(!kFreq.isEmpty()){
             tmp.add(kFreq.poll().getKey());
         }
+
+        //此时是反过来的，需要翻转
         Collections.reverse(tmp);
 
         //最后放到int[]中
