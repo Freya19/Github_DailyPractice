@@ -29,20 +29,29 @@ public class L20validBracketsSolution {
             if(s.charAt(i)=='('||s.charAt(i)=='['||s.charAt(i)=='{'){
                 sk.push(s.charAt(i));
             }else if(s.charAt(i)==')'||s.charAt(i)==']'||s.charAt(i)=='}'){
-                if(sk.empty()) return false;
+                if(sk.empty()) {
+                    return false;
+                }
                 char cur = sk.pop();
 
-                if(cur=='('&&s.charAt(i)!=')') return false;
-                if(cur=='['&&s.charAt(i)!=']') return false;
-                if(cur=='{'&&s.charAt(i)!='}') return false;
+                if(cur=='('&&s.charAt(i)!=')') {
+                    return false;
+                }
+                if(cur=='['&&s.charAt(i)!=']') {
+                    return false;
+                }
+                if(cur=='{'&&s.charAt(i)!='}') {
+                    return false;
+                }
             }
         }
-        if(sk.empty()) return true;
+        if(sk.empty()) {
+            return true;
+        }
+
         return false;
     }
-}
 
-class testL20 {
     public static void main(String[] args) {
     String s1 = "([{})]";
     String s2 = "([{}])";
