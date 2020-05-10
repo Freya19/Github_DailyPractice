@@ -35,7 +35,8 @@ public class L61旋转链表 {
             length++;
         }
 
-        int newK = k % length;   //区分k比链表长还是短的情况
+        //区分k比链表长还是短的情况
+        int newK = k % length;
 
         // 找原链表的尾
         ListNode originalTail = new ListNode(0);
