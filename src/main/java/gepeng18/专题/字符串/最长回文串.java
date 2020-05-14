@@ -34,7 +34,8 @@ public class 最长回文串 {
         char[] chars = s.toCharArray();
         int count = 0;
         for (int i = 0; i < chars.length; i++) {
-            if (!hashset.contains(chars[i])) {// 如果hashset没有该字符就保存进去
+            // 如果hashset没有该字符就保存进去
+            if (!hashset.contains(chars[i])) {
                 hashset.add(chars[i]);
             } else {// 如果有,就让count++（说明找到了一个成对的字符），然后把该字符移除
                 hashset.remove(chars[i]);
@@ -42,8 +43,8 @@ public class 最长回文串 {
             }
         }
         /**
-         * 不应该判断hashset中是否有超过1个数嘛?超过则不构成回文串
-         * 解答：应该是题目已经架设给定的字符串能构成回文 吧
+         * 题目意思为构成的回文串的长度，所以空则表明加加减减正好全部取消，不为空则从中随便抽出一个作为中心，
+         * 那么就是2n+1
          */
         return hashset.isEmpty() ? count * 2 : count * 2 + 1;
     }

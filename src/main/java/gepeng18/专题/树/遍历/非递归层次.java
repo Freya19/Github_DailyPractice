@@ -33,7 +33,7 @@ public class 非递归层次 {
             }else{
                 //字符串表示指令是不严谨的，可以用枚举或者boolean
                 assert cmd.operation.equals("go");
-                // 无右，无左，就打印当前节点的信息
+                // 打印当前节点的信息
                 queue.addLast(new Command("print",cmd.node));
 
                 if(cmd.node.left!=null) {
