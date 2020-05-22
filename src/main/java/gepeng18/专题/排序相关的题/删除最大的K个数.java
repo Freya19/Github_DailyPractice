@@ -1,7 +1,5 @@
 package gepeng18.专题.排序相关的题;
 
-import gepeng18.test.P;
-
 import java.util.PriorityQueue;
 import java.util.Queue;
 
