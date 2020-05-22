@@ -1,6 +1,6 @@
 package gepeng18.专题.动态规划;
 
-public class L72编辑距离 {
+public class L72编辑距离_难 {
     int dp[][];
 
     public int minDistance(String word1, String word2) {
@@ -41,6 +41,6 @@ public class L72编辑距离 {
     }
 
     public static void main(String[] args) {
-        new L72编辑距离().minDistance("horse","ros");
+        new L72编辑距离_难().minDistance("horse","ros");
     }
 }

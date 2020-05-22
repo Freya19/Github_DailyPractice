@@ -27,7 +27,9 @@ package gepeng18.专题.字符串;
  */
 public class 最长回文子序列 {
 
-
+    /**
+     * 动态规划
+     */
     public int longestPalindromeSubseq1(String s) {
         int len = s.length();
         int[][] dp = new int[len][len];
@@ -43,6 +45,9 @@ public class 最长回文子序列 {
         return dp[0][len - 1];
     }
 
+    /**
+     * 记忆化搜索
+     */
     private int dp[][];
 
     //返回s的最长回文子串的长度

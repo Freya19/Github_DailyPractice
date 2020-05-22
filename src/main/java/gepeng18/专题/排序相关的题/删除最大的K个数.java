@@ -5,6 +5,9 @@ import java.util.Queue;
 
 /**
  * 给定一个数组，删除其中最大的K个数
+ *
+ * 思路： 优先队列，将值和index一起存起来，然后按照值排序，最后将index都取出来，按顺序赋值即可
+ * 而赋值过程中要保持按照原数组的顺序，所以采取这种方式
  */
 public class 删除最大的K个数 {
     class Element {
