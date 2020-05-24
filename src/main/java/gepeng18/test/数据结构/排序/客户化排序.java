@@ -17,7 +17,7 @@ public class 客户化排序 implements Comparator {
     }
 
     @AllArgsConstructor
-    static class Person {
+    static class Person{
         int age;
 
         @Override

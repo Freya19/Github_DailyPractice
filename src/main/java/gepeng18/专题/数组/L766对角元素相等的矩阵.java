@@ -41,6 +41,5 @@ public class L766对角元素相等的矩阵 {
             }
         }
         return true;
-
     }
 }
