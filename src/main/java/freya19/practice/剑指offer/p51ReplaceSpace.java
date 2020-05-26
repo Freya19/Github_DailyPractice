@@ -1,4 +1,4 @@
-package freya19.practice.SwordToOffer;
+package freya19.practice.剑指offer;
 
 /*
 请实现一个函数，将一个字符串中的每个空格替换成“%20”。

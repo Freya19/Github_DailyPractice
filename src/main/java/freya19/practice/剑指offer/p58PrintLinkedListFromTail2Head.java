@@ -1,8 +1,6 @@
-package freya19.practice.SwordToOffer;
+package freya19.practice.剑指offer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Stack;
 
 class ListNode {

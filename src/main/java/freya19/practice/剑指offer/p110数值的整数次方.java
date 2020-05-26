@@ -1,4 +1,4 @@
-package freya19.practice.SwordToOffer;
+package freya19.practice.剑指offer;
 
 public class p110数值的整数次方 {
     boolean invalidInput = false;
