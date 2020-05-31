@@ -15,10 +15,7 @@ public class HeapOOM {
         }
     }
 
-
-
     private static void addObject(List list){
-
         final int oneM = 1024 * 1024;
         byte[] a5 = new byte[oneM];
         list.add(a5);

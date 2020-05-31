@@ -26,7 +26,6 @@ import java.util.Arrays;
 public class L198HouseRobber记忆化搜索 {
     private int[] memo;
 
-    //memo[i]表示考虑偷nums[i...n)范围内房子的所得最大利益
     public int rob(int[] nums) {
         memo = new int[nums.length];
         Arrays.fill(memo, -1);
@@ -34,14 +33,15 @@ public class L198HouseRobber记忆化搜索 {
         return tryRob(nums, 0);
     }
 
-    // 考虑偷nums[index...nums.length-1]范围内的房子
     private int tryRob(int[] nums, int index) {
-        //对index做越界的判断
-        if (index >= nums.length)
+        //边界条件判断（类似边界情况的初始化）
+        if (index >= nums.length) {
             return 0;
+        }
 
-        if (memo[index] != -1)
+        if (memo[index] != -1) {
             return memo[index];
+        }
 
         int res = 0;
         for (int i = index; i < nums.length; i++) {
@@ -53,7 +53,28 @@ public class L198HouseRobber记忆化搜索 {
 
     public static void main(String[] args) {
 
-        int nums[] = {2,7,9,3,1};
+//        int[] nums = {2, 7, 9, 3, 1};
+        int[] nums = {2, 7, 1, 9, 3};
+
         System.out.println((new L198HouseRobber记忆化搜索()).rob(nums));
     }
 }
+
+
+//        if (index == 1) {
+//            return nums[1];
+//        }
+//
+//        if (index == 0) {
+//            return nums[0];
+//        }
+//
+//        if (memo[index] != -1) {
+//            return memo[index];
+//        }
+//
+//        int res = 0;
+//        res = Math.max(res, nums[index] + tryRob(nums, index - 2));
+//        memo[index] = res;
+//
+//        return res;
