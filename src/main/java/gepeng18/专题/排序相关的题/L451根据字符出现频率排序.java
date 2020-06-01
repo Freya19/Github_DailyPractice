@@ -2,10 +2,7 @@ package gepeng18.专题.排序相关的题;
 
 import gepeng18.笔试.模拟考试.注解.Entity;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -50,19 +47,40 @@ import java.util.stream.Collectors;
 public class L451根据字符出现频率排序 {
 
     public void frequencySort(String s) {
-        HashMap<Character, Integer> map = new HashMap<>();
+        HashMap<Character, Integer> origin1 = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             final char c = s.charAt(i);
-            map.put(c,map.getOrDefault(c,0)+1);
+            origin1.put(c,origin1.getOrDefault(c,0)+1);
         }
 
-        HashMap<Character, Integer> res = new HashMap<>();
-        map.entrySet()
+        LinkedHashMap<Character, Integer> res = new LinkedHashMap<>();
+        origin1.entrySet()
                 .stream()
-                .sorted((p1, p2) -> {return p2.getValue()- p1.getValue();})
-                .collect(Collectors.toList()).forEach(ele -> res.put(ele.getKey(), ele.getValue()));
-
+                .sorted((p1, p2) -> {return p2.getValue()- p1.getValue();}).collect(Collectors.toList())
+                .forEach(ele -> res.put(ele.getKey(), ele.getValue()));
         System.out.println(res);
+
+
+        List<Map.Entry<Character, Integer>> origin2 = new ArrayList<Map.Entry<Character, Integer>>(origin1.entrySet());
+        //origin2.sort()
+        origin2.sort(new Comparator<Map.Entry<Character, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
+                return o2.getValue()-o1.getValue();
+            }
+        });
+        System.out.println(origin2);
+
+        List<Map.Entry<Character, Integer>> origin3 = new ArrayList<Map.Entry<Character, Integer>>(origin1.entrySet());
+        //collections.sort()
+        Collections.sort(origin3, new Comparator<Map.Entry<Character, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Character, Integer> o1, Map.Entry<Character, Integer> o2) {
+                return o2.getValue().compareTo(o1.getValue());
+            }
+        });
+        System.out.println(origin3);
+
     }
 
     public static void main(String[] args) {

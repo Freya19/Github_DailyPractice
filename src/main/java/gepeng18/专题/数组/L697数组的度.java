@@ -26,13 +26,13 @@ import java.util.stream.Collectors;
  * [1, 2, 2, 3, 1], [1, 2, 2, 3], [2, 2, 3, 1], [1, 2, 2], [2, 2, 3], [2, 2]
  * 最短连续子数组[2, 2]的长度为2，所以返回2.
  */
+
 public class L697数组的度 {
 
     class Int {
         int count = 0;
         int left = 0;
         int right = 0;
-
     }
 
     public int findShortestSubArray(int[] nums) {
@@ -50,7 +50,6 @@ public class L697数组的度 {
                 map.put(nums[i], current);
             }
 
-
         Integer max = Collections.max(map.values().stream().map(i -> {
             return i.count;
         }).collect(Collectors.toList()));
@@ -60,9 +59,7 @@ public class L697数组的度 {
             if (entry.getValue().count == max) {
                 minLength = Math.min(entry.getValue().right - entry.getValue().left + 1,minLength);
             }
-
         }
-
         return minLength;
     }
 
