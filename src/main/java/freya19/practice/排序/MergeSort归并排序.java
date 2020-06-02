@@ -12,16 +12,23 @@ public class MergeSort归并排序 {
         realizeMergeSort(arr, 0, n - 1);   //递归的函数
     }
 
-    // 递归调用对arr[l...r]范围进行归并排序（闭区间，也可以用开区间）
+    /**
+     * 递归调用对arr[l...r]范围进行归并排序（闭区间，也可以用开区间）
+     */
     public void realizeMergeSort(int[] arr, int l, int r) {
         //递归终止条件（越界停止）
-        if (l >= r)  // 递归终止条件中，l>r会出现栈空间溢出的异常；包注意包含r
+        // 递归终止条件中，l>r会出现栈空间溢出的异常；包注意包含r
+        if (l >= r)
             return;
 
-        int mid = (l + r) / 2; //实际上如果按计算式计算的话，有整型溢出的异常；但是排序可以先不管
-        realizeMergeSort(arr, l, mid); //递归调用 对左边的部分进行排序
-        realizeMergeSort(arr, mid + 1, r); //递归调用 对右边的部分进行排序
-        merge(arr, l, mid, r); //排序完成后，进行归并，得到完整的排序号的数组
+        //实际上如果按计算式计算的话，有整型溢出的异常；但是排序可以先不管
+        int mid = (l + r) / 2;
+        //递归调用 对左边的部分进行排序
+        realizeMergeSort(arr, l, mid);
+        //递归调用 对右边的部分进行排序
+        realizeMergeSort(arr, mid + 1, r);
+        //排序完成后，进行归并，得到完整的排序号的数组
+        merge(arr, l, mid, r);
     }
 
     public void merge(int[] arr, int l, int mid, int r) {
