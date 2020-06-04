@@ -9,21 +9,28 @@ public class ListNode {
         next = null;
     }
 
-    // 根据传入的数组来创建一个链表，创建另一个LisNode的构造函数
+    /**
+     *  根据传入的数组来创建一个链表，创建另一个LisNode的构造函数
+     * @param arr
+     */
     public ListNode(int[] arr) {
         //这里要判断传入的数组是否为空
         if (arr.length == 0 || arr == null) {
             new IllegalArgumentException("arr can not be empty");
         }
-        this.val = arr[0];  //数组的第一个元素赋值给链表的第一个节点的值
-        ListNode curNode = this;  //定义一个链表的节点，把this赋值给它
-        for (int i = 0; i < arr.length; i++) {
-            curNode.next = new ListNode(arr[i]); // ~
+        //数组的第一个元素赋值给链表的第一个节点的值
+        this.val = arr[0];
+        //定义一个链表的节点，把this赋值给它
+        ListNode curNode = this;
+        for (int i = 1; i < arr.length; i++) {
+            curNode.next = new ListNode(arr[i]);
             curNode = curNode.next;
         }
     }
 
-    //操作链表：查
+    /**
+     * 操作链表：查
+     */
     ListNode findNode(int n) {
         ListNode curNode = this;
         while (curNode != null) {
@@ -46,7 +53,8 @@ public class ListNode {
             sb.append("——>");
             curNode = curNode.next;
         }
-        sb.append("NULL");//在链表的末尾加上 NULL
+        ;//在链表的末尾加上 NULL
+        sb.append("NULL");
         return sb.toString();
     }
 

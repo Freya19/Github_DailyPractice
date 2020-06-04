@@ -23,8 +23,8 @@ public class L160相交链表 {
         ListNode l1=headA, l2=headB;
         while (l1!=l2){
             //这里是 相当于 两个链表相加，为的是同时遍历到交点
-            l1=(l1==null)?headB:l1.next;
-            l2=(l2==null)?headA:l2.next;
+            l1 = (l1 == null) ? headB : l1.next;
+            l2 = (l2 == null) ? headA : l2.next;
         }
         //当l1==l2退出循环的时候，也就是找到交点的时候
         //值得注意的是，即使不存在交点，最终返回null的情况也包含了，因为没交点，l1==l2==null啦

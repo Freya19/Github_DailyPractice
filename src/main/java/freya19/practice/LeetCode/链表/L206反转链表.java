@@ -15,10 +15,14 @@ public class L206反转链表 {
         ListNode cur = head;
 
         while (cur != null) {
-            ListNode next = cur.next; //cur原本指向的下一个节点，用next保存
-            cur.next = pre;  //然后将cur指向前一个节点
-            pre = cur; // 前一个节点现在往后移动一位，在cur的位置
-            cur = next;// cur也同样往后移动一位
+            //cur原本指向的下一个节点，用next保存
+            ListNode next = cur.next;
+            //然后将cur指向前一个节点
+            cur.next = pre;
+            // 前一个节点现在往后移动一位，在cur的位置
+            pre = cur;
+            // cur也同样往后移动一位
+            cur = next;
         }
         return pre;
     }
