@@ -15,16 +15,33 @@ public class L739每日温度 {
         }
 
         int[] res = new int[T.length];
-        int left = 0, right = 1;
-        while (right < T.length) {
-            if (T[left] < T[right]) {
-                res[left] = right - left;
-                left++;
-                right = left + 1;
-            } else {
-                right++;
+
+        for (int i = 0; i < T.length; i++){
+            for (int j = i + 1; j < T.length; j++) {
+                if (T[i] < T[j]) {
+                    res[i] = j - i;
+                    break;
+                }
             }
         }
+
+
+//
+//        int left = 0;
+//        while (left < T.length) {
+//            int right = left + 1;
+//            while (right < T.length) {
+//                if (T[left] < T[right]) {
+//                    res[left] = right - left;
+//                    left++;
+//                    right = left + 1;
+//                } else {
+//                    right++;
+//                }
+//            }
+//
+//
+//        }
         return res;
     }
 
@@ -32,7 +49,7 @@ public class L739每日温度 {
         int[] arr = {73, 74, 75, 71, 69, 72, 76, 73};
         //           [1,  1,  4,  2,  1,  1,  0,  0]。
 
-        int[] nums = {2, 1, 1, 3, 1, 2, 4, 5};
+        int[] nums = {2, 1, 1, 3, 5, 1, 4, 2};
         //            3, 2, 1, 1, 1, 1, 1, 0
         int[] ints = new L739每日温度().dailyTemperatures(nums);
         for (int i : ints) {
