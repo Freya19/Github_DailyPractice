@@ -31,7 +31,7 @@ public class 用两个队列实现栈<E> {
     }
 
     public E pop() {
-        //谁有值则将除最后一个外，其他的值都送到另一个栈中
+        //谁有值则将除最后一个外，其他的值都送到另一个队列中
         if (valid == 1) {
             if (queue1.isEmpty())
                 throw new RuntimeException("栈已空");
