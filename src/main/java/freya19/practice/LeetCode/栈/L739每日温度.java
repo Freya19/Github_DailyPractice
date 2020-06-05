@@ -1,6 +1,7 @@
 package freya19.practice.LeetCode.栈;
 
-import java.util.Stack;
+import java.util.*;
+import java.util.concurrent.BlockingDeque;
 
 /**
  * 数组中元素与下一个比它大的元素之间的距离
@@ -56,25 +57,7 @@ public class L739每日温度 {
             System.out.println(i);
         }
 
+
     }
 
 }
-
-/*Stack<Integer> in = new Stack<>();
-        Stack<Integer> helper = new Stack<>();
-        int[] ret = new int[T.length-1];
-
-        for(int t:T){
-            in.push(t);
-        }
-
-        int currentElement = in.pop();
-        int cnt =0;
-        while (!in.isEmpty()){
-            if(currentElement>in.peek()){
-                helper.push(in.pop());
-                cnt++;
-            }else {
-                return cnt;
-            }
-        }*/
