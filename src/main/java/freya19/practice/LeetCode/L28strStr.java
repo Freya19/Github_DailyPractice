@@ -23,7 +23,9 @@ import java.util.Queue;
 public class L28strStr {
     public int strStr(String haystack, String needle){
 //        if(haystack==null || haystack.length()<needle.length()) return -1; // 这里有个疑问，就是 haystack如果空的话会咋样
-        if(needle==null) return 0;
+        if(needle==null) {
+            return 0;
+        }
 
         Queue<Integer> q = new LinkedList<Integer>();
 //        for(int i=0;i<haystack.length();i++){             // 这样是错的，因为不能控制字符不等的时候 needle的索引不动
@@ -46,7 +48,10 @@ public class L28strStr {
                     i++;
                 }
         }
-        if(q.size()==0) return -1; //队列里没有任何数据，就表示没有这样的子串，就是没有找到了
+        //队列里没有任何数据，就表示没有这样的子串，就是没有找到了
+        if(q.size()==0) {
+            return -1;
+        }
         return q.element();
     }
 
