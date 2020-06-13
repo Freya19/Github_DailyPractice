@@ -39,9 +39,11 @@ public class 最长回文子串 {
             l--;
             r++;
         }
+
         if (len < r - l - 1) {
             index = l + 1;
             len = r - l - 1;
         }
     }
 }
+

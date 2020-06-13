@@ -1,4 +1,4 @@
-package gepeng18.test;
+package gepeng18.test.多线程;
 
 public class printOddAndEven {
     int i=0;
