@@ -8,8 +8,15 @@ package freya19.practice.排序;
  */
 
 public class MergeSort归并排序 {
-    public void mergeSort(int[] arr, int n) { //n 依旧是数组的长度
-        realizeMergeSort(arr, 0, n - 1);   //递归的函数
+
+    /**
+     * 归并排序
+     * @param arr 待排序的数组
+     * @param n 数组长度
+     */
+    public void mergeSort(int[] arr, int n) {
+        //递归的函数
+        realizeMergeSort(arr, 0, n - 1);
     }
 
     /**
@@ -17,9 +24,10 @@ public class MergeSort归并排序 {
      */
     public void realizeMergeSort(int[] arr, int l, int r) {
         //递归终止条件（越界停止）
-        // 递归终止条件中，l>r会出现栈空间溢出的异常；包注意包含r
-        if (l >= r)
+        // 递归终止条件中，l>r会出现栈空间溢出的异常；注意包含r
+        if (l >= r) {
             return;
+        }
 
         //实际上如果按计算式计算的话，有整型溢出的异常；但是排序可以先不管
         int mid = (l + r) / 2;

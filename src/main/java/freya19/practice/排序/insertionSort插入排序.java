@@ -6,29 +6,37 @@ package freya19.practice.排序;
  */
 
 public class insertionSort插入排序 {
-    //交换前后元素进行排序（耗时，性能低），因为交换表赋值要耗时
+
+    /**
+     * 交换前后元素实现插入排序 —— 交换 比 赋值 耗时
+     * @param arr
+     * @param n
+     */
     public void insertionSort1(int[] arr, int n) {
         for (int i = 1; i < n; i++) {
             for (int j = i; j > 0 && arr[j] < arr[j - 1]; j--) {
-                int temp = 0;
-                temp = arr[j];
+                int temp = arr[j];
                 arr[j] = arr[j - 1];
                 arr[j - 1] = temp;
             }
         }
     }
 
-    // 赋值操作实现
+    /**
+     * // 赋值操作实现插入排序
+     * @param arr
+     * @param n
+     */
     public void insertionSort2(int[] arr, int n) {
         for (int i = 1; i < n; i++) {
-            //将要比较的元素用一个临时变量保存一下
+            //当前元素：将要比较的元素用一个临时变量保存一下
             int temp = arr[i];
             int j;
             for (j = i; j > 0 && temp < arr[j - 1]; j--) {
-                arr[j]=arr[j-1];
+                arr[j] = arr[j - 1];
             }
-            //最终找到了这个待安放的值要出入的位置了
-            arr[j]=temp;
+            //最终找到了这个待安放的值要放置的位置了
+            arr[j] = temp;
         }
     }
 
