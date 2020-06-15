@@ -1,4 +1,4 @@
-package freya19.practice.leetcode.堆;
+package freya19.practice.leetcode.排序;
 
 
 import java.util.Arrays;
@@ -13,7 +13,6 @@ import java.util.PriorityQueue;
 public class L215数组中第K个最大元素 {
     /**
      * 排序 O(nlogn)
-     *
      * @return
      */
 
