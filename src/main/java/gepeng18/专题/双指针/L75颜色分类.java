@@ -3,6 +3,7 @@ package gepeng18.专题.双指针;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -44,7 +45,8 @@ public class L75颜色分类 {
 
     public static void main(String[] args)  {
         final int[] input = new int[]{0,1,2};
-
+        final ArrayList<Integer> objects = new ArrayList<>(Arrays.asList(1,2,3));
+        objects.remove(new Integer(2));
         sortColors(input);
         System.out.println(Arrays.toString(input));
     }

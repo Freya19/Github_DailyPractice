@@ -1,12 +1,15 @@
 package gepeng18.专题.数组;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
  */
 public class L283MoveZeroes {
+    new ConcurrentHashMap
     public void moveZeroes1(int[] nums) {
         int[] newArray = new int[nums.length];
         int newIndex = 0;
