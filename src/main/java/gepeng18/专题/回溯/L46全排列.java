@@ -5,35 +5,35 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 public class L46全排列 {
     private ArrayList<List<Integer>> res;
-    private boolean[] used; // *******************************
+    private boolean[] used;
     public List<List<Integer>> permute(int[] nums) {
         res = new ArrayList<List<Integer>>();
         if(nums == null || nums.length == 0)
             return res;
-        used = new boolean[nums.length]; // 基本数据类型boolean都是
+        // 基本数据类型boolean都是
+        used = new boolean[nums.length];
         LinkedList<Integer> p = new LinkedList<Integer>();
-        generatePermutation(nums, 0, p);
+        generatePermutation(nums,  p);
         return res;
     }
-    // p中保存了一个有index-1个元素的排列。
-    // 向这个排列的末尾添加第index个元素, 获得一个有index个元素的排列
-    private void generatePermutation(int[] nums, int index, LinkedList<Integer> p){
-        if(index == nums.length){
-            res.add((LinkedList<Integer>)p.clone());
+
+    //state中保存了目前的已经产生的数据
+    private void generatePermutation(int[] nums, LinkedList<Integer> state){
+        if(state.size() == nums.length){
+            res.add((LinkedList<Integer>)state.clone());
             return;
         }
+
         for(int i = 0 ; i < nums.length ; i ++)
-            if(!used[i]){        //****************
-                used[i] = true;   // **************
-
-                p.add(nums[i]);
-                generatePermutation(nums, index + 1, p );
-                p.removeLast();
-
-                used[i] = false;   // **********
+            if(!used[i]){
+                used[i] = true;
+                state.add(nums[i]);
+                generatePermutation(nums,  state );
+                state.removeLast();
+                used[i] = false;
             }
-        return;
     }
+
     private static void printList(List<Integer> list){
         for(Integer e: list)
             System.out.print(e + " ");

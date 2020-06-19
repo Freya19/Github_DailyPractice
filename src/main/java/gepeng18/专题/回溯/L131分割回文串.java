@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class L131分割回文串 {
-    List<List<String>> res = new ArrayList<>(); //定义全局变量保存最终结果
+    //定义全局变量保存最终结果
+    List<List<String>> res = new ArrayList<>();
 
 
     // 检查字符串列表是否为回文
@@ -19,8 +20,10 @@ public class L131分割回文串 {
     }
 
     public void back(String str,List<String> state ){
-        if(str.length()==0){                  //状态满足最终要求
-            res.add(state);                   // 加入结果
+        //状态满足最终要求
+        if(str.length()==0){
+            // 加入结果
+            res.add(state);
             return;
         }
 

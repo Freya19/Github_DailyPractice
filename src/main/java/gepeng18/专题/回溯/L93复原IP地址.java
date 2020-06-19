@@ -14,6 +14,13 @@ import java.util.List;
 public class L93复原IP地址 {
     List<String> res = new ArrayList<>();
     int deep = 0;
+
+    public List<String> restoreIpAddresses(String s) {
+        List<String> state  = new ArrayList<>();
+        back(s,state,0,deep);
+        return res;
+    }
+
     public void back(String s,List<String> state, int q,int deep){
         if(s.length()-q<1*(4-deep) || s.length()-q>3*(4-deep))
             return;
@@ -21,14 +28,17 @@ public class L93复原IP地址 {
             StringBuilder stringBuilder = new StringBuilder();
             for(String sub:state)
                 stringBuilder.append(sub).append(".");
-
             res.add(stringBuilder.toString().substring(0,stringBuilder.toString().length()-1));
             return ;
         }
 
         for(int i=q;i<q+3;i++){
+            //因为这里不是以for length的形式，所以会有越界的情况
             if(i==s.length())
                 return ;
+            //将以0开头的去掉，IP地址没有字段是以0开头的，所以一旦检测到以0开头，则表明这样分不对
+            //那为什么不continue而是return呢？因为这里是取q i+1所以，一旦检测到以0开头，那表明q处是0，
+            //这样的话后面都没必要判断了，肯定都不符合条件，回退到上一步
             String substring = s.substring(q, i + 1);
             int tmpNum = Integer.valueOf(substring);
             if(String.valueOf(tmpNum).length()!=i+1-q)
@@ -39,12 +49,6 @@ public class L93复原IP地址 {
                 back(s,tmp,i+1,deep+1);
             }
         }
-    }
-
-    public List<String> restoreIpAddresses(String s) {
-        List<String> state  = new ArrayList<>();
-        back(s,state,0,deep);
-        return res;
     }
 
     public static void main(String[] args) {
