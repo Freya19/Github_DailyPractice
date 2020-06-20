@@ -38,24 +38,28 @@ class L17电话号码的字母组合 {
         return res;
     }
 
-    // s中保存了此时从digits[0...index-1]翻译得到的一个字母字符串
-    // 寻找和digits[index]匹配的字母, 获得digits[0...index]翻译得到的解
-    private void findCombination(String digits, int index, String s) {
+    /**
+     * s中保存了此时从digits[0...index-1]翻译得到的一个字母字符串
+     * 寻找和digits[index]匹配的字母, 获得digits[0...index]翻译得到的解
+     */
+    private void findCombination(String digits, int index, String state) {
         // 这个是递归终止条件（当这个findCombination再次被调用，走到这一步的时候，
         // 满足if里面的条件，就保存s到结果集里，否则就继续向下执行递归）
         if (index == digits.length()) {
-            res.add(s);
+            res.add(state);
             return;
         }
-        Character c = digits.charAt(index); //某个数字，比如说是2
-        //下面断言表示：0 <= c <=9 且 c !=1
-        assert c.compareTo('0') >= 0 &&
-                c.compareTo('9') <= 0 &&
-                c.compareTo('1') != 0;
-        String letters = letterMap[c - '0']; // - ASCII码  letterMap中对应的是"abc"
-        for (int i = 0; i < letters.length(); i++) { // i=0时是a， s=s+a，这时候要去看index+1对应的数字，同样操作。进行组合。
-            findCombination(digits, index + 1, s + letters.charAt(i));
+        //某个数字，比如说是2
+        Character currentChar = digits.charAt(index);
+        //下面断言表示：0 <= currentChar <=9 且 currentChar !=1
+        assert currentChar.compareTo('0') >= 0 &&
+                currentChar.compareTo('9') <= 0 &&
+                currentChar.compareTo('1') != 0;
+        // - ASCII码  letterMap中对应的是"abc"
+        String letters = letterMap[currentChar - '0'];
+        // i=0时是a， state=state+a，这时候要去看index+1对应的数字，同样操作。进行组合。
+        for (int i = 0; i < letters.length(); i++) {
+            findCombination(digits, index + 1, state + letters.charAt(i));
         }
-        return;
     }
 }
