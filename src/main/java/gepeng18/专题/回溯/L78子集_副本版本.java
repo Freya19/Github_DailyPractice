@@ -11,7 +11,7 @@ import java.util.List;
  *
  * 示例:
  *
- * 输入: nums = [1,2,3]
+ * 输入: nums = [1,2,3 ]
  * 输出:
  * [
  *   [3],
@@ -36,6 +36,7 @@ public class L78子集_副本版本 {
         return subsets;
     }
 
+    //state 这个子集
     private void backtracking(int start, List<Integer> tempSubset, List<List<Integer>> subsets,
                               final int size, final int[] nums) {
 
@@ -43,6 +44,7 @@ public class L78子集_副本版本 {
             subsets.add(tempSubset);
             return;
         }
+
         for (int i = start; i < nums.length; i++) {
             final ArrayList<Integer> cur = new ArrayList<>(tempSubset);
             cur.add(nums[i]);

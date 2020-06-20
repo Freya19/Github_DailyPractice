@@ -36,14 +36,16 @@ public class L46全排列2 {
         return res;
     }
 
-    //state中保存了目前的已经产生的数据
+    //tmpState中保存了目前的已经产生的数据
     private void generatePermutation(int[] nums, boolean [] used,LinkedList<Integer> state){
         //什么时候停？
         if(state.size() == nums.length){
             res.add((LinkedList<Integer>)state.clone());
             return;
         }
-
+        //1 2 3 4
+        //2 3 1
+        //2 3 4
         for(int i = 0 ; i < nums.length ; i ++)
             //从剩下的数据中挑选一次，继续增加状态，但是要保持初始状态不变
             if(!used[i]){

@@ -19,7 +19,8 @@ import java.util.*;
  *   [1,2],
  *   []
  * ]
- *
+ * 1 2 2
+ * 2 1 2
  */
 public class L90子集II {
     List<List<Integer>> res = new ArrayList<>();

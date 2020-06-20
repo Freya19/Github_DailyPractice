@@ -20,8 +20,7 @@ public class L306累加数 {
     private boolean res = false;
     // q 已经判断多少个数了
     void back(String num,int num1,int num2,int q,int deep){
-        if(deep>=3&&num.length() == q)
-        {
+        if(deep>=3&&num.length() == q) {
             res = true;
             return;
         }
