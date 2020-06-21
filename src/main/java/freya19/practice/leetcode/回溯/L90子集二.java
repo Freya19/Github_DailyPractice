@@ -1,4 +1,4 @@
-package freya19.practice.leetcode;
+package freya19.practice.leetcode.回溯;
 /*
 给定一个可能包含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
 说明：解集不能包含重复的子集。
@@ -25,7 +25,7 @@ package freya19.practice.leetcode;
 
 import java.util.*;
 
-public class L90回溯之子集二 {
+public class L90子集二 {
     List<List<Integer>> res = new ArrayList<>();
     Set<List<Integer>> set = new HashSet<>();
 
@@ -54,7 +54,7 @@ public class L90回溯之子集二 {
 
     public static void main(String[] args) {
         int[] arrays = {4,4,4,1,4};
-        L90回溯之子集二 l90 = new L90回溯之子集二();
+        L90子集二 l90 = new L90子集二();
         List<List<Integer>> lists = l90.subsetsWithDup(arrays);
 
         for (int i = 0; i < lists.size(); i++) {

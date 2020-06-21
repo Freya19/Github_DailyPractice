@@ -1,4 +1,4 @@
-package freya19.practice.leetcode;
+package freya19.practice.leetcode.回溯;
 /*
 给定一个字符串 s，将 s 分割成一些子串，使每个子串都是回文串。
 返回 s 所有可能的分割方案。
@@ -16,10 +16,15 @@ package freya19.practice.leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class L131回溯之分割回文串 {
-    List<List<String>> res = new ArrayList<>(); //存放最终结果并返回
+public class L131分割回文串 {
+    //存放最终结果并返回
+    List<List<String>> res = new ArrayList<>();
 
-    // 是否为回文的判断函数
+    /**
+     * 是否为回文的判断函数
+     * @param str
+     * @return
+     */
     private boolean isPalindrome(String str) {
         for (int i = 0; i < str.length() / 2; i++) {
             if (str.charAt(i) != str.charAt(str.length() - 1 - i)) {
@@ -29,18 +34,17 @@ public class L131回溯之分割回文串 {
         return true;
     }
 
-    //递归体
     public void findPartition(String s, List<String> state) {
-        if (s.length() == 0) {                            //**********************
+        if (s.length() == 0) {
             res.add(state);
             return;
         }
 
         for (int i = 0; i < s.length(); i++) {
-            if (isPalindrome(s.substring(0, i + 1))) {    //***********************
+            if (isPalindrome(s.substring(0, i + 1))) {
                 ArrayList<String> tempList = new ArrayList<>(state);
                 tempList.add(s.substring(0, i + 1));
-                findPartition(s.substring(i + 1), tempList);  //*********************
+                findPartition(s.substring(i + 1), tempList);
             }
         }
     }
@@ -52,8 +56,13 @@ public class L131回溯之分割回文串 {
         return res;
     }
 
+
+
+
+
+
     public static void main(String[] args) {
-        L131回溯之分割回文串 l131 = new L131回溯之分割回文串();
+        L131分割回文串 l131 = new L131分割回文串();
         List<List<String>> res = l131.partition("aab");
         for (int i = 0; i < res.size(); i++) {
             System.out.println(res.get(i));
