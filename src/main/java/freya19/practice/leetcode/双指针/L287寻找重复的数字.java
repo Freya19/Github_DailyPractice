@@ -14,27 +14,34 @@ package freya19.practice.leetcode.双指针;
  */
 
 public class L287寻找重复的数字 {
-    //一种炫酷的二分法，“抽屉”原理
+
+    /**
+     *  一种炫酷的二分法，“抽屉”原理
+     */
     public int findDuplicate(int[] nums) {
         int len = nums.length;
         int left = 0;
         int right = len - 1;
 
         while (left < right) {
-            int mid = left + right >>> 1; //无符号右移（就是除以2，如果left + right溢出也不会出错）
+            //无符号右移（就是除以2，如果left + right溢出也不会出错）
+            int mid = left + right >>> 1;
 
             //遍历数组，找到比mid小的元素统计个数
             int ctn = 0;
             for (int num : nums) {
-                if (num <= mid)
+                if (num <= mid) {
                     ctn++;
+                }
             }
 
             //如果统计的这个个数ctn比mid大（ctn>mid），那么这个重复元素就包含在[left,mid]区间
-            if (ctn > mid)
+            if (ctn > mid) {
                 right = mid;
-            else //否则的话（ctn<=mid），那么这个重复元素就包含在[mid+1,right]区间
+            } else //否则的话（ctn<=mid），那么这个重复元素就包含在[mid+1,right]区间
+            {
                 left = mid + 1;
+            }
         }
         //最终，能找到这个重复的元素，且为left
         return left;
