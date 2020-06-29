@@ -1,12 +1,13 @@
-package freya19.practice.leetcode;
+package freya19.practice.leetcode.树;
 
+import freya19.practice.leetcode.树.TreeNode;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/*
+/**
 给定一个二叉树，返回其按层次遍历的节点值。 （即逐层地，从左到右访问所有节点）。
 
 例如:

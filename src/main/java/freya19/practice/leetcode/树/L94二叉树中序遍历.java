@@ -1,26 +1,11 @@
-package freya19.practice.leetcode;
+package freya19.practice.leetcode.树;
+
+import freya19.practice.leetcode.树.Command;
+import freya19.practice.leetcode.树.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-/*
-//Definition for a binary tree node.
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) { val = x; }
-}
-
-class Command{
-    String s;
-    TreeNode node;
-    public Command(String s, TreeNode node){  //  public
-        this.s=s;
-        this.node=node;
-    }
-}
- */
 
 public class L94二叉树中序遍历 {
     public List<Integer> inorderTraversal(TreeNode root) {

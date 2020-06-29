@@ -1,5 +1,8 @@
-package freya19.practice.leetcode;
-/* 递归
+package freya19.practice.leetcode.树;
+
+import freya19.practice.leetcode.树.TreeNode;
+
+/** 递归
 给定一个二叉树，找出其最大深度。
 最大深度是从根节点到最远叶子节点的最长路径上的节点数。
 说明: 叶子节点是指没有子节点的节点。

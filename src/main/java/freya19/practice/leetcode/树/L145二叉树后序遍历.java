@@ -1,14 +1,12 @@
-package freya19.practice.leetcode;
-/*
- 非递归,二叉树的前序遍历
- 时间复杂度: O(n), n为树的节点个数
- 空间复杂度: O(h), h为树的高度
- */
+package freya19.practice.leetcode.树;
+
+import freya19.practice.leetcode.树.Command;
+import freya19.practice.leetcode.树.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-
+/*
 //Definition for a binary tree node.
 class TreeNode {
     int val;
@@ -25,9 +23,9 @@ class Command{
         this.node=node;
     }
 }
-
-public class L144二叉树前序遍历 {
-    public List<Integer> preorderTraversal(TreeNode root) {
+ */
+public class L145二叉树后序遍历 {
+    public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
         if(root == null)
             return res;
@@ -46,20 +44,20 @@ public class L144二叉树前序遍历 {
                 res.add(cmd.node.val);  // return res.add(cmd.node.val);报错 —— 类型不匹配 ，提供的是布尔，需要的是list。。
             }else{
                 assert cmd.s.equals("go"); //字符串表示指令是不严谨的，可以用枚举或者boolean
-                // 前序遍历 root -> left ->right，所以推入栈就反过来
+
+                // 后序遍历  left -> right -> root，所以推入栈就反过来
+                stack.push(new Command("print",cmd.node));
+
                 if(cmd.node.right!=null){ //有右子树，往下执行，所以往栈中推入go指令
                     stack.push(new Command("go",cmd.node.right));
                 }
+
                 if(cmd.node.left!=null) { //有左子树，往下执行，所以往栈中推入go指令
                     stack.push(new Command("go", cmd.node.left));
                 }
-                // 无右，无左，就打印当前节点的信息
-                stack.push(new Command("print",cmd.node));
+
             }
         }
         return res;
     }
-
 }
-
-

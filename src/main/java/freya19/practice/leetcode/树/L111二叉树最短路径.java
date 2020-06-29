@@ -1,4 +1,4 @@
-package freya19.practice.leetcode;
+package freya19.practice.leetcode.树;
 /*
 给定一个二叉树，找出其最小深度。
 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
@@ -13,6 +13,8 @@ package freya19.practice.leetcode;
    15   7
 返回它的最小深度  2.
  */
+
+import freya19.practice.leetcode.树.TreeNode;
 
 public class L111二叉树最短路径 {
     public int minDepth(TreeNode root) {

@@ -1,4 +1,6 @@
-package freya19.practice.leetcode;
+package freya19.practice.leetcode.树;
+
+import freya19.practice.leetcode.树.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

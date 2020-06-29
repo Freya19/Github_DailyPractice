@@ -1,4 +1,4 @@
-package freya19.practice.leetcode;
+package freya19.practice.leetcode.树;
 /*
 递归 — —
   翻转一棵二叉树。
@@ -17,6 +17,8 @@ package freya19.practice.leetcode;
  / \   / \
 9   6 3   1
  */
+
+import freya19.practice.leetcode.树.TreeNode;
 
 public class L226invertBinaryTree {
     public TreeNode invertTree(TreeNode root) {
