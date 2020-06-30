@@ -1,16 +1,24 @@
-package gepeng18.专题.数据结构的实现;
+package gepeng18.专题.大数;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SuperInteger {
+/**
+ * 剑指 Offer 17. 打印从1到最大的n位数
+ * https://leetcode-cn.com/problems/da-yin-cong-1dao-zui-da-de-nwei-shu-lcof/
+ */
+
+/**
+ * 这里返回值是int[] 表明用int来接收 表明n不会越界，所以也没必要这样写，就普通循环即可
+ */
+
+public class 打印从1到最大的n位数 {
     int[] digits;
     boolean returnNull;
-    public SuperInteger(int[] digits, boolean returnNull) {
-        this.digits = digits;
-        this.returnNull = returnNull;
-    }
+    ArrayList<Integer> res = new ArrayList<>();
 
     public int[] plusOne() {
+
         int carry = 0;
 
         //1. 先直接加1，然后进位
@@ -45,15 +53,33 @@ public class SuperInteger {
             return digits;
     }
 
-    public static void print1ToMaxOfNDigits(int n) {
+    public int[] printNumbers(int n) {
         int[] num = new int[n];
         Arrays.fill(num,0);
-        SuperInteger instance = new SuperInteger(num,true);
+        digits = num;
+        returnNull = true;
         while (true) {
-            int[] ints1 = instance.plusOne();
+            int[] ints1 = plusOne();
             if (ints1==null) break;
-            System.out.println(Arrays.toString(ints1));
+            int oneNum = 0;
+            for(int i=0;i<ints1.length;i++){
+                oneNum = oneNum*10+ints1[i];
+            }
+            res.add(oneNum);
         }
+
+        int[] d = new int[res.size()];
+        for(int i = 0;i<res.size();i++){
+            d[i] = res.get(i);
+        }
+        return d;
+    }
+
+
+
+    public static void main(String[] args) {
+        new 打印从1到最大的n位数().printNumbers(3);
+
     }
 
 }
