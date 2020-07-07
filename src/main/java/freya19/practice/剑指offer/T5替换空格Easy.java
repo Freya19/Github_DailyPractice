@@ -8,7 +8,7 @@ package freya19.practice.剑指offer;
  *
  * 剑指offer用的是双指针+复制
  */
-public class T5替换空格 {
+public class T5替换空格Easy {
     public String replaceSpace(String s) {
         if(s==null||s.length()==0){
             return s;

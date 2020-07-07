@@ -2,7 +2,7 @@ package freya19.practice.剑指offer;
 
 import java.util.Arrays;
 
-public class T7重建二叉树 {
+public class T7重建二叉树Medium {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
 
         TreeNode root = null;

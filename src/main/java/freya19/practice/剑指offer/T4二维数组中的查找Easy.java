@@ -1,6 +1,6 @@
 package freya19.practice.剑指offer;
 
-public class T4二维数组中的查找 {
+public class T4二维数组中的查找Easy {
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
 
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
@@ -30,7 +30,7 @@ public class T4二维数组中的查找 {
                 {7, 8, 9}
         };
 
-        boolean ifExt = new T4二维数组中的查找().findNumberIn2DArray(matrix, 5);
+        boolean ifExt = new T4二维数组中的查找Easy().findNumberIn2DArray(matrix, 5);
         System.out.println(ifExt);
     }
 }

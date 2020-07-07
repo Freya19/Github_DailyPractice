@@ -11,7 +11,7 @@ import java.util.Stack;
  * 最终，将列表 tmp 转化为数组 res ，并返回即可。
  */
 
-public class T6从尾到头打印链表N {
+public class T6从尾到头打印链表EasyN {
 
     ArrayList<Integer> tmp = new ArrayList<Integer>();
 

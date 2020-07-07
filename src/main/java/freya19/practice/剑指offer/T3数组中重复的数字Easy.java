@@ -4,7 +4,7 @@ package freya19.practice.剑指offer;
  * 6′26″
  */
 
-public class T3数组中重复的数字 {
+public class T3数组中重复的数字Easy {
     public int findRepeatNumber(int[] nums) {
 
         int res=-1;
