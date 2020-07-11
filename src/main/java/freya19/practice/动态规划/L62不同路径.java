@@ -1,7 +1,7 @@
 package freya19.practice.动态规划;
 
 public class L62不同路径 {
-    int[][] dp; //
+    int[][] dp;
 
     public int uniquePaths(int m, int n) {
 
@@ -28,14 +28,6 @@ public class L62不同路径 {
     }
 
     public int solution(int m, int n) {
-//        if(dp[m][n]!=-1) {
-//            return dp[m][n];
-//        }
-
-//        int res = solution(m-1,n)+solution(m,n-1);
-//        dp[m][n] = res;
-//        return res;
-
         if (dp[m][n] == -1) {
             dp[m][n] = solution(m - 1, n) + solution(m, n - 1);
         }

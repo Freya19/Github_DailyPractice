@@ -9,7 +9,7 @@ public class L64最小路径之和 {
             return 0;
         }
 
-        dp = new int[m][n]; //
+        dp = new int[m][n];
 
         //常规初始化
         for(int i=0;i<m;i++)

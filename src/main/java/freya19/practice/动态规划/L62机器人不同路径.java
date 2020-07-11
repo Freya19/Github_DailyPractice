@@ -6,7 +6,7 @@ package freya19.practice.动态规划;
  */
 
 public class L62机器人不同路径 {
-    private int[][] dp; //记录路径的数组
+    private int[][] dp;
 
     public int uniquePaths(int m, int n) {
         if (m <= 0 || n <= 0)
@@ -14,17 +14,25 @@ public class L62机器人不同路径 {
 
         //创建并初始化数组
         dp = new int[m][n];
-        for (int i = 0; i < m; i++)
-            for (int j = 0; j < n; j++)
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 dp[i][j] = -1;
+            }
+        }
 
         //特殊初始化
         // 最上边
         for (int j = 0; j < n; j++)
-            dp[0][j] = 1;  //到最上面任何一个点都是1条路径
+            //到最上面任何一个点都是1条路径
+        {
+            dp[0][j] = 1;
+        }
 
         for (int i = 0; i < m; i++)
-            dp[i][0] = 1; //到最左侧任何一个点都是1条路径
+            //到最左侧任何一个点都是1条路径
+        {
+            dp[i][0] = 1;
+        }
 
         //一般的情况，就调用已经写好的函数
         return findUniquePaths(m - 1, n - 1);

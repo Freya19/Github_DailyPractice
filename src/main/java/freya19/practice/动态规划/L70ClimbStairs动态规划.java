@@ -1,6 +1,6 @@
 package freya19.practice.动态规划;
 
-/*
+/**
 假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
 每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
 注意：给定 n 是一个正整数。
@@ -35,7 +35,8 @@ public class L70ClimbStairs动态规划 {
     }
 
     public static void main(String[] args) {
-        int n=1;  // 注意：题目中要求给定 n 是一个正整数。
+        // 注意：题目中要求给定 n 是一个正整数。
+        int n=1;
         L70ClimbStairs动态规划 cs = new L70ClimbStairs动态规划();
         System.out.println(cs.climbStairs(n));
     }

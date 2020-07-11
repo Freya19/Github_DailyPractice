@@ -1,9 +1,6 @@
 package freya19.practice.面试题;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/*
+/**
 你正在使用一堆木板建造跳水板。有两种类型的木板，其中长度较短的木板长度为shorter，
 长度较长的木板长度为longer。你必须正好使用k块木板。编写一个方法，生成跳水板所有可能的长度。
 返回的长度需要从小到大排列。
@@ -11,6 +8,8 @@ import java.util.List;
 示例：
 输入：shorter = 1，longer = 2，k = 3
 输出： {3,4,5,6}
+ 1+1+1   2+2+2
+ 1+1+2   1+2+2
 
 提示：
     0 < shorter <= longer
@@ -40,7 +39,7 @@ public class L1611跳水板 {
         return res;
     }
 
-    //输入1,1.与其结果是[0]。但实际结果是[]；
+    /**输入1,1.与其结果是[0]。但实际结果是[]；*/
     public static void main(String[] args) {
         int longer = 2, shorter = 1, k = 3;
 

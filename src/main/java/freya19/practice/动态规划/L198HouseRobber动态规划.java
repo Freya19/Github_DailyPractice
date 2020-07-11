@@ -1,5 +1,5 @@
 package freya19.practice.动态规划;
-/*
+/**
 你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，
 影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，
 如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
@@ -35,12 +35,18 @@ public class L198HouseRobber动态规划 {
         Arrays.fill(memo, -1);
 
         // 这里是倒过来思考的，从最后一个房子开始偷
-        memo[n - 1] = nums[n - 1]; // n-1 是最后一间房子
+        // n-1 是最后一间房子
+        memo[n - 1] = nums[n - 1];
 
         // memo[i]就是打劫nums[i...n-1]个房子中的部分房子所能得到的最大金钱
-        for (int i = n - 2; i >= 0; i--)   // 0 ≤ i ≤ n-2
-            for (int j = i; j < n; j++)    // n-2 ≤ j < n         所以 合在一起就是 [0...n-1]范围内的房子
+        // 0 ≤ i ≤ n-2
+        for (int i = n - 2; i >= 0; i--){
+            // n-2 ≤ j < n         所以 合在一起就是 [0...n-1]范围内的房子
+
+            for (int j = i; j < n; j++) {
                 memo[i] = Math.max(memo[i], nums[j] + (j + 2 < n ? memo[j + 2] : 0));
+            }
+        }
         return memo[0];
     }
 

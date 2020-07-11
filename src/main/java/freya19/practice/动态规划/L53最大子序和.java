@@ -26,6 +26,7 @@ package freya19.practice.动态规划;
  * 每次比较 sum 和 ans的大小，将最大值置为ans，遍历结束返回结果
  * 时间复杂度：O(n)
  *
+ * ------------ 我用的不是动归呀 --------------------
  */
 public class L53最大子序和 {
     public int maxSubArray(int[] nums) {
