@@ -40,17 +40,20 @@ public class 打印从1到最大的n位数 {
             }
         }
 
-        //3. 全部进位后，如果还有进位,则return null
+        // 这里的目的是有的题是越界返回空，有的是越界创建新数组，将其合二为一，此题较为简单，直接返回null即可
+        //3. 如果最终还有进位,并且允许returnNull，则return null
         if (carry == 1 && returnNull)
             return null;
-
-        //4. 全部进位后，如果还有进位，则创建一个新的数组，首位置1即可
-        if (carry == 1) {
+        else if (carry == 1 && !returnNull) {
+            //4. 如果还有进位，不允许返回空，则创建一个新的数组，首位置1即可
             digits = new int[digits.length + 1];
             digits[0] = 1;
             return digits;
         } else
             return digits;
+
+
+
     }
 
     public int[] printNumbers(int n) {
@@ -60,6 +63,7 @@ public class 打印从1到最大的n位数 {
         returnNull = true;
         while (true) {
             int[] ints1 = plusOne();
+            // 因为越界返回null，所以返回null就不用继续了
             if (ints1==null) break;
             int oneNum = 0;
             for(int i=0;i<ints1.length;i++){
@@ -75,11 +79,7 @@ public class 打印从1到最大的n位数 {
         return d;
     }
 
-
-
     public static void main(String[] args) {
         new 打印从1到最大的n位数().printNumbers(3);
-
     }
-
 }
