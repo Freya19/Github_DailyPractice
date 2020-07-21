@@ -5,6 +5,13 @@ import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
 
+/**
+ * 无重复字符，则右指针前移
+ * 有重复字符，则左指针前移
+ *
+ * 每次结束，判断是否重复，无重复则取最大值
+ * 然而实际上，由前面条件知道不可能重复，所以不用判断
+ */
 public class L3无重复字符的最长子串 {
     public int lengthOfLongestSubstring(String s) {
 
