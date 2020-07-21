@@ -38,7 +38,6 @@ import java.util.Stack;
  * …. 依次执行，最后辅助栈为空。如果不为空说明弹出序列不是该栈的弹出顺序。
  */
 public class 栈的压入弹出序列 {
-
     public boolean IsPopOrder(int[] pushA, int[] popA) {
         if (pushA.length == 0 || popA.length == 0)
             return false;
@@ -56,6 +55,11 @@ public class 栈的压入弹出序列 {
             }
         }
         return s.empty();
+    }
+
+    public static void main(String[] args) {
+        boolean b = new 栈的压入弹出序列().IsPopOrder(new int[]{1, 2, 3}, new int[]{3, 2, 1, 1});
+        System.out.println(b);
     }
 }
 

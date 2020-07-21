@@ -21,6 +21,16 @@ import java.util.List;
  * 输出:
  * [0, 6]
  */
+
+
+/**
+ * 不是字母异位词则右指针右移，
+ * 是字母异位词  则左指针右移
+ * 但是字母异位词判决条件为长度相同，字母相同，字母排列不同
+ * 所以我们最好只使用一个条件，即这里选定长度相同
+ *
+ * 每次结束判断 长度相同，字母相同，字母排列不同 是否成立，成立则添加，不成立就算了
+ */
 public class L438找到字符串中所有字母异位词 {
     public List<Integer> findAnagrams(String s, String p) {
         List<Integer> res = new ArrayList<>();
@@ -44,7 +54,7 @@ public class L438找到字符串中所有字母异位词 {
         int l = 0, r = -1;
         while (l < s.length()) {
 
-            if (r + 1 < s.length() && r - l + 1 < p.length()) {
+            if (r + 1 < s.length() && r - l + 1 < p.length() ) {
                 r++;
                 freqS[s.charAt(r) - 'a']++;
             } else {
@@ -68,9 +78,8 @@ public class L438找到字符串中所有字母异位词 {
     }
 
     public static void main(String[] args) {
-        String s = "abab";
-        String p = "ab";
+        String s = "cbaebabacd";
+        String p = "abc";
         System.out.println(new L438找到字符串中所有字母异位词().findAnagrams(s, p));
-
     }
 }
