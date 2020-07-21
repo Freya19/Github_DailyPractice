@@ -1,4 +1,4 @@
-package gepeng18.sword2offer;
+package gepeng18.专题.动态规划;
 
 public class 变态跳台阶 {
     int[] nums;
