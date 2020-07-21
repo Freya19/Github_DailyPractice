@@ -36,9 +36,7 @@ public class CreateThreadByCallable implements Callable {
 
         // *  要求获得Callable线程的计算结果，如果没有计算完成就要去强求，会导致阻塞
         // *  futureTask.get() 需要放在最后执行，这样不会导致主线程阻塞。可以通过自旋来获取
-        while (futureTask.isDone()){
             System.out.println("result: "+futureTask.get());
-        }
 
     }
 
