@@ -18,8 +18,14 @@ import java.util.Scanner;
  * 输出:
  * 2
  *
- * 题解： 滑动窗口，完毕
+ */
+
+/**
+ * 题解：
+ * 如果是左括号，则cnt++
+ * 如果是右括号，则cnt--
  *
+ * 每次循环，计算cnt的最大值
  */
 public class 括号匹配深度 {
     public static void main(String[] args) {

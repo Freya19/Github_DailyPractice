@@ -1,7 +1,8 @@
 package freya19.practice.算法题和数据结构.堆;
 
-import java.util.ArrayList;
-import java.util.PriorityQueue;
+import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
+
+import java.util.*;
 
 public class SO40最小的k个元素 {
 
@@ -22,6 +23,9 @@ public class SO40最小的k个元素 {
             }
         }
 
+//        new StringBuilder();
+//        new StringBuffer();
+
         int i=0;
         while (!maxHeap.isEmpty()){
             res[i++]=maxHeap.poll();
@@ -36,6 +40,9 @@ public class SO40最小的k个元素 {
         maxHeap.add(3);
         maxHeap.add(4);
         maxHeap.add(0);
+
+        new TreeMap<>();
+        new HashMap<>();
 
         while (!maxHeap.isEmpty()){
             System.out.println(maxHeap.poll());

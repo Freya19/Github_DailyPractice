@@ -12,6 +12,7 @@ package gepeng18.专题.树;
 public class L112路径总和 {
     //找以root为根的路径和是否为sum
     public boolean hasPathSum(TreeNode root, int sum) {
+        // 叶子就涉及两步
         if(root==null)
             return false;
 

@@ -10,6 +10,13 @@ package gepeng18.专题.滑动窗口;
  * 解释: 子数组 [4,3] 是该条件下的长度最小的连续子数组。
  *
  */
+
+/**
+ * 和小于s，则右指针右移
+ * 和大于等于s，则左指针右移
+ *
+ * 每次循环结束，判断长度最小
+ */
 public class L209长度最小的子数组 {
     public int minSubArrayLen(int s, int[] nums) {
         if(s <= 0 || nums == null)
@@ -22,10 +29,10 @@ public class L209长度最小的子数组 {
         while(l < nums.length){
             if(r + 1 < nums.length && sum < s){
                 r++;
-                sum += nums[++r];
+                sum += nums[r];
             }
             else{
-                sum -= nums[l++];
+                sum -= nums[l];
                 l++;
             }
 
