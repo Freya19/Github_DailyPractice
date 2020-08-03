@@ -1,7 +1,7 @@
 package gepeng18.专题.排序;
 
 
-public class MergeSort归并排序2 {
+public class MergeSort归并排序 {
 
     public int[] sort(int[] nums) {
         int len = nums.length;
@@ -63,7 +63,7 @@ public class MergeSort归并排序2 {
     }
 
     public static void main(String[] args) {
-        int[] res = new MergeSort归并排序2().sort(new int[]{8, 5, 3, 5, 6, 8, 9, 1});
+        int[] res = new MergeSort归并排序().sort(new int[]{8, 5, 3, 5, 6, 8, 9, 1});
         for (int i = 0; i < res.length; i++) {
             System.out.println(res[i]);
         }
