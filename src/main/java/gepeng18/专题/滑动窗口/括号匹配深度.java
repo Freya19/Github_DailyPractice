@@ -29,6 +29,10 @@ import java.util.Scanner;
  */
 public class 括号匹配深度 {
     public static void main(String[] args) {
+        forCycle();
+    }
+
+    private static void forCycle() {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
         int cnt = 0, max = 0, i;
@@ -42,4 +46,6 @@ public class 括号匹配深度 {
         sc.close();
         System.out.println(max);
     }
+
+
 }

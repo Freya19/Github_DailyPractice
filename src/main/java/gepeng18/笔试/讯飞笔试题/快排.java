@@ -16,12 +16,12 @@ public class 快排 {
     void sort(int [] array,int start,int end){
         if (start>=end)
             return;
-        int mid = patition(array, start, end);
-        sort(array,0,mid-1);
+        int mid = partition(array, start, end);
+        sort(array,start,mid-1);
         sort(array,mid+1,end);
     }
 
-    int patition(int [] array,int left,int right){
+    int partition(int [] array, int left, int right){
         System.out.print(left+"---"+right+" --- ");
         int base = array[left];
         int j = left;
