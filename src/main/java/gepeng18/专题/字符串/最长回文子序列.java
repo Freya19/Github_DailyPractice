@@ -69,18 +69,13 @@ public class 最长回文子序列 {
             return dp[left][right];
 
         if (left == right-1) {
-            int res;
             if (s.charAt(left) == s.charAt(right))
-                res = 2;
+                return 2;
             else
-                res = 1;
-
-            dp[left][right] = res;
-            return res;
+                return 1;
         }
 
         if (left == right) {
-            dp[left][right] = 1;
             return dp[left][right];
         }
 

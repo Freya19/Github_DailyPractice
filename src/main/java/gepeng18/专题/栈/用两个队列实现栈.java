@@ -7,7 +7,7 @@ import java.util.Queue;
 
 /**
  * 一直保持一个队列为空，push值总往有值的队列push
- * pop时 先将所有元素pop到另外一个队列中，再
+ * pop时 先将所有元素pop到另外一个队列中，再弹出来
  * @param <E>
  */
 public class 用两个队列实现栈<E> {

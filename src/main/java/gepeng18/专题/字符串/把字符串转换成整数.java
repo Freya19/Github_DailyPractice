@@ -37,7 +37,6 @@ public class 把字符串转换成整数 {
         System.out.println("使用库函数转换：" + Integer.valueOf(s));
         int res = 把字符串转换成整数.StrToInt(s);
         System.out.println("使用自己写的方法转换：" + res);
-
     }
 
 }

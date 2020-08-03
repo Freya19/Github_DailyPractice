@@ -10,7 +10,7 @@ public class L22括号生成 {
         return res;
     }
 
-    //
+    // res表示结果，thisString表示目前生成的
     void func(List<String> res, String thisString, int leftCount, int rightCount, int n){
         if(leftCount > n || rightCount > n || rightCount > leftCount) return ;
         if(leftCount == n && rightCount == n) {res.add(thisString); return;}

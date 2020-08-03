@@ -40,6 +40,7 @@ public class 最长回文子串 {
             r++;
         }
 
+        //长度就是r-l+1，但是l--了，r++了，所以多了2，所以是r-l-1
         if (len < r - l - 1) {
             index = l + 1;
             len = r - l - 1;
