@@ -50,12 +50,12 @@ public class L20有效的括号 {
             else{
                 if(stack.size() == 0)
                     return false;
-                Character right = stack.pollLast();
-                if(s.charAt(i) == ')' && right == '(')
+                Character top = stack.pollLast();
+                if(s.charAt(i) == ')' && top == '(')
                     continue;
-                if(s.charAt(i) == ']' && right == '[')
+                if(s.charAt(i) == ']' && top == '[')
                     continue;
-                if(s.charAt(i) == '}' && right == '{')
+                if(s.charAt(i) == '}' && top == '{')
                     continue;
                 return false;
             }
