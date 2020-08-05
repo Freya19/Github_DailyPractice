@@ -12,7 +12,6 @@ public class 跳跃游戏2 {
         for (int i = 0; i < n - 1; i++) {
             // 目前来说，最远能到哪
             curFarthest = Math.max(nums.get(i) + i, curFarthest);
-            //
             if (preFarthest == i) {
                 jumps++;
                 preFarthest = curFarthest;
