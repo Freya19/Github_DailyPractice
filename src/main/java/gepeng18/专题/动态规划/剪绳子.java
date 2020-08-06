@@ -11,7 +11,6 @@ public class 剪绳子 {
 
     // 将n进行分割(至少分成两部分)，可以获得的最大乘积
     public int cuttingRope(int target) {
-
         if(target ==1)
             return 1;
 
