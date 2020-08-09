@@ -1,6 +1,7 @@
 package freya19.practice.算法题和数据结构.贪心;
 
 public class L55跳跃游戏 {
+
     public boolean canJump(int[] nums) {
         if (nums == null || nums.length == 0) {
             return true;
