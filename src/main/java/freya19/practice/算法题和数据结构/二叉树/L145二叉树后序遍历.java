@@ -3,24 +3,7 @@ package freya19.practice.算法题和数据结构.二叉树;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-/*
-//Definition for a binary tree node.
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) { val = x; }
-}
 
-class Command{
-    String s;
-    TreeNode node;
-    public Command(String s, TreeNode node){  //  public
-        this.s=s;
-        this.node=node;
-    }
-}
- */
 public class L145二叉树后序遍历 {
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();

@@ -1,6 +1,7 @@
 package freya19.practice.算法题和数据结构.动态规划;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class SO14剪绳子_2 {
     public int cuttingRope(int n) {
@@ -19,5 +20,10 @@ public class SO14剪绳子_2 {
             }
         }
         return dp[n];
+    }
+
+    public static void main(String[] args) {
+        HashSet<Integer> hashSet = new HashSet<>();
+
     }
 }

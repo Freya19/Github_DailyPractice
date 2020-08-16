@@ -21,8 +21,9 @@ class Command{
 public class L144二叉树前序遍历 {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();
-        if(root == null)
+        if(root == null) {
             return res;
+        }
 
         // stack，用于模拟底层存取数据的
         Stack<Command> stack = new Stack<>();

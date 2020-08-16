@@ -43,10 +43,8 @@ public class L198打家劫舍1_记忆化搜索 {
             return memo[index];
         }
 
-        int res = 0;
-        for (int i = index; i < nums.length; i++) {
-            res = Math.max(res, nums[i] + tryRob(nums, i + 2));
-        }
+        // 偷 index 处的房子 和 不偷 index 处的房子 二者取最大值
+        int res = Math.max(nums[index] + tryRob(nums, index + 2), tryRob(nums, index + 1));
         memo[index] = res;
         return res;
     }
