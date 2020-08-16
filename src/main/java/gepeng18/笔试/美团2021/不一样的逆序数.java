@@ -4,8 +4,9 @@ public class 不一样的逆序数 {
     public static void main(String[] args) {
         int n = (int) Math.pow(10,7);
         for(int i=1;i<=n;i++){
-            if(judge(i))
+            if(judge(i)) {
                 System.out.println(i);
+            }
 
         }
     }

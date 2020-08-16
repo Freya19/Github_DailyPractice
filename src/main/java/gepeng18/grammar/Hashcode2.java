@@ -24,9 +24,11 @@ public class Hashcode2 {
 
     public static void main(String[] args) {
         Hashcode2 vo = new Hashcode2(1, 2);
+
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
+
         System.out.println(vo.hashCode());
         System.out.println(list.hashCode());
         System.out.println(vo.equals(list));
