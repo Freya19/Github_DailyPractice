@@ -3,9 +3,7 @@ package gepeng18.test.基础类型;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
-import org.omg.CORBA.ARG_OUT;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class ArrayDemo {

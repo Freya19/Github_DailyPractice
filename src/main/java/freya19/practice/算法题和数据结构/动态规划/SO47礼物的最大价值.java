@@ -1,19 +1,14 @@
 package freya19.practice.算法题和数据结构.动态规划;
 
-import com.sun.org.apache.regexp.internal.RE;
-
-import java.util.Arrays;
-
-public class L64最小路径和 {
-
-    public int minPathSum(int[][] grid) {
-        if (grid == null) {
+public class SO47礼物的最大价值 {
+    public int maxValue(int[][] grid) {
+        if(grid==null){
             return 0;
         }
 
-        int rows = grid.length, cols = grid[0].length;
+        int rows = grid.length,cols=grid[0].length;
 
-        // 记录最优解的数组 —— 最小路径和
+        // 记录最优解的数组 —— 最大路径和
         int[][] dp = new int[rows][cols];
         // 原始初始化
         for (int i = 0; i < rows; i++) {
@@ -37,17 +32,17 @@ public class L64最小路径和 {
         // 动态转移方程
         for (int i = 1; i < rows; i++) {
             for (int j = 1; j < cols; j++) {
-                dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
+                dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
             }
         }
 
         return dp[rows - 1][cols - 1];
     }
 
-        public static void main(String[] args) {
-            int[][] arr = new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-    //        System.out.println(arr.length);
-    //        System.out.println(arr[0].length);
-            System.out.println(new L64最小路径和().minPathSum(arr));
-        }
+    public static void main(String[] args) {
+        int[][] arr = new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+        //        System.out.println(arr.length);
+        //        System.out.println(arr[0].length);
+        System.out.println(new SO47礼物的最大价值().maxValue(arr));
+    }
 }

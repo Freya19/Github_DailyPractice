@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 public class 计算split平均数 {
@@ -15,8 +17,7 @@ public class 计算split平均数 {
         System.out.println("Enter lines of text.");
         List<Float> list = new ArrayList<>();
         str = br.readLine();
-        while(!str.equals(""))
-         {
+        while(!str.equals("")) {
              Float num = Float.valueOf(str.split(":")[1].trim());
              list.add(num);
              str = br.readLine();
@@ -34,3 +35,14 @@ public class 计算split平均数 {
         计算split平均数.readFileByLines();
     }
 }
+
+/**
+joint_fine_tune  split 1 :  91.66667
+joint_fine_tune  split 2 :  77.083336
+joint_fine_tune  split 3 :  77.083336
+joint_fine_tune  split 4 :  77.083336
+joint_fine_tune  split 6 :  79.16667
+joint_fine_tune  split 8 :  85.41667
+joint_fine_tune  split 9 :  81.25
+joint_fine_tune  split 10 :  91.66667
+ */

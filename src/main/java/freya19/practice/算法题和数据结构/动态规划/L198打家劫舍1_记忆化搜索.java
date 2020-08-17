@@ -23,7 +23,7 @@ package freya19.practice.算法题和数据结构.动态规划;
 import java.util.Arrays;
 
 
-public class L198HouseRobber记忆化搜索 {
+public class L198打家劫舍1_记忆化搜索 {
     private int[] memo;
 
     public int rob(int[] nums) {
@@ -43,10 +43,8 @@ public class L198HouseRobber记忆化搜索 {
             return memo[index];
         }
 
-        int res = 0;
-        for (int i = index; i < nums.length; i++) {
-            res = Math.max(res, nums[i] + tryRob(nums, i + 2));
-        }
+        // 偷 index 处的房子 和 不偷 index 处的房子 二者取最大值
+        int res = Math.max(nums[index] + tryRob(nums, index + 2), tryRob(nums, index + 1));
         memo[index] = res;
         return res;
     }
@@ -56,7 +54,7 @@ public class L198HouseRobber记忆化搜索 {
 //        int[] nums = {2, 7, 9, 3, 1};
         int[] nums = {2, 7, 1, 9, 3};
 
-        System.out.println((new L198HouseRobber记忆化搜索()).rob(nums));
+        System.out.println((new L198打家劫舍1_记忆化搜索()).rob(nums));
     }
 }
 
