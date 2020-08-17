@@ -1,10 +1,14 @@
 package gepeng18.test;
 
+import sun.util.resources.cldr.ta.CurrencyNames_ta;
+
+import java.lang.reflect.Array;
+import java.util.*;
+
 public class and符号 {
+    static int cnt = 0;
     public static void main(String[] args) {
-        String a = null;
-        System.out.println(a!=null&&a.equals(""));
-        //一个&有逻辑与和按位与的作用，但是不会短路
-        System.out.println(a!=null&a.equals(""));
+        new  Hashtable<>().put("1","2")
     }
+
 }
