@@ -42,8 +42,8 @@ public class 小区问题 {
                 flag.put(split[0],flag.get(split[1]));
                 ArrayList<Integer> cur = res.get(flag.get(split[1]));
                 cur.add(Integer.valueOf(split[0]));
-            }else{
-                assert flag.get(split[1]).equals(flag.get(split[0]));
+            }else {
+                throw  new RuntimeException("不可能");
             }
         }
         for (ArrayList list:res){

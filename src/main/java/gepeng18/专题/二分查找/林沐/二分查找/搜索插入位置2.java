@@ -26,7 +26,7 @@ public class 搜索插入位置2 {
             if(index!=-1)
                 return index;
         }
-        throw  new RuntimeException("因为有地方插入，所以上面的插入条件肯定有一个会满足");
+         throw  new RuntimeException("因为有地方插入，所以上面的插入条件肯定有一个会满足");
     }
 
     public static void main(String[] args) {
