@@ -1,7 +1,5 @@
 package gepeng18.笔试.阿里巴巴2021;
 
-import java.util.Scanner;
-
 public class 小强集训队 {
     // 连续子数组和
     public static int solve(int[] nums, int k) {
@@ -25,17 +23,9 @@ public class 小强集训队 {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int times = scanner.nextInt();
-        int min = 0;
-        int[] nums = new int[times];
-        for (int i = 0; i < times; i++)
-            nums[i] = scanner.nextInt();
 
-        for (int i = 1; i <= times; i++){
-            min = new 小强集训队().solve(nums, i);
-            System.out.println(min);
-        }
+        int min = new 小强集训队().solve(new int[]{1,2,3,4,5,6,7,8,9}, 3);
+        System.out.println(min);
 
     }
 
