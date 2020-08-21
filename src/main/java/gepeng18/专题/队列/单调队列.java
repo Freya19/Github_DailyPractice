@@ -1,7 +1,10 @@
 package gepeng18.专题.队列;
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
 import java.util.Deque;
+import java.util.LinkedList;
+import java.util.stream.Stream;
 
 /**
  * 918. 环形子数组的最大和
@@ -49,39 +52,41 @@ import java.util.Deque;
  * 自己肯定要进来，就看你们滚不滚了
  */
 public class 单调队列 {
-    class Solution {
-        public int maxSubarraySumCircular(int[] A) {
-            int N = A.length;
+    LinkedList<Integer> data = new LinkedList<>();
+    void push(int n) {
+        while (data.size()!=0 && data.peekLast() < n)
+            data.pollLast();
+        data.addLast(n);
+    }
 
-            // Compute P[j] = B[0] + B[1] + ... + B[j-1]
-            // for fixed array B = A+A
-            int[] P = new int[2*N+1];
-            for (int i = 0; i < 2*N; ++i)
-                P[i+1] = P[i] + A[i % N];
+    void pop(int n) {
+        if (data.size()!=0 && data.getFirst() == n)
+            data.pollFirst();
+    }
 
-            // Want largest P[j] - P[i] with 1 <= j-i <= N
-            // For each j, want smallest P[i] with i >= j-N
-            int ans = A[0];
-            // deque: i's, increasing by P[i]
-            Deque<Integer> deque = new ArrayDeque();
-            deque.offer(0);
+    int max() {
+        return data.getFirst();
+    }
 
-            for (int j = 1; j <= 2*N; ++j) {
-                // If the smallest i is too small, remove it.
-                if (deque.peekFirst() < j-N)
-                    deque.pollFirst();
-
-                // The optimal i is deque[0], for cand. answer P[j] - P[i].
-                ans = Math.max(ans, P[j] - P[deque.peekFirst()]);
-
-                // Remove any i1's with P[i2] <= P[i1].
-                while (!deque.isEmpty() && P[j] <= P[deque.peekLast()])
-                    deque.pollLast();
-
-                deque.offerLast(j);
+    int [] maxSlidingWindow(int[] nums, int k) {
+        LinkedList<Integer> res = new LinkedList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (i < k - 1) { //先填满窗口的前 k - 1
+                push(nums[i]);
+            } else { // 窗口向前滑动
+                push(nums[i]);
+                res.addLast(max());
+                pop(nums[i - k + 1]);
             }
-
-            return ans;
         }
+        int[] finalRes = new int[res.size()];
+        for (int i = 0;i<res.size();i++)
+            finalRes[i] = res.get(i);
+        return finalRes;
+    }
+
+    public static void main(String[] args) {
+        int[] ints = new 单调队列().maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3);
+        System.out.println(Arrays.toString(ints));
     }
 }

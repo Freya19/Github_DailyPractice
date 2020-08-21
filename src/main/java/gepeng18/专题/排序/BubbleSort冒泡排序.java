@@ -1,9 +1,8 @@
 package gepeng18.专题.排序;
 
 public class BubbleSort冒泡排序 {
-    public static void main(String[] args) {
-        //冒泡排序算法
-        int[] numbers=new int[]{1,5,8,2,3,9,4};
+
+    private static void bubbleSort(int[] numbers) {
         for(int i=0;i<numbers.length-1;i++) {
             for(int j=0;j<numbers.length-1-i;j++) {
                 if(numbers[j]>numbers[j+1]) {
@@ -13,9 +12,14 @@ public class BubbleSort冒泡排序 {
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        //冒泡排序算法
+        int[] numbers=new int[]{1,5,8,2,3,9,4};
+        bubbleSort(numbers);
         System.out.println("从小到大排序后的结果是:");
         for(int i=0;i<numbers.length;i++)
             System.out.print(numbers[i]+" ");
     }
-
 }

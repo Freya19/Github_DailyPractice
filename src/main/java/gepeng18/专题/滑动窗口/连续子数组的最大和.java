@@ -15,7 +15,6 @@ public class 连续子数组的最大和 {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        while (true)
-            Thread.sleep(100000);
+
     }
 }
