@@ -4,9 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 public class iterator {
-    static int removeDuplicates(int[] nums) {
+    synchronized static  int removeDuplicates(int[] nums) {
         int n = nums.length;
         if (n == 0) return 0;
         int slow = 0, fast = 1;
@@ -24,6 +29,6 @@ public class iterator {
     }
 
     public static void main(String[] args) {
-        removeDuplicates(new int[]{1, 2, 2, 3, 4, 5, 6, 7});
+
     }
 }
