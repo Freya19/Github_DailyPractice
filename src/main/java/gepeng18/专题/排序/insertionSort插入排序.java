@@ -6,25 +6,28 @@ package gepeng18.专题.排序;
  */
 
 public class insertionSort插入排序 {
+
     // 赋值操作实现
     public void insertionSort(int[] arr, int n) {
         for (int i = 1; i < n; i++) {
             //将要比较的元素用一个临时变量保存一下
             int temp = arr[i];
             int j;
-            for (j = i; j > 0 ; j--) {
-                if( arr[j - 1]>temp )
-                    arr[j]=arr[j-1];
+            for (j = i-1; j >= 0 ; j--) {
+                // j 是否需要向后移动呢，如果需要移动，则后移，否则退出
+                // 退出表明j+1右移了，j不用右移，所以j+1就是我们需要放置的位置
+                if( arr[j]>temp )
+                    arr[j+1]=arr[j];
                 else
                     break;
             }
             //最终找到了这个待安放的值要出入的位置了
-            arr[j]=temp;
+            arr[j+1]=temp;
         }
     }
 
     public static void main(String[] args) {
-        int[] arr = {8, 6, 2, 3, 1, 5, 7, 4};
+        int[] arr = {8};
         int n = arr.length;
         insertionSort插入排序 is = new insertionSort插入排序();
         is.insertionSort(arr, n);

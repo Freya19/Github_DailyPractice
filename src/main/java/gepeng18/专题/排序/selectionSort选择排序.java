@@ -1,6 +1,7 @@
 package gepeng18.专题.排序;
 
 public class selectionSort选择排序 {
+
     /**
      * 将数组中的数字按从小到大的顺序排列
      * @param nums 待排序的数组
@@ -21,6 +22,7 @@ public class selectionSort选择排序 {
         }
     }
 
+
     public static void main(String[] args) {
         int[] nums= {2,1,3,6,4,5,8,7};
         int n = nums.length;
@@ -31,4 +33,5 @@ public class selectionSort选择排序 {
         }
         System.out.println();
     }
+
 }
