@@ -1,6 +1,4 @@
-package freya19.practice.笔试原题;
-
-import java.util.HashMap;
+package freya19.practice.笔试;
 
 /**
  * 如果一个数的4倍正好是它的逆序数，即为逆序对
