@@ -7,17 +7,11 @@ import java.util.Arrays;
  */
 public class QuickSort {
 
-    public static void main(String[] args) {
-        int[] array = new int[]{25 ,84 ,21, 47, 15, 27 ,68, 35, 20};
-        sort(array,0,array.length-1);
-    }
 
-    private static void sort(int [] array,int start,int end){
-        if (start>=end)
-            return;
-        int mid = partition(array, start, end);
-        sort(array,start,mid-1);
-        sort(array,mid+1,end);
+    private static void swap(int[] array, int i, int j) {
+        int tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
     }
 
     private static int partition(int[] arr, int low, int high) {
@@ -37,11 +31,18 @@ public class QuickSort {
         return low;
     }
 
-    private static void swap(int[] array, int i, int j) {
-        int tmp = array[i];
-        array[i] = array[j];
-        array[j] = tmp;
+
+    private static void sort(int [] array,int start,int end){
+        if (start>=end)
+            return;
+        int mid = partition(array, start, end);
+        sort(array,start,mid-1);
+        sort(array,mid+1,end);
     }
 
+    public static void main(String[] args) {
+        int[] array = new int[]{25 ,84 ,21, 47, 15, 27 ,68, 35, 20};
+        sort(array,0,array.length-1);
+    }
 
 }
