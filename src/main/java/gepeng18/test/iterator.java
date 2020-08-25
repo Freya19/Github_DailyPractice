@@ -1,21 +1,19 @@
 package gepeng18.test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
-class Sup{
 
+public class iterator {
+    public static void main(String[] args) {
+        int sum = 0;
+        int n = 3;
+        int bottom = 0;
+        while (n > 0 || bottom > 2) {
+            // 消费
+            sum += n;
+            bottom += n;
+            n = bottom / 3;
+            bottom -= n * 3;
+        }
+        System.out.println(sum);
+    }
 }
-
-class Mid extends Sup{
-
-}
-
-
