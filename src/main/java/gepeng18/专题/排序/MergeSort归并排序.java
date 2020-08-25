@@ -3,34 +3,7 @@ package gepeng18.专题.排序;
 
 public class MergeSort归并排序 {
 
-    public int[] sort(int[] nums) {
-        int len = nums.length;
 
-        if (len < 2) {
-            return nums;
-        }
-
-        sort(nums, 0, len - 1);
-        return nums;
-    }
-
-    /**
-     * nums[left..right] 排序
-     */
-    private void sort(int[] nums, int left, int right) {
-        if (left == right) {
-            return;
-        }
-
-        int mid = left + (right - left) / 2;
-        sort(nums, left, mid);
-        sort(nums, mid + 1, right);
-
-        if (nums[mid] <= nums[mid + 1]) {
-            return;
-        }
-        merge(nums, left, mid, right);
-    }
 
     /**
      * nums[left..mid] 有序，nums[mid + 1..right] 有序，现在使left~right有序
@@ -60,6 +33,35 @@ public class MergeSort归并排序 {
                 j++;
             }
         }
+    }
+
+    /**
+     * nums[left..right] 排序
+     */
+    private void sort(int[] nums, int left, int right) {
+        if (left == right) {
+            return;
+        }
+
+        int mid = left + (right - left) / 2;
+        sort(nums, left, mid);
+        sort(nums, mid + 1, right);
+
+        if (nums[mid] <= nums[mid + 1]) {
+            return;
+        }
+        merge(nums, left, mid, right);
+    }
+
+    public int[] sort(int[] nums) {
+        int len = nums.length;
+
+        if (len < 2) {
+            return nums;
+        }
+
+        sort(nums, 0, len - 1);
+        return nums;
     }
 
     public static void main(String[] args) {
