@@ -24,7 +24,6 @@ public class QuickSort {
                 low++;
             if (low < high)
                 swap(arr, low, high);
-
         }
         swap(arr, low, first);
         System.out.println(Arrays.toString(arr));
