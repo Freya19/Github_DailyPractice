@@ -8,8 +8,10 @@ import java.util.List;
 public class 全排列 {
     List<String> res = new ArrayList();
     void back(String whole,String current,String remain){
-        if (current.length() == whole.length())
-           res.add(current);
+        if (current.length() == whole.length()){
+            res.add(current);
+            return ;
+        }
         for (int i=0;i<remain.length();i++)
             back(whole,current+remain.charAt(i),remain.substring(0,i)+remain.substring(i+1));
     }
