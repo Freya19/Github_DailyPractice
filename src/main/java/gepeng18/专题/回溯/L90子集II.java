@@ -34,6 +34,7 @@ public class L90子集II {
     }
 
     void back(int[] nums,List state, int q) {
+        // 这个if其实是一种煎枝操作
         if(set.contains(state))
             return;
         else {

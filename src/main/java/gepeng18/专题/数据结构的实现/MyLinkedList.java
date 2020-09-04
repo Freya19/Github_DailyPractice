@@ -37,16 +37,16 @@ public class MyLinkedList<E> {
         checkRange(index);
 
         Node newNode = new Node(element);
-        Node originalNode = getNode(index);
+        Node after = getNode(index);
 
-        if (originalNode != null) {
-            Node before = originalNode.previous;
+        if (after != null) {
+            Node before = after.previous;
 
             before.next = newNode;
             newNode.previous = before;
 
-            newNode.next = originalNode;
-            originalNode.previous = newNode;
+            newNode.next = after;
+            after.previous = newNode;
 
         }
 
@@ -74,11 +74,11 @@ public class MyLinkedList<E> {
 
         checkRange(index);
 
-        Node temp = getNode(index);
+        Node cur = getNode(index);
 
-        if (temp != null) {
-            Node before = temp.previous;
-            Node after = temp.next;
+        if (cur != null) {
+            Node before = cur.previous;
+            Node after = cur.next;
 
             if (before != null) {
                 before.next = after;
@@ -121,20 +121,20 @@ public class MyLinkedList<E> {
     private Node getNode(int index) {
         checkRange(index);
 
-        Node temp = null;
+        Node cur = null;
         if (index <= (size >> 1)) {   //size>>1相当于除以2
-            temp = first;
+            cur = first;
             for (int i = 0; i < index; i++) {
-                temp = temp.next;
+                cur = cur.next;
             }
         } else {
-            temp = last;
+            cur = last;
             for (int i = size - 1; i > index; i--) {
-                temp = temp.previous;
+                cur = cur.previous;
             }
         }
 
-        return temp;
+        return cur;
     }
 
     @Override

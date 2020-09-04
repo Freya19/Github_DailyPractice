@@ -19,7 +19,6 @@ public class 面试题38字符串的排列 {
     public void back(String state, String s) {
         if (set.contains(state))
             return;
-
         else if (s.length() == 0) {
             res.add(state);
             set.add(state);
