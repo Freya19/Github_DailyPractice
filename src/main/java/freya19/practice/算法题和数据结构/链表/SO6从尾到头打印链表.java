@@ -9,24 +9,29 @@ import java.util.ArrayList;
  * 最终，将列表 tmp 转化为数组 res ，并返回即可。
  */
 
-public class SO6从尾到头打印链表EasyN {
-
-    ArrayList<Integer> tmp = new ArrayList<Integer>();
+public class SO6从尾到头打印链表 {
 
     public int[] reversePrint(ListNode head) {
-        recur(head);
-        int[] res = new int[tmp.size()];
-        for (int i = 0; i < res.length; i++) {
-            res[i] = tmp.get(i);
-        }
-        return res;
-    }
 
-    void recur(ListNode head) {
-        if (head == null) {
-            return;
+        if(head == null){
+            return new int[]{};
         }
-        recur(head.next);
-        tmp.add(head.val);
+
+        ListNode tmpHead = head;
+        int cnt =0;
+        while (tmpHead!=null){
+            cnt++;
+            tmpHead=tmpHead.next;
+        }
+
+        int[] res = new int[cnt];
+        for(int i=res.length-1;i>=0;i--){
+            if(head!=null){
+                res[i]=head.val;
+                head=head.next;
+            }
+        }
+
+        return res;
     }
 }
