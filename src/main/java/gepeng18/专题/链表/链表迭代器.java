@@ -1,12 +1,11 @@
-package gepeng18.test;
+package gepeng18.专题.链表;
 
-import com.sun.media.sound.SoftTuning;
-import sun.nio.cs.SingleByte;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.ListIterator;
+import java.util.Scanner;
 
-import java.lang.ref.SoftReference;
-import java.util.*;
-
-public class and符号 {
+public class 链表迭代器 {
     public static void removeFromLeft(LinkedList list){
         Iterator left = list.iterator();
         int i  = 0;
