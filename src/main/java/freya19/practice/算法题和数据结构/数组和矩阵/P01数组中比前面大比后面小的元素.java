@@ -18,7 +18,7 @@ public class P01数组中比前面大比后面小的元素 {
             }
 
             for (int k = i + 1; k < nums.length; k++) {
-                if (nums[k] > nums[i]) {
+                if (nums[k] >= nums[i]) {
                     times++;
                 }
             }
@@ -32,7 +32,7 @@ public class P01数组中比前面大比后面小的元素 {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{2, 3, 4, 3, 5, 6};
+        int[] nums = new int[]{2, 3, 1, 3, 5, 6};
         int index = new P01数组中比前面大比后面小的元素().findTarget(nums);
         System.out.println(index);
 

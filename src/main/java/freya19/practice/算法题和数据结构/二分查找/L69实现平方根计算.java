@@ -12,7 +12,6 @@ package freya19.practice.算法题和数据结构.二分查找;
      由于返回类型是整数，小数部分将被舍去。
  */
 
-
 /**
  * 二分查找法
  * 存在整数a满足 a^2 ≤ x < (a+1)^2 ，称 a 为 x 的 整数平方根。
@@ -35,7 +34,7 @@ public class L69实现平方根计算 {
             }else if(mid*mid >nums){
                 right=mid-1;
             }else{
-                left=(int)mid+1;
+                left = (int) mid + 1;
             }
         }
         return 0;
