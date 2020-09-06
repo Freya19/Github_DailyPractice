@@ -10,35 +10,35 @@ import java.util.List;
  * 每次循环，判断是否覆盖和是否最小
  */
 public class L76最小覆盖子串 {
-    public String minWindow(String s, String t) {
-        int []freqT = new int[256];
+    public String minWindow(String str1, String str2) {
+        int []str2char = new int[256];
 
-        for (int i = 0; i < t.length(); i++) {
-            freqT[t.charAt(i)] ++;
+        for (int i = 0; i < str2.length(); i++) {
+            str2char[str2.charAt(i)] ++;
         }
 
-        int []freqS = new int[256];
+        int []str1char = new int[256];
         int count = 0; //有多少个元素得到判断
-        int minLength = s.length()+1;
+        int minLength = str1.length()+1;
         int startIndex = -1;
 
         int l = 0, r = -1;
-        while(l < s.length()){
-            if(r+1<s.length()&&count<t.length()){
+        while(l < str1.length()){
+            if(r+1<str1.length()&&count<str2.length()){
                 r++;
-                freqS[s.charAt(r)]++;
+                str1char[str1.charAt(r)]++;
                 // <=表明还没超过，没有超过则count++
-                if(freqS[s.charAt(r)]<=freqT[s.charAt(r)])
+                if(str1char[str1.charAt(r)]<=str2char[str1.charAt(r)])
                     count++;
             } else{
-                freqS[s.charAt(l)]--;
+                str1char[str1.charAt(l)]--;
                 // >的情况下就不要减了
-                if(freqS[s.charAt(l)]<freqT[s.charAt(l)])
+                if(str1char[str1.charAt(l)]<str2char[str1.charAt(l)])
                     count--;
                 l++;
             }
 
-            if(count==t.length()&&(r-l+1)<minLength){
+            if(count==str2.length()&&(r-l+1)<minLength){
                 minLength = r-l+1;
                 startIndex = l;
             }
@@ -46,7 +46,7 @@ public class L76最小覆盖子串 {
         }
 
         if(startIndex!=-1)
-            return s.substring(startIndex,startIndex+minLength);
+            return str1.substring(startIndex,startIndex+minLength);
         else
             return  "";
     }
