@@ -36,10 +36,26 @@ public class 开方 {
 //        throw  new RuntimeException("我觉得不可能");
 //    }
 
-    public static void main(String[] args) {
-        int sqrt = sqrt(2147395599);
-        System.out.println(sqrt);
+    public static int findMin(int state,int w,int [][]r,int a,int b){
+        int min = Integer.MAX_VALUE;
+        for (int i = 0;i<w;i++){
+            if ((r[i][0] == a)&&(r[i][1] == b)){
+                min = Math.min(min,state+r[i][2]);
+            }else if (r[i][0] == a){
+                int cur = findMin(state + r[i][2], w, r, r[i][1], b);
+                min = Math.min(min,cur);
+            }
+        }
+        return min;
     }
 
+    public static void main(String[] args) {
+        int min = findMin(0, 3, new int[][]{
+                {0, 1, 600},
+                {1, 2, 800},
+                {0, 2, 1300}
+        }, 0, 2);
+        System.out.println(min);
+    }
 
 }

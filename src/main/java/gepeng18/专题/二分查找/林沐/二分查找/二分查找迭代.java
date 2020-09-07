@@ -1,7 +1,12 @@
 package gepeng18.专题.二分查找.林沐.二分查找;
 
+import java.io.FilterOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 
+abstract class a{
+
+        }
 public class 二分查找迭代 {
     static boolean binary_search(int [] sort_array, int target){
         int begin = 0;
@@ -31,10 +36,13 @@ public class 二分查找迭代 {
     }
 
     public static void main(String[] args) {
-        int sort_array[] = {-1, 2, 5, 20, 90, 100, 207, 800};
-        int random_array[] = {50, 90, 3, -1, 207, 80};
-        ArrayList<Boolean> res = search_array(sort_array, random_array);
-        System.out.println(res);
+//        int [] arr = new  int[]{};
+//        int sort_array[] = {-1, 2, 5, 20, 90, 100, 207, 800};
+//        int random_array[] = {50, 90, 3, -1, 207, 80};
+//        ArrayList<Boolean> res = search_array(sort_array, random_array);
+//        System.out.println(res);
+        Integer i = new Integer(100);
+        Integer j = new Integer(100);
+        System.out.println(i == j);
     }
-
 }
