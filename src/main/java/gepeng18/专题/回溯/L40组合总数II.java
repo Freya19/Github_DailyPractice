@@ -23,6 +23,7 @@ import java.util.*;
  * [1, 1, 6]
  * ]
  */
+
 public class L40组合总数II {
     //定义全局变量保存最终结果
     private List<List<Integer>> res = new ArrayList<>();
@@ -31,11 +32,11 @@ public class L40组合总数II {
 
     //已经选的数为state，还可以选p-最后，count为已经加了的数
     public void back(int[] candidates, int target, List state, int p, int count) {
-        if(count>target)
-            return ;
+        if (count > target)
+            return;
 
-        if (count == target ) {
-            if(!set.contains(state)){
+        if (count == target) {
+            if (!set.contains(state)) {
                 set.add(state);
                 res.add(state);
             }
