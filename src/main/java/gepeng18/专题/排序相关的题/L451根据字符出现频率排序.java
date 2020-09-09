@@ -47,21 +47,22 @@ import java.util.stream.Collectors;
 public class L451根据字符出现频率排序 {
 
     public void frequencySort(String s) {
-        HashMap<Character, Integer> origin1 = new HashMap<>();
+        HashMap<Character, Integer> origin = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
             final char c = s.charAt(i);
-            origin1.put(c,origin1.getOrDefault(c,0)+1);
+            origin.put(c,origin.getOrDefault(c,0)+1);
         }
 
+        // 方法1
         LinkedHashMap<Character, Integer> res = new LinkedHashMap<>();
-        origin1.entrySet()
+        origin.entrySet()
                 .stream()
                 .sorted((p1, p2) -> {return p2.getValue()- p1.getValue();}).collect(Collectors.toList())
                 .forEach(ele -> res.put(ele.getKey(), ele.getValue()));
         System.out.println(res);
 
 
-        List<Map.Entry<Character, Integer>> origin2 = new ArrayList<Map.Entry<Character, Integer>>(origin1.entrySet());
+        List<Map.Entry<Character, Integer>> origin2 = new ArrayList<Map.Entry<Character, Integer>>(origin.entrySet());
         //origin2.sort()
         origin2.sort(new Comparator<Map.Entry<Character, Integer>>() {
             @Override
@@ -71,7 +72,7 @@ public class L451根据字符出现频率排序 {
         });
         System.out.println(origin2);
 
-        List<Map.Entry<Character, Integer>> origin3 = new ArrayList<Map.Entry<Character, Integer>>(origin1.entrySet());
+        List<Map.Entry<Character, Integer>> origin3 = new ArrayList<Map.Entry<Character, Integer>>(origin.entrySet());
         //collections.sort()
         Collections.sort(origin3, new Comparator<Map.Entry<Character, Integer>>() {
             @Override
@@ -84,6 +85,11 @@ public class L451根据字符出现频率排序 {
     }
 
     public static void main(String[] args) {
-        new L451根据字符出现频率排序().frequencySort("iiijjjskflgjsssjhh");
+        String a = "12";
+        final String d = "1";
+        String e = d+"2";
+        System.out.println(a == e);
+//        new StringBuilder().
+//        new L451根据字符出现频率排序().frequencySort("iiijjjskflgjsssjhh");
     }
 }

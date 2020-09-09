@@ -1,5 +1,6 @@
 package gepeng18.专题.堆;
 
+import javax.print.DocFlavor;
 import java.util.PriorityQueue;
 
 public class 数据流中的中位数 {
@@ -13,14 +14,14 @@ public class 数据流中的中位数 {
     public void Insert(Integer val) {
         /* 插入要保证两个堆存于平衡状态 */
         if (N % 2 == 0) {
-            /* N 为偶数的情况下插入到右半边。
-             * 因为右半边元素都要大于左半边，但是新插入的元素不一定比左半边元素来的大，
-             * 因此需要先将元素插入左半边，然后利用左半边为大顶堆的特点，取出堆顶元素即为最大元素，此时插入右半边 */
-            left.add(val);
-            right.add(left.poll());
-        } else {
+            /* N 为偶数的情况下插入到左半边。
+             * 因为右半边元素都要大于左半边，但是新插入的元素不一定比右半边元素小，
+             * 因此需要先将元素插入右半边，然后利用右半边为小顶堆的特点，取出堆顶元素即为最小元素，此时插入左半边 */
             right.add(val);
             left.add(right.poll());
+        } else {
+            left.add(val);
+            right.add(left.poll());
         }
         N++;
     }
@@ -29,6 +30,6 @@ public class 数据流中的中位数 {
         if (N % 2 == 0)
             return (left.peek() + right.peek()) / 2.0;
         else
-            return (double) right.peek();
+            return (double) left.peek();
     }
 }

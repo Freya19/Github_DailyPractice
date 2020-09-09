@@ -1,4 +1,4 @@
-package gepeng18.面试;
+package gepeng18.面试.美团;
 
 public class 换饮料 {
     public static int solve(int n){
