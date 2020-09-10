@@ -16,15 +16,14 @@ public class 小强集训队 {
                 sum -= nums[l - 1];
             }
 
-            if (r - l + 1 == k)
-                min = Math.min(min, sum);
+            if (r - l + 1 == k) min = Math.min(min, sum);
         }
         return min;
     }
 
     public static void main(String[] args) {
 
-        int min = new 小强集训队().solve(new int[]{1,2,3,4,5,6,7,8,9}, 3);
+        int min = new 小强集训队().solve(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9}, 3);
         System.out.println(min);
 
     }
