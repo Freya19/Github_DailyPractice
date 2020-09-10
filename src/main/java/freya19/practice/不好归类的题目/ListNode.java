@@ -1,5 +1,7 @@
 package freya19.practice.不好归类的题目;
 
+import java.util.Scanner;
+
 public class ListNode {
     public int val;
     public ListNode next;
@@ -56,6 +58,7 @@ public class ListNode {
         ;//在链表的末尾加上 NULL
         sb.append("NULL");
         return sb.toString();
+
     }
 
     //删除一个节点

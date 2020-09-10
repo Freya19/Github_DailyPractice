@@ -1,5 +1,7 @@
 package gepeng18.专题.动态规划;
 
+import java.util.Scanner;
+
 public class 剪绳子 {
 
     int [] nums = new int[1000];
@@ -24,5 +26,12 @@ public class 剪绳子 {
         }
         nums[target]=max;
         return nums[target];
+    }
+
+    public static void main(String[] args) {
+
+        Scanner  scanner = new Scanner(System.in);
+        int i = scanner.nextInt();
+        System.out.println(i);
     }
 }

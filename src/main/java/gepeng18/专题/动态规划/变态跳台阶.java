@@ -12,13 +12,7 @@ public class 变态跳台阶 {
     public int jump(int n) {
 
         if (n == 1) {
-            nums[1] = 1;
             return 1;
-        }
-
-        if (n == 2) {
-            nums[2] = 2;
-            return 2;
         }
 
         if (nums[n] == -1) {

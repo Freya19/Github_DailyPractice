@@ -17,10 +17,10 @@ package gepeng18.专题.动态规划;
  *     会多次调用 sumRange 方法。
  *
  */
-public class L303区域和检索_数组不可变 {
+public class 求和 {
     int[] preSum;
 
-    public L303区域和检索_数组不可变(int[] nums) {
+    public 求和(int[] nums) {
         preSum = new int[nums.length + 1];
         for (int i = 1; i <= nums.length; i++)
             preSum[i] = preSum[i - 1] + nums[i - 1];

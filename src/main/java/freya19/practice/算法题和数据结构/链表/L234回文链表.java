@@ -49,14 +49,14 @@ public class L234回文链表 {
      * 反转链表
      */
     private ListNode reverse(ListNode head) {
-        ListNode newHead = null;
+        ListNode node = null;
         while (head != null) {
-            ListNode nextNode = head.next;
-            head.next = newHead;
-            newHead = head;
-            head = nextNode;
+            ListNode cur = head.next;
+            head.next = node;
+            node = head;
+            head = cur;
         }
-        return newHead;
+        return node;
     }
 
     /**

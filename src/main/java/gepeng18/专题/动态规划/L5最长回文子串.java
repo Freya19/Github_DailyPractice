@@ -17,7 +17,7 @@ public class L5最长回文子串 {
     }
 
 
-    public int solution(String s,int l,int r){
+    private int solution(String s,int l,int r){
         if(dp[l][r]!=-1)
             return dp[l][r];
 

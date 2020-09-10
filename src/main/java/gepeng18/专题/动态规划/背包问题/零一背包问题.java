@@ -22,6 +22,7 @@ public class 零一背包问题 {
         return bestValue(w, v, n - 1, C);
     }
 
+
     // 用 [0...index]的物品,填充容积为c的背包的最大价值
     private int bestValue(int[] w, int[] v, int index, int c){
 

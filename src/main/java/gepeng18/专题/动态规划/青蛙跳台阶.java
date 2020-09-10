@@ -14,12 +14,10 @@ public class 青蛙跳台阶 {
     public int solution(int n) {
 
         if(n == 1){
-            nums[1] = 1;
             return 1;
         }
 
         if(n==2){
-            nums[2] = 2;
             return 2;
         }
 
