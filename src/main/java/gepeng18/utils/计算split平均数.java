@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class 计算split平均数 {
     public static void readFileByLines() throws IOException {
@@ -33,6 +34,7 @@ public class 计算split平均数 {
 
     public static void main(String[] args) throws IOException {
         计算split平均数.readFileByLines();
+        
     }
 }
 

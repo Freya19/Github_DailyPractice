@@ -41,8 +41,7 @@ public class 练习树的遍历 {
             Command command = stack.pop();
             if(command.op.equals(Command.PRINT))
                 res.add(command.node.val);
-            else
-            {
+            else {
                 if(command.node.right!=null)
                     stack.push(new Command(Command.GO,command.node.right));
 
