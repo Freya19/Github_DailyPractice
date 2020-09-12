@@ -33,7 +33,7 @@ public class 计算split平均数 {
     }
 
     public static void main(String[] args) throws IOException {
-        计算split平均数.readFileByLines();
+        readFileByLines();
         
     }
 }
