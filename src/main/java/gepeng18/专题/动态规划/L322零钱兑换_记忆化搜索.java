@@ -1,6 +1,11 @@
 package gepeng18.专题.动态规划;
 
-class L322零钱兑换_记忆化搜索 {
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.TreeMap;
+import java.util.concurrent.ConcurrentHashMap;
+
+class L322零钱兑换_记忆化搜索  {
     int[] memo;
     public int coinChange(int[] coins, int amount) {
         if(coins.length == 0){
@@ -42,7 +47,5 @@ class L322零钱兑换_记忆化搜索 {
     }
 
     public static void main(String[] args) {
-        System.out.println(Integer.MAX_VALUE);
-        System.out.println("1000000007");
     }
 }
