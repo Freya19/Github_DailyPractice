@@ -21,7 +21,5 @@ public class 换饮料 {
     public static void main(String[] args) {
         int solve = solve(5);
         System.out.println(solve);
-
-
     }
 }
