@@ -1,3 +1,8 @@
+package gepeng18.专题.动态规划;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 //package gepeng18.专题.动态规划;
 //
 ///**
@@ -22,28 +27,32 @@
 // * 链接：https://leetcode-cn.com/problems/house-robber-ii
 // * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 // */
-//public class L213 {
-//    //考虑从start 偷到end
-//    int dp[];
-//    public int rob(int [] nums,int start,int end){
-//        if(end == start){
-//            dp[end] = nums[start];
-//            return dp[end];
-//        }
-//
-//        if(end == start+1){
-//            dp[end] = Math.max(nums[start],nums[end]);
-//            return dp[end];
-//        }
-//
-//        if(dp[end]!=0)
-//            return dp[end];
-//        dp[end] = Math.max(rob(nums, start, end - 2) + nums[end], rob(nums, start, end - 1));
-//        return dp[end];
-//    }
-//
-//    public int rob(int[] nums) {
-//        dp = new int[nums.length];
-//        rob(nums,0,nums.length-2);
-//    }
-//}
+public class L213打家劫舍2 {
+    //考虑从start 偷到end
+    int dp[];
+    public int rob(int [] nums,int start,int end){
+        if(end == start){
+            return nums[end];
+        }
+        if (end == start+1){
+            return Math.max(nums[start],nums[start+1]);
+        }
+        if(dp[end]!=-1)
+            return dp[end];
+        dp[end] = Math.max(rob(nums, start, end - 2) + nums[end], rob(nums, start, end - 1));
+        return dp[end];
+    }
+
+    public int rob(int[] nums) {
+        if (nums == null || nums.length ==  0)
+            return 0;
+        if (nums.length<2)
+            return nums[0];
+        dp = new int[nums.length];
+        Arrays.fill(dp,-1);
+        int res = rob(nums, 0, nums.length - 2);
+        Arrays.fill(dp,-1);
+        res = Math.max(res,rob(nums, 1, nums.length - 1));
+        return res;
+    }
+}
