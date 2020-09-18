@@ -1,13 +1,12 @@
 package gepeng18.grammar;
 
-class Parent{
-    public int i = 0;
-}
-public class Son extends Parent{
-    public int i = 1;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 
-    public static void main(String[] args) {
-        Parent parent = new Son();
-        System.out.println(parent.i);
+public class Son {
+
+    public static void main(String[] args) throws InterruptedException {
     }
 }

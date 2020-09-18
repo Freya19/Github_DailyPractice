@@ -1,10 +1,15 @@
 package gepeng18.考试.微盟;
 
 import java.lang.reflect.Field;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 
+<<<<<<< HEAD:src/main/java/gepeng18/考试/微盟/引号中的字符串1.java
 public class 引号中的字符串1 {
 
+=======
+public class 打印 {
+>>>>>>> 22f162aa555c977cd8b9c57f9b35847747fe75ac:src/main/java/考试/打印.java
     static ArrayList<String> func(String s) {
         ArrayList<String> res = new ArrayList<>();
         int end = -1;
