@@ -15,7 +15,7 @@ public class 引号中的字符串2 {
                     index = i;
                 }else{
                     res.add(s.substring(index+1,i));
-                    beforeFind = false;
+                    beforeFind = false;  // 清除之前的标志位
                 }
             }
         }

@@ -15,6 +15,9 @@ public class 连续子数组的最大和 {
     }
 
     public static void main(String[] args) throws InterruptedException {
+        String s1 = "abc";
+        String s2 = "a"+"b"+"c";
+        System.out.println(s1 == s2);  // true
 
     }
 }

@@ -27,8 +27,9 @@ public class 三十六进制2 {
             int sum = x + y + add;
             if (sum>35){
                 add = 1;
-            }else
-                add = 0;
+            }else{
+                add = 0; // 必须有这个，要取消之前的进位
+            }
             for (Map.Entry<Character, Integer> entry : transfer.entrySet()) {
                 if (entry.getValue() == sum % 36) {
                     res.append(entry.getKey());
@@ -42,7 +43,7 @@ public class 三十六进制2 {
     }
 
     public static void main(String[] args) {
-        String res = add("b1", "12");
+        String res = add("ab1", "12");
         System.out.println(res);
     }
 
