@@ -3,6 +3,7 @@ package 考试;
 import java.lang.reflect.Field;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class 打印 {
     static ArrayList<String> func(String s) {
@@ -15,6 +16,7 @@ public class 打印 {
             if(end!=-1)
                 res.add(s.substring(start+1, end));
         }
+        new ReentrantLock().newCondition().signal();
         return res;
     }
 
