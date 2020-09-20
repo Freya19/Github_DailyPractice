@@ -1,11 +1,12 @@
-package 考试;
+package gepeng18.考试.微盟;
 
 import java.lang.reflect.Field;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class 打印 {
+
+public class 引号中的字符串1 {
     static ArrayList<String> func(String s) {
         ArrayList<String> res = new ArrayList<>();
         int end = -1;

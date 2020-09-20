@@ -30,8 +30,7 @@ public class L209长度最小的子数组 {
             if(r + 1 < nums.length && sum < s){
                 r++;
                 sum += nums[r];
-            }
-            else{
+            } else {
                 sum -= nums[l];
                 l++;
             }
