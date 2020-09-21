@@ -1,5 +1,7 @@
 package gepeng18.考试;
 
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,10 +19,5 @@ public class 字符串匹配 {
             throw new IllegalArgumentException("No valid class");
         }
         return className;
-    }
-
-    public static void main(String[] args) {
-        String a = matchPublicClassName("cdabbcd");
-        System.out.println(a);
     }
 }
