@@ -5,13 +5,9 @@ import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 
-<<<<<<< HEAD
-public class 引号中的字符串1 {
 
-=======
 
 public class 引号中的字符串1 {
->>>>>>> 640f1804e978a6988688f7d0c81b2920fdd16c4f
     static ArrayList<String> func(String s) {
         ArrayList<String> res = new ArrayList<>();
         int end = -1;
