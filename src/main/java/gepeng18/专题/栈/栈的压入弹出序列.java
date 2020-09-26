@@ -58,7 +58,8 @@ public class 栈的压入弹出序列 {
     }
 
     public static void main(String[] args) {
-        boolean b = new 栈的压入弹出序列().IsPopOrder(new int[]{1, 2, 3}, new int[]{3, 2, 1, 1});
+        boolean b = new 栈的压入弹出序列().IsPopOrder(new int[]{0,1,2,3,4,5,6,7,8,9},
+                new int[]{2,5,6,7,4,8,9,3,1,0});
         System.out.println(b);
     }
 }
