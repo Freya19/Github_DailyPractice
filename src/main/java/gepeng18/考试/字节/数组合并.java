@@ -28,10 +28,12 @@ public class 数组合并 {
 
     // 链表合并的思路
     public static int[] merge2(int[] arr1, int[] arr2) {
+
         int[] res = new int[arr1.length + arr2.length];
         int index1 = 0;
         int index2 = 0;
         int resIndex = 0;
+
         while (index1 < arr1.length && index2 < arr2.length) {
             if (arr1[index1] > arr2[index2]) {
                 res[resIndex] = arr2[index2];
@@ -51,7 +53,7 @@ public class 数组合并 {
                 resIndex++;
             }
         } else {
-            for (int i = index1; i < arr2.length; i++) {
+            for (int i = index1; i < arr1.length; i++) {
                 res[resIndex] = arr1[i];
                 resIndex++;
             }
