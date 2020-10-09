@@ -6,10 +6,10 @@ public class 子序列最小和 {
         int sum = 0;
         int min = Integer.MAX_VALUE;
         for (int i = 0;i<nums.length;i++){
-            if (sum>0)
-                sum = nums[i];
+            if (sum<0)
+                sum = sum+nums[i] ;
             else
-                sum = sum+nums[i];
+                sum = nums[i];
             min = Math.min(sum,min);
         }
         System.out.println(min);

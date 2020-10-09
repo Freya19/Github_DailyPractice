@@ -32,7 +32,6 @@ public class 把字符串转换成整数 {
     }
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
         String s = "-12312312";
         System.out.println("使用库函数转换：" + Integer.valueOf(s));
         int res = 把字符串转换成整数.StrToInt(s);

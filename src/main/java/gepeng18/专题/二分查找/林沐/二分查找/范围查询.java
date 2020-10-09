@@ -11,11 +11,9 @@ public class 范围查询 {
                     return mid;
                 }
                 end = mid - 1;
-            }
-            else if (target < nums[mid]){
+            } else if (target < nums[mid]){
                 end = mid - 1;
-            }
-            else if (target > nums[mid]){
+            } else if (target > nums[mid]){
                 begin = mid + 1;
             }
         }
@@ -32,11 +30,9 @@ public class 范围查询 {
                     return mid;
                 }
                 begin = mid + 1;
-            }
-            else if (target < nums[mid]){
+            } else if (target < nums[mid]){
                 end = mid - 1;
-            }
-            else if (target > nums[mid]){
+            } else if (target > nums[mid]){
                 begin = mid + 1;
             }
         }

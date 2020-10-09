@@ -12,8 +12,12 @@ public class L22括号生成 {
 
     // res表示结果，thisString表示目前生成的
     void func(List<String> res, String thisString, int leftCount, int rightCount, int n){
-        if(leftCount > n || rightCount > n || rightCount > leftCount) return ;
-        if(leftCount == n && rightCount == n) {res.add(thisString); return;}
+        if(leftCount > n || rightCount > n || rightCount > leftCount)
+            return ;
+        if(leftCount == n && rightCount == n) {
+            res.add(thisString);
+            return;
+        }
         func(res, thisString + '(', leftCount+1, rightCount, n);
         func(res, thisString + ')', leftCount, rightCount+1, n);
         return;

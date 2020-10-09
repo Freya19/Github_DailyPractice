@@ -26,39 +26,28 @@ package gepeng18.专题.链表;
 
 import gepeng18.leetcode.ListNode;
 
-/**
- * Solution
- *
- * 两次遍历法
- *
- * 首先我们将添加一个 哑结点 作为辅助，该结点位于列表头部。哑结点用来简化某些极端情况，
- * 例如列表中只含有一个结点，或需要删除列表的头部。在第一次遍历中，我们找出列表的长度 L。
- * 然后设置一个指向哑结点的指针，并移动它遍历列表，直至它到达第 (L - n) 个结点那里。
- * 我们把第 (L - n)个结点的 next 指针重新链接至第 (L - n + 2)个结点，完成这个算法。
- */
+
 public class 删除链表的倒数第N个节点 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         // 哑结点，哑结点用来简化某些极端情况，例如列表中只含有一个结点，或需要删除列表的头部
         ListNode dummy = new ListNode(0);
         // 哑结点指向头结点
         dummy.next = head;
-        // 保存链表长度
-        int length = 0;
-        ListNode len = head;
-        while (len != null) {
-            length++;
-            len = len.next;
-        }
-        length = length - n;
-        //从dummy移动L-n次即可移动到第L-n个节点
-        ListNode target = dummy;
-        // 找到 L-n 位置的节点
-        while (length > 0) {
-            target = target.next;
+
+        int length = n+1;
+        ListNode quick = dummy;
+        while (length>0) {
+            quick = quick.next;
             length--;
         }
-        // 把第 (L - n)个结点的 next 指针重新链接至第 (L - n + 2)个结点
-        target.next = target.next.next;
+
+        ListNode slow = dummy;
+
+        while (quick!=null) {
+            quick = quick.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
         return dummy.next;
     }
 

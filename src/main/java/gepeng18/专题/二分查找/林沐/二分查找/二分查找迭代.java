@@ -4,9 +4,7 @@ import java.io.FilterOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-abstract class a{
 
-        }
 public class 二分查找迭代 {
     static boolean binary_search(int [] sort_array, int target){
         int begin = 0;

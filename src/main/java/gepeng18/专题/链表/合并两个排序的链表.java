@@ -15,7 +15,8 @@ import gepeng18.leetcode.ListNode;
  * 考虑通过递归的方式实现！
  */
 public class 合并两个排序的链表 {
-    //将list1和list2进行归并后，返回结果的头指针
+    // 方法1：递归
+    // 将list1和list2进行归并后，返回结果的头指针
     public ListNode Merge(ListNode list1, ListNode list2) {
         if(list1 == null){
             return list2;
@@ -32,6 +33,7 @@ public class 合并两个排序的链表 {
         }
     }
 
+    // 方法2：正常的方法
     public ListNode Merge2(ListNode list1, ListNode list2) {
         ListNode dummyNode = new ListNode(-1);
         ListNode cur = dummyNode;

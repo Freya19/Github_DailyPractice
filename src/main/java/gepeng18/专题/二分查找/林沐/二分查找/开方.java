@@ -1,4 +1,4 @@
-package gepeng18.专题.二分查找;
+package gepeng18.专题.二分查找.林沐.二分查找;
 
 public class 开方 {
     public static int sqrt(int n){
@@ -17,6 +17,7 @@ public class 开方 {
         }
         throw new RuntimeException("不可能出现这种情况");
     }
+
 //    public static int sqrt(int n){
 //        long l = 0,h = n;
 //        while (l<=h){

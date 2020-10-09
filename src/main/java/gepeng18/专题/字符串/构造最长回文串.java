@@ -24,7 +24,7 @@ import java.util.HashSet;
  * 所以如果最后有字母落单，总长度可以加 1。首先将字符串转变为字符数组。然后遍历该数组，判
  * 断对应字符是否在hashset中，如果不在就加进去，如果在就让count++，然后移除该字符！这样就能找到出现次数为双数的字符个数。
  */
-public class 最长回文串 {
+public class 构造最长回文串 {
 
     public int longestPalindrome(String s) {
         if (s.length() == 0)
