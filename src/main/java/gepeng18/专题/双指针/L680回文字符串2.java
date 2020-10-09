@@ -19,8 +19,7 @@ public class L680回文字符串2 {
         while(left<right){
             if(s.charAt(left)!=s.charAt(right)){
                 return isPalindrome(s, left, right-1) || isPalindrome(s, left+1, right);
-            }
-            else {
+            } else {
                 left++;
                 right--;
             }
