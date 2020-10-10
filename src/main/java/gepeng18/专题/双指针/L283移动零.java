@@ -1,8 +1,5 @@
 package gepeng18.专题.双指针;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-import jdk.internal.util.xml.impl.Input;
-
 /**
  * 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
  *
@@ -21,5 +18,15 @@ import jdk.internal.util.xml.impl.Input;
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class L283移动零 {
-
+    public void moveZeroes(int[] nums) {
+        int idx = 0;
+        for (int num : nums) {
+            if (num != 0) {
+                nums[idx++] = num;
+            }
+        }
+        while (idx < nums.length) {
+            nums[idx++] = 0;
+        }
+    }
 }
