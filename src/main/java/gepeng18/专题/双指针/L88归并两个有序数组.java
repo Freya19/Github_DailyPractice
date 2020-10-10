@@ -9,12 +9,12 @@ public class L88归并两个有序数组 {
             num1[i] = num[i];
         }
 
-        for(int i=0,j=0,k=0; i<m || j<n;){
+        int i=0,j=0,k=0;
+        for(; i<m || j<n;){
             if(i == m){
                 num[k] = num2[j];
                 j++;
-            }
-            else if(j==n){
+            } else if(j==n){
                 num[k] = num1[i];
                 i++;
             }else if(num1[i] < num2[j]){
