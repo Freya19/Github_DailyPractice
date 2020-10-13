@@ -33,10 +33,10 @@ public class L215数组中的第K个最大元素 {
         // 小顶堆
         PriorityQueue<Integer> pq = new PriorityQueue<>();
         for (int val : nums) {
-            // 维护堆的大小为 K
-            if (pq.size() == k)
-                pq.poll();
             pq.add(val);
+            // 维护堆的大小为 K
+            if (pq.size() > k)
+                pq.poll();
         }
         return pq.peek();
     }
