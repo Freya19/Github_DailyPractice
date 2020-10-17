@@ -9,7 +9,6 @@ public class 面试题40_最小的k个数 {
     // 1. 若目前堆的大小小于K，将当前数字放入堆中。
     // 2. 否则判断当前数字与大根堆堆顶元素的大小关系，如果当前数字比大根堆堆顶还大，这个数就直接跳过；
     //    反之如果当前数字比大根堆堆顶小，先poll掉堆顶，再将该数字放入堆中。
-    class Solution {
         public int[] getLeastNumbers(int[] arr, int k) {
             if (k == 0 || arr.length == 0) {
                 return new int[0];
@@ -33,7 +32,7 @@ public class 面试题40_最小的k个数 {
             }
             return res;
         }
-    }
+
 
 
 }
