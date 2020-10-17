@@ -6,8 +6,8 @@ public class 车辆调度 {
 
     public static void main(String[] args) {
         车辆调度 solver = new 车辆调度();
-        solver.profits = new int[][]{{4,2},{3,3},{5,4},{5,3},{1,5}};
-        solver.solve(2,2,0,0);
+        solver.profits = new int[][]{{10,20},{20,40}};
+        solver.solve(1,1,0,0);
         System.out.println(solver.maxProfit);
     }
 

@@ -62,6 +62,7 @@ public class L451根据字符出现频率排序 {
         System.out.println(res);
 
 
+        // 方法2
         List<Map.Entry<Character, Integer>> origin2 = new ArrayList<Map.Entry<Character, Integer>>(origin.entrySet());
         //origin2.sort()
         origin2.sort(new Comparator<Map.Entry<Character, Integer>>() {
@@ -70,6 +71,8 @@ public class L451根据字符出现频率排序 {
                 return o2.getValue()-o1.getValue();
             }
         });
+
+        // 方法3
         System.out.println(origin2);
 
         List<Map.Entry<Character, Integer>> origin3 = new ArrayList<Map.Entry<Character, Integer>>(origin.entrySet());

@@ -6,19 +6,19 @@ import java.util.*;
 
 /**
  * 给定一个非空的整数数组，返回其中出现频率前 k 高的元素。
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * 示例 1:
- *
+ * <p>
  * 输入: nums = [1,1,1,2,2,3], k = 2
  * 输出: [1,2]
- *
+ * <p>
  * 示例 2:
- *
+ * <p>
  * 输入: nums = [1], k = 1
  * 输出: [1]
- *
+ * <p>
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/top-k-frequent-elements
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
@@ -55,8 +55,38 @@ public class L347出现频率最多的k个元素 {
         return topK;
     }
 
+    public int [] topKFrequent2(int[] nums, int k) {
+        Map<Integer, Integer> frequencyForNum = new HashMap<>();
+        for (int num : nums) {
+            frequencyForNum.put(num, frequencyForNum.getOrDefault(num, 0) + 1);
+        }
+        PriorityQueue<Map.Entry<Integer, Integer>> pq = new PriorityQueue<>(new Comparator<Map.Entry<Integer, Integer>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Integer> o1, Map.Entry<Integer, Integer> o2) {
+                // 堆就按照头是头，尾是尾巴
+                // 小 大
+                return o1.getValue() - o2.getValue();
+            }
+        });
+        for (Map.Entry<Integer, Integer> entry : frequencyForNum.entrySet()) {
+
+            pq.add(entry);
+            if (pq.size() > k)
+                pq.poll();
+        }
+        ArrayList<Integer> res = new ArrayList<>();
+        while (pq.size() > 0) {
+            Map.Entry<Integer, Integer> entry = pq.poll();
+            res.add(entry.getKey());
+        }
+        int[] finalRes = new int[res.size()];
+        for (int i = 0;i<res.size();i++)
+            finalRes[i] = res.get(i);
+        return finalRes;
+    }
+
 
     public static void main(String[] args) {
-        new L347出现频率最多的k个元素().topKFrequent1(new int[]{5,6},2);
+        new L347出现频率最多的k个元素().topKFrequent2(new int[]{1,1,1,2,2,3}, 2);
     }
 }
