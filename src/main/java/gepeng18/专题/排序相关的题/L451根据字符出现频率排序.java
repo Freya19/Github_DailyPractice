@@ -88,10 +88,6 @@ public class L451根据字符出现频率排序 {
     }
 
     public static void main(String[] args) {
-        String a = "12";
-        final String d = "1";
-        String e = d+"2";
-        System.out.println(a == e);
 //        new StringBuilder().
 //        new L451根据字符出现频率排序().frequencySort("iiijjjskflgjsssjhh");
     }

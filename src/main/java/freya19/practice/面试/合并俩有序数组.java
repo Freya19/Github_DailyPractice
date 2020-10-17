@@ -11,7 +11,7 @@ public class 合并俩有序数组 {
         // 指向res的下标
         int p = 0;
 
-        // 遍历两个数组，比较当元素的大小，小的放到res中
+        // 遍历两个数组，比较当前元素的大小，小的放到res中
         // 或的话会越界
         while (p1 < nums1.length && p2 < nums2.length) {
             if (nums1[p1] < nums2[p2]) {
