@@ -1,7 +1,6 @@
 package gepeng18.面试;
 
 public class Exam {
-
     /**
      * 验证IP地址
      *
