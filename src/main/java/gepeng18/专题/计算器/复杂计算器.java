@@ -2,9 +2,10 @@ package gepeng18.专题.计算器;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class 复杂计算器 {
-    public int calculate(String s) {
+    public static int calculate(String s) {
         /*
             将 减法、乘法、除法 转换为 加法
             某个数 num, 如果前面的对应的运算符是 -，那么 将 -num 压入栈中
@@ -20,7 +21,7 @@ public class 复杂计算器 {
         int[] i = new int[1];
         return dfs(s, i);
     }
-    private int dfs(String s, int[] i){
+    private static int dfs(String s, int[] i){
         Deque<Integer> stack = new LinkedList<>();
 
         //记录某个连续的数，比如 "42"，那么我们首先 num = 4，然后遇到 2 ,num = num * 10 + 2 = 42
@@ -38,7 +39,9 @@ public class 复杂计算器 {
             if(Character.isDigit(ch)){
                 num = num * 10 + (ch - '0');
             }
-            //不是数字，不是空格（运算符 或 '(' 或 ')' ） 或者 到了最后一个字符，那么根据前面记录的 op 操作符 将数字压栈，然后将新的运算符 ch 赋值给 op
+            //不是数字，不是空格（运算符 或 '(' 或 ')' ） 或者 到了最后一个字符，
+            // 那么根据前面记录的 op 操作符 将数字压栈，然后将新的运算符 ch 赋值给 op
+            // 即将之前的符号计算一下，并且将现在的符号给记录下来
             if(!Character.isDigit(ch) && ch != ' ' || i[0] == s.length() - 1){
                 switch(op){
                     case '+':
@@ -70,5 +73,10 @@ public class 复杂计算器 {
             res += stack.pop();
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        int res = calculate("1*2+3");
+        System.out.println(res);
     }
 }
