@@ -6,26 +6,21 @@ public class 对角线打印 {
      * @param array
      */
     private static void printTwoDimensionalArrayTopRight(int[][] array){
-        int n = array.length;
-        int maxSize = n * n;
-        int len = (maxSize + "").length();
-
-        //初始角标
-        int i = 0;
-        int j = 0;
+        int row = array.length;
+        int col = array[0].length;
 
         //右上角，我们可以认为先从n - 1 到 0 列
-        for (int k = n - 1 ; k >= 0; k--){
+        for (int k = col - 1 ; k >= 0; k--){
             //每一列的循环 行下标i会增加，列下标j会增加
-            for (i = 0 ,j = k; j <= n - 1 ; i++,j++){
+            for (int i = 0 ,j = k; j<col && i < row   ; i++,j++){
                 System.out.print(array[i][j]+" ");
             }
         }
 
         //再从1 到 n - 1 行
-        for (int k = 1 ; k <= n - 1; k++){
+        for (int k = 1 ; k <= row - 1; k++){
             //每一列的循环 行下标i会增加，列下标j会增加
-            for (i = k ,j = 0; i <= n - 1  ; i++,j++){
+            for (int i = k ,j = 0; i < row   ; i++,j++){
                 System.out.print(array[i][j]+" ");
             }
         }
@@ -36,20 +31,21 @@ public class 对角线打印 {
      * @param array
      */
     private static void printTwoDimensionalArrayTopLeft(int[][] array){
-        int n = array.length;
+        int row = array.length;
+        int col = array[0].length;
 
         //右上角，我们可以认为先从n - 1 到 0 列
-        for (int k = 0;k<n; k++){
+        for (int k = 0;k<col; k++){
             //每一列的循环 行下标i会增加，列下标j会增加
-            for (int i = 0 ,j = k; j>=0 ; i++,j--){
+            for (int i = 0 ,j = k; i < row && j >= 0 ; i++,j--){
                 System.out.print(array[i][j]+" ");
             }
         }
 
         //再从1 到 n - 1 行
-        for (int k = 1 ; k <= n - 1; k++){
+        for (int k = 1 ; k <= row - 1; k++){
             //每一列的循环 行下标i会增加，列下标j会增加
-            for (int i = k ,j = n-1; i<n  ; i++,j--){
+            for (int i = k ,j = col-1; i < row   ; i++,j--){
                 System.out.print(array[i][j]+" ");
             }
         }
@@ -57,11 +53,10 @@ public class 对角线打印 {
 
     public static void main(String[] args) {
         int[][] arr = {
-                {0,1,2,3},
-                {4,5,6,7},
-                {8,9,10,11},
-                {12,13,14,15}
+                {0, 1, 2, 3,  4},
+                {5, 6, 7, 8,  9},
+                {10,11,12,13, 14}
         };
-        printTwoDimensionalArrayTopLeft(arr);
+        printTwoDimensionalArrayTopRight(arr);
     }
 }

@@ -49,7 +49,6 @@ public class 面试题40_2 {
                 swap(arr, low, high);
         }
         swap(arr, low, first);
-        System.out.println(Arrays.toString(arr));
         return low;
     }
 

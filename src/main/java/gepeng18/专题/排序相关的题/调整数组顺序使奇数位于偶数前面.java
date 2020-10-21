@@ -1,5 +1,7 @@
 package gepeng18.专题.排序相关的题;
 
+import java.util.Scanner;
+
 public class 调整数组顺序使奇数位于偶数前面 {
     public void reOrderArray(int[] nums) {
         int N = nums.length;
@@ -21,4 +23,5 @@ public class 调整数组顺序使奇数位于偶数前面 {
         nums[i] = nums[j];
         nums[j] = t;
     }
+
 }
