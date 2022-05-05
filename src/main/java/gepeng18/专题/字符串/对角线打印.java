@@ -1,5 +1,9 @@
 package gepeng18.专题.字符串;
 
+import java.util.Arrays;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class 对角线打印 {
     /**
      * 左上角开始打印二维矩阵数组
@@ -52,11 +56,15 @@ public class 对角线打印 {
     }
 
     public static void main(String[] args) {
-        int[][] arr = {
-                {0, 1, 2, 3,  4},
-                {5, 6, 7, 8,  9},
-                {10,11,12,13, 14}
-        };
-        printTwoDimensionalArrayTopRight(arr);
+//        int[][] arr = {
+//                {0, 1, 2, 3,  4},
+//                {5, 6, 7, 8,  9},
+//                {10,11,12,13, 14}
+//        };
+//        printTwoDimensionalArrayTopRight(arr);
+        int x[] = new int[4];
+        System.out.println(Arrays.toString(x));
+
+
     }
 }
