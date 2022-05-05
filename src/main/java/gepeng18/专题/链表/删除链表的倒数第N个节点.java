@@ -24,7 +24,7 @@ package gepeng18.专题.链表;
  * 其中 L是列表的长度。只要我们找到列表的长度 L，这个问题就很容易解决。
  */
 
-import gepeng18.leetcode.ListNode;
+import gepeng18.leetcode.old.ListNode;
 
 
 public class 删除链表的倒数第N个节点 {

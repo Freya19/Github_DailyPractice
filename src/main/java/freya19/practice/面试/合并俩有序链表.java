@@ -1,6 +1,6 @@
 package freya19.practice.面试;
 
-import gepeng18.leetcode.ListNode;
+import gepeng18.leetcode.old.ListNode;
 
 public class 合并俩有序链表 {
     public ListNode mergeTwoLinkedList(ListNode head1, ListNode head2) {

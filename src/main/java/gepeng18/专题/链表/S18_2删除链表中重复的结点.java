@@ -1,6 +1,6 @@
 package gepeng18.专题.链表;
 
-import gepeng18.leetcode.ListNode;
+import gepeng18.leetcode.old.ListNode;
 
 public class S18_2删除链表中重复的结点 {
     public ListNode deleteDuplication(ListNode pHead){

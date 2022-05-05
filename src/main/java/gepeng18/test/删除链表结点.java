@@ -1,6 +1,6 @@
 package gepeng18.test;
 
-import gepeng18.leetcode.ListNode;
+import gepeng18.leetcode.old.ListNode;
 
 public class 删除链表结点 {
     public ListNode deleteNode(ListNode head, ListNode tobeDelete) {

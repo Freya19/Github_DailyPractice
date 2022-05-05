@@ -1,6 +1,4 @@
-package gepeng18.专题.堆;
-
-import gepeng18.leetcode.old.ListNode;
+package gepeng18.leetcode.old;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -25,7 +23,7 @@ import java.util.PriorityQueue;
  *
  */
 
-class L23合并K个排序链表 {
+class SolutionL23 {
     class ListNodeCompare implements Comparator<ListNode> {
         @Override
         public int compare(ListNode a, ListNode b) {

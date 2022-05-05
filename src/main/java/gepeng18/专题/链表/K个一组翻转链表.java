@@ -1,6 +1,6 @@
 package gepeng18.专题.链表;
 
-import gepeng18.leetcode.ListNode;
+import gepeng18.leetcode.old.ListNode;
 
 public class K个一组翻转链表 {
     public ListNode reverseKGroup(ListNode head, int k) {
