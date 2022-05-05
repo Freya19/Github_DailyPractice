@@ -1,9 +1,5 @@
 package freya19.practice.算法题和数据结构.动态规划;
 
-import com.sun.org.apache.regexp.internal.RE;
-
-import java.util.Arrays;
-
 public class L64最小路径和 {
 
     public int minPathSum(int[][] grid) {
